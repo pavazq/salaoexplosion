@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Principais -->
+  <url><loc>https://salaoexplosion.com.br/</loc><priority>1.0</priority></url>
+  <url><loc>https://salaoexplosion.com.br/servicos.html</loc><priority>0.9</priority></url>
+  <url><loc>https://salaoexplosion.com.br/sobre.html</loc><priority>0.8</priority></url>
+  <url><loc>https://salaoexplosion.com.br/equipe.html</loc><priority>0.8</priority></url>
+  <url><loc>https://salaoexplosion.com.br/contato.html</loc><priority>0.8</priority></url>
+  <url><loc>https://salaoexplosion.com.br/produtos.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/espaco.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/playlist.html</loc><priority>0.4</priority></url>
+
+  <!-- Massagens -->
+  <url><loc>https://salaoexplosion.com.br/massagens/</loc><priority>0.8</priority></url>
+  <url><loc>https://salaoexplosion.com.br/massagens/relaxante.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/massagens/redutora.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/massagens/modeladora.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/massagens/miofascial.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/massagens/drenagem-linfatica.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/massagens/detox-argila.html</loc><priority>0.7</priority></url>
+
+  <!-- Outros (estética) -->
+  <url><loc>https://salaoexplosion.com.br/outros/sobrancelha.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/outros/limpeza-de-pele.html</loc><priority>0.7</priority></url>
+
+  <!-- Referências -->
+  <url><loc>https://salaoexplosion.com.br/referencias/coloridos.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/referencias/cortes.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/referencias/mechas.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/referencias/moreno-iluminado.html</loc><priority>0.6</priority></url>
+
+  <!-- Guia de sobrevivência capilar -->
+  <url><loc>https://salaoexplosion.com.br/guia-sobrevivencia-capilar/</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/guia-sobrevivencia-capilar/day-after.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/guia-sobrevivencia-capilar/dicas-alimentares.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/guia-sobrevivencia-capilar/dicas-tratamento.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/guia-sobrevivencia-capilar/finalizacao-cacheada.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/guia-sobrevivencia-capilar/finalizacao-crespa.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/guia-sobrevivencia-capilar/finalizacao-lisa.html</loc><priority>0.6</priority></url>
+
+  <!-- Orientações -->
+  <url><loc>https://salaoexplosion.com.br/orientacao-pre-corte/</loc><priority>0.5</priority></url>
+  <url><loc>https://salaoexplosion.com.br/orientacao-massagem/</loc><priority>0.5</priority></url>
+  <url><loc>https://salaoexplosion.com.br/orientacao-massagem-pos/</loc><priority>0.5</priority></url>
+
+  <!-- Landing -->
+  <url><loc>https://salaoexplosion.com.br/landing/</loc><priority>0.5</priority></url>
+
+  <!-- Procedimentos — categorias -->
+  <url><loc>https://salaoexplosion.com.br/procedimentos/cronograma.html</loc><priority>0.8</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/cortes.html</loc><priority>0.8</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/tratamentos.html</loc><priority>0.8</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/tratamentos-essenciais.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/coloracoes.html</loc><priority>0.8</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/coloracao.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/alisamentos.html</loc><priority>0.8</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/finalizacoes.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/harmonizacoes.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/estetica.html</loc><priority>0.7</priority></url>
+
+  <!-- Procedimentos — tratamentos individuais -->
+  <url><loc>https://salaoexplosion.com.br/procedimentos/hidratacao.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/nutricao.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/reconstrucao.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/tratamento-capilar.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/tratamento-estelar.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/cronograma-capilar.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/cronograma-estelar.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/detok.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/ccrp-carvao-ativado.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/acidificacao-redken.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/plastica-dos-fios.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/reposicao-de-carbono.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/progressiva.html</loc><priority>0.7</priority></url>
+
+  <!-- Procedimentos — cortes individuais -->
+  <url><loc>https://salaoexplosion.com.br/procedimentos/corte-estiloso.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/corte-terapeutico.html</loc><priority>0.7</priority></url>
+
+  <!-- Procedimentos — harmonizações -->
+  <url><loc>https://salaoexplosion.com.br/procedimentos/harmonizacao-lisas.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/harmonizacao-cacheadas.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/harmonizacao-crespas.html</loc><priority>0.7</priority></url>
+
+  <!-- Procedimentos — finalizações -->
+  <url><loc>https://salaoexplosion.com.br/procedimentos/finalizacao-lisa.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/finalizacao-cacheada.html</loc><priority>0.7</priority></url>
+
+  <!-- Procedimentos — coloridos -->
+  <url><loc>https://salaoexplosion.com.br/procedimentos/coloridos.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/coloridos-global.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/coloridos-mechas.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/coloridos-californiana.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/coloridos-uma-mecha.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/coloridos-peekaboo.html</loc><priority>0.6</priority></url>
+
+  <!-- Procedimentos — moreno iluminado -->
+  <url><loc>https://salaoexplosion.com.br/procedimentos/moreno-iluminado.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/moreno-iluminado-coloracao.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/moreno-iluminado-descoloracao.html</loc><priority>0.6</priority></url>
+
+  <!-- Procedimentos — mechas e luzes -->
+  <url><loc>https://salaoexplosion.com.br/procedimentos/mechas.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/mechas-uma-cor.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/mechas-degrade.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/mechas-2cores.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/luzes.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/ombre-hair.html</loc><priority>0.6</priority></url>
+
+  <!-- Procedimentos — global -->
+  <url><loc>https://salaoexplosion.com.br/procedimentos/global.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/global-uma-cor.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/global-mechas.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/global-degrade.html</loc><priority>0.6</priority></url>
+
+  <!-- Procedimentos — californiana -->
+  <url><loc>https://salaoexplosion.com.br/procedimentos/californiana.html</loc><priority>0.7</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/californiana-uma-cor.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/californiana-mechas.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/californiana-degrade.html</loc><priority>0.6</priority></url>
+
+  <!-- Procedimentos — peekaboo -->
+  <url><loc>https://salaoexplosion.com.br/procedimentos/peekaboo-uma-cor.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/peekaboo-mechas.html</loc><priority>0.6</priority></url>
+  <url><loc>https://salaoexplosion.com.br/procedimentos/peekaboo-degrade.html</loc><priority>0.6</priority></url>
+
+</urlset>

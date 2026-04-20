@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Conheça o Salão Explosion — Marly com 30 anos de experiência, tecnologia capilar e atendimento exclusivo em Diadema, SP.">
+  <meta name="theme-color" content="#0a0011">
+  <title>Sobre Nós — Salão Explosion</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sobre Nós — Salão Explosion">
+  <meta property="og:description" content="Marly, 30 anos de experiência. Tecnologia capilar, transição e cuidado em Diadema/SP.">
+  <meta property="og:image" content="https://salaoexplosion.com.br/assets/img/hero.jpg">
+  <meta property="og:url" content="https://salaoexplosion.com.br/sobre.html">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://salaoexplosion.com.br/assets/img/hero.jpg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+  <style>
+    body { background: var(--bg-deep); }
+
+    .sobre-page {
+      padding: calc(var(--header-height) + 3rem) 0 0;
+    }
+
+    /* ── Hero ── */
+    .sobre-hero {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto clamp(3rem, 6vw, 5rem);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+    }
+    .sobre-hero .label { display: block; margin-bottom: 0.75rem; color: var(--accent); }
+    .sobre-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 600;
+      color: var(--text-light);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .sobre-hero h1 span {
+      background: linear-gradient(110deg, var(--accent), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sobre-hero p {
+      color: var(--text-light-secondary);
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      line-height: 1.8;
+    }
+
+    /* ── Vídeo do espaço ── */
+    .sobre-video-block {
+      max-width: 860px;
+      margin: 0 auto clamp(3rem, 6vw, 5rem);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+    }
+    .sobre-video-wrap {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 32px 90px rgba(0,0,0,0.7), 0 0 0 1.5px rgba(177,78,255,0.2);
+    }
+    .sobre-video-wrap video {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+
+    /* ── Números ── */
+    .sobre-numeros {
+      background: var(--bg-dark);
+      border: none;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+      mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+      padding: clamp(2.5rem, 5vw, 4rem) clamp(1rem, 4vw, 3rem);
+      margin-bottom: clamp(3rem, 6vw, 5rem);
+    }
+    .sobre-numeros__grid {
+      max-width: 860px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    .sobre-numero__item {
+      text-align: center;
+    }
+    .sobre-numero__valor {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .sobre-numero__sufixo {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .sobre-numero__label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light-secondary);
+    }
+    @media (max-width: 600px) {
+      .sobre-numeros__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ── Filosofia ── */
+    .sobre-filosofia {
+      max-width: 860px;
+      margin: 0 auto clamp(3rem, 6vw, 5rem);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+    }
+    .sobre-filosofia__intro {
+      text-align: center;
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+    .sobre-filosofia__intro .label {
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+    .sobre-filosofia__intro h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 600;
+      color: var(--text-light);
+      line-height: 1.2;
+    }
+    .filosofia-bloco {
+      display: grid;
+      grid-template-columns: 3px 1fr;
+      gap: 0 2rem;
+      margin-bottom: 2.5rem;
+      align-items: start;
+    }
+    .filosofia-bloco__linha {
+      width: 3px;
+      height: 100%;
+      min-height: 100%;
+      border-radius: 2px;
+    }
+    .filosofia-bloco--salao .filosofia-bloco__linha {
+      background: linear-gradient(180deg, var(--accent), transparent);
+    }
+    .filosofia-bloco--empreendedores .filosofia-bloco__linha {
+      background: linear-gradient(180deg, var(--pink), transparent);
+    }
+    .filosofia-bloco--visao .filosofia-bloco__linha {
+      background: linear-gradient(180deg, var(--gold), transparent);
+    }
+    .filosofia-bloco__conteudo {}
+    .filosofia-bloco__icon {
+      width: 28px;
+      height: 28px;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .filosofia-bloco--salao .filosofia-bloco__icon { color: var(--accent); }
+    .filosofia-bloco--empreendedores .filosofia-bloco__icon { color: var(--pink); }
+    .filosofia-bloco--visao .filosofia-bloco__icon { color: var(--gold); }
+    .filosofia-bloco__tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+    .filosofia-bloco--salao .filosofia-bloco__tag { color: var(--accent); }
+    .filosofia-bloco--empreendedores .filosofia-bloco__tag { color: var(--pink); }
+    .filosofia-bloco--visao .filosofia-bloco__tag { color: var(--gold); }
+    .filosofia-bloco__titulo {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+    }
+    .filosofia-bloco__texto {
+      color: var(--text-light-secondary);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+
+    /* ── Sobre a Marly ── */
+    .sobre-marly {
+      max-width: 620px;
+      margin: 0 auto clamp(3rem, 6vw, 5rem);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+      text-align: center;
+    }
+    .sobre-marly__img-wrap {
+      width: 200px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 1.75rem;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.55), 0 0 0 2px rgba(177,78,255,0.35);
+    }
+    .sobre-marly__img-wrap img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center 10%;
+    }
+    .sobre-marly__text .label { color: var(--accent); margin-bottom: 0.75rem; display: block; }
+    .sobre-marly__text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+    }
+    .sobre-marly__text p {
+      color: var(--text-light-secondary);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    /* ── Equipe preview ── */
+    .sobre-equipe-preview {
+      max-width: 960px;
+      margin: 0 auto clamp(3rem, 6vw, 5rem);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+    }
+    .sobre-equipe-preview__intro {
+      text-align: center;
+      margin-bottom: clamp(2rem, 4vw, 3rem);
+    }
+    .sobre-equipe-preview__intro .label { color: var(--accent); display: block; margin-bottom: 0.75rem; }
+    .sobre-equipe-preview__intro h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 600;
+      color: var(--text-light);
+    }
+    .sobre-equipe-preview__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .sobre-eq-card {
+      text-align: center;
+    }
+    .sobre-eq-card__foto {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 0.85rem;
+      border: 2px solid rgba(177,78,255,0.35);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+    .sobre-eq-card__foto img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .sobre-eq-card__nome {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-light);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .sobre-eq-card__cargo {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-light-secondary);
+    }
+    .sobre-equipe-preview__cta {
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      .sobre-equipe-preview__grid { grid-template-columns: repeat(2, 1fr); }
+      .sobre-marly { grid-template-columns: 1fr; }
+      .sobre-marly__img-wrap { max-width: 260px; margin: 0 auto; }
+    }
+
+    /* ── Depoimento ── */
+    .sobre-depoimento {
+      background: var(--bg-dark);
+      border: none;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+      mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+      padding: clamp(3.5rem, 7vw, 6rem) clamp(1rem, 4vw, 3rem);
+      margin-bottom: clamp(3rem, 6vw, 5rem);
+    }
+    .sobre-depoimento__inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .sobre-depoimento__aspas {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--accent);
+      opacity: 0.4;
+      display: block;
+      margin-bottom: -1rem;
+    }
+    .sobre-depoimento__texto {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .sobre-depoimento__nome {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .sobre-depoimento__estrelas {
+      color: var(--gold);
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    /* ── Endereço / espaço ── */
+    .sobre-espaco {
+      max-width: 860px;
+      margin: 0 auto clamp(4rem, 8vw, 7rem);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+      text-align: center;
+    }
+    .sobre-espaco .label { color: var(--accent); margin-bottom: 0.75rem; display: block; }
+    .sobre-espaco h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+    .sobre-espaco p {
+      color: var(--text-light-secondary);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    .sobre-info-bar {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .sobre-info-item {
+      text-align: center;
+    }
+    .sobre-info-item strong {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-light-secondary);
+      margin-bottom: 0.35rem;
+    }
+    .sobre-info-item span {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--text-light);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <a href="index.html" class="header__logo">
+      <img src="assets/img/logo-explosion.png" alt="Salão Explosion">
+    </a>
+    <nav class="header__nav">
+      <a href="servicos.html">Serviços</a>
+      <a href="massagens/index.html">Massagens</a>
+      <a href="equipe.html">Equipe</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="playlist.html">Playlist</a>
+      <a href="#" class="btn-cta" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion.">Agende seu horário</a>
+    </nav>
+    <div class="header__toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <a href="servicos.html">Serviços</a>
+    <a href="massagens/index.html">Massagens</a>
+    <a href="equipe.html">Equipe</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="contato.html">Contato</a>
+    <a href="playlist.html">Playlist</a>
+    <a href="#" class="btn-cta btn-cta-solid" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion." style="margin-top:1rem;">Agendar pelo WhatsApp</a>
+  </div>
+
+  <main class="sobre-page">
+
+    <!-- Hero -->
+    <div class="sobre-hero reveal">
+      <span class="label">O que nos move</span>
+      <h1>Aqui, <span>você importa.</span></h1>
+      <p>Acreditamos que quando alguém se olha no espelho e se ama, leva isso pra fora. Espalha confiança, presença, leveza. É por isso que fazemos o que fazemos — não só para deixar o cabelo bonito, mas para que cada pessoa saia daqui sentindo que merece esse cuidado.</p>
+    </div>
+
+    <!-- Vídeo do espaço -->
+    <div class="sobre-video-block reveal">
+      <div class="sobre-video-wrap">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="Imagens/espaco-salao.f299.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Filosofia -->
+    <div class="sobre-filosofia">
+
+      <div class="sobre-filosofia__intro reveal">
+        <span class="label">Quem somos</span>
+        <h2>Mais do que um salão.<br>Uma forma de cuidar.</h2>
+      </div>
+
+      <div class="filosofia-bloco filosofia-bloco--salao reveal">
+        <div class="filosofia-bloco__linha"></div>
+        <div class="filosofia-bloco__conteudo">
+          <svg class="filosofia-bloco__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <p class="filosofia-bloco__tag">Nossa prática</p>
+          <h3 class="filosofia-bloco__titulo">Escuta antes de qualquer produto</h3>
+          <p class="filosofia-bloco__texto">Cada atendimento começa com uma conversa real. Entendemos seu cabelo, seu histórico e o que você quer — e só então escolhemos o caminho certo pra você.</p>
+        </div>
+      </div>
+
+      <div class="filosofia-bloco filosofia-bloco--empreendedores reveal">
+        <div class="filosofia-bloco__linha"></div>
+        <div class="filosofia-bloco__conteudo">
+          <svg class="filosofia-bloco__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          <p class="filosofia-bloco__tag">Nossa postura</p>
+          <h3 class="filosofia-bloco__titulo">Profissionais que ouvem de verdade</h3>
+          <p class="filosofia-bloco__texto">Somos profissionais comprometidas em buscar o melhor para cada cliente. Valorizamos seus desejos reais — e trabalhamos para chegar lá com você.</p>
+        </div>
+      </div>
+
+      <div class="filosofia-bloco filosofia-bloco--visao reveal">
+        <div class="filosofia-bloco__linha"></div>
+        <div class="filosofia-bloco__conteudo">
+          <svg class="filosofia-bloco__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+          <p class="filosofia-bloco__tag">Nosso objetivo</p>
+          <h3 class="filosofia-bloco__titulo">Você sai sabendo o que fazer</h3>
+          <p class="filosofia-bloco__texto">Ensinamos a cuidar em casa. Queremos que você dependa menos do salão e mais de você mesma — com resultado que dura.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Sobre a Marly -->
+    <div class="sobre-marly reveal">
+      <div class="sobre-marly__img-wrap">
+        <img src="assets/img/opt/marly-1.jpg" alt="Marly — Fundadora do Salão Explosion">
+      </div>
+      <div class="sobre-marly__text">
+        <span class="label">A fundadora</span>
+        <h2>Marly — três décadas de cuidado e afeto</h2>
+        <p>Especialista em cachos, coloração criativa e cronogramas capilares, Marly construiu sua reputação ouvindo cada cliente com atenção e entregando resultados que vão além do esperado.</p>
+        <p>Para ela, cada atendimento é um projeto de amor. O resultado é sempre assinado com carinho.</p>
+        <a href="equipe.html" class="btn-cta btn-cta-solid" style="display:inline-flex;margin-top:1rem;">Conheça toda a equipe</a>
+      </div>
+    </div>
+
+    <!-- Equipe preview -->
+    <div class="sobre-equipe-preview">
+      <div class="sobre-equipe-preview__intro reveal">
+        <span class="label">Quem cuida de você</span>
+        <h2>Uma equipe feita de propósito</h2>
+      </div>
+      <div class="sobre-equipe-preview__grid">
+        <div class="sobre-eq-card reveal">
+          <div class="sobre-eq-card__foto">
+            <img src="assets/img/opt/marly-1.jpg" alt="Marly" style="object-position: center 10%;">
+          </div>
+          <span class="sobre-eq-card__nome">Marly</span>
+          <span class="sobre-eq-card__cargo">Fundadora · Cabeleireira</span>
+        </div>
+        <div class="sobre-eq-card reveal">
+          <div class="sobre-eq-card__foto">
+            <img src="assets/img/opt/hellen.jpg" alt="Hellen">
+          </div>
+          <span class="sobre-eq-card__nome">Hellen</span>
+          <span class="sobre-eq-card__cargo">Coordenação & Marketing</span>
+        </div>
+        <div class="sobre-eq-card reveal">
+          <div class="sobre-eq-card__foto">
+            <img src="assets/img/opt/emilia.jpg" alt="Emília">
+          </div>
+          <span class="sobre-eq-card__nome">Emília</span>
+          <span class="sobre-eq-card__cargo">Massoterapeuta</span>
+        </div>
+        <div class="sobre-eq-card reveal">
+          <div class="sobre-eq-card__foto">
+            <img src="assets/img/opt/paloma.jpg" alt="Paloma">
+          </div>
+          <span class="sobre-eq-card__nome">Paloma</span>
+          <span class="sobre-eq-card__cargo">Suporte & Desenvolvimento</span>
+        </div>
+      </div>
+      <div class="sobre-equipe-preview__cta reveal">
+        <a href="equipe.html" class="btn-cta">Conhecer a equipe completa</a>
+      </div>
+    </div>
+
+    <!-- Depoimento -->
+    <div class="sobre-depoimento">
+      <div class="sobre-depoimento__inner reveal">
+        <span class="sobre-depoimento__aspas">"</span>
+        <p class="sobre-depoimento__texto">Minha experiência foi incrível do início ao fim. Saí completamente transformada — não só o cabelo, mas a confiança também. Com certeza voltarei sempre.</p>
+        <span class="sobre-depoimento__estrelas">★★★★★</span>
+        <span class="sobre-depoimento__nome">Rafaela Brito — Cliente do Salão Explosion</span>
+      </div>
+    </div>
+
+    <!-- Espaço -->
+    <div class="sobre-espaco reveal" id="espaco">
+      <span class="label">Nosso espaço</span>
+      <h2>Um lugar pensado para você</h2>
+      <p>Cada detalhe foi projetado para que você recarregue as energias enquanto a tecnologia cuida dos seus fios. Conforto, tranquilidade e acolhimento em cada canto.</p>
+      <div class="sobre-info-bar">
+        <div class="sobre-info-item">
+          <strong>Endereço</strong>
+          <span>Eldorado, Diadema</span>
+        </div>
+        <div class="sobre-info-item">
+          <strong>WhatsApp</strong>
+          <span>(11) 98654-2632</span>
+        </div>
+        <div class="sobre-info-item">
+          <strong>Agendamento</strong>
+          <span>Somente com hora marcada</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+        <a href="#" class="btn-cta btn-cta-solid" data-whatsapp="Olá! Vi o espaço do Salão Explosion e quero agendar um horário.">Agendar pelo WhatsApp</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <img src="assets/img/logo-explosion.png" alt="Salão Explosion" class="footer__logo-img">
+          <p class="footer__desc">Venha sentir<br>Explosion<br>em seu coração. Acolhimento, tecnologia e amor em cada atendimento.</p>
+        </div>
+        <div>
+          <p class="footer__heading">Navegação</p>
+          <div class="footer__links">
+            <a href="index.html">Início</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="massagens/index.html">Massagens</a>
+            <a href="produtos.html">Produtos</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Contato</p>
+          <div class="footer__links">
+            <a href="tel:+5511986542632">(11) 98654-2632</a>
+            <a href="https://wa.me/5511986542632" target="_blank">WhatsApp</a>
+            <a>Eldorado · Diadema</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Redes Sociais</p>
+          <div class="footer__social">
+            <a href="https://instagram.com/salaoexplosion" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://tiktok.com/@salaoexplosion" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13a8.28 8.28 0 005.58 2.15v-3.44a4.85 4.85 0 01-3.77-1.25V6.69h3.77z"/></svg>
+            </a>
+            <a href="https://facebook.com/salaoexplosion/" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Salão Explosion. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="whatsapp-float" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion." aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

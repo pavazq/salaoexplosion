@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Cuidados Pós-Massagem — Salão Explosion. Dicas para potencializar os resultados e manter a sensação de bem-estar após sua sessão.">
+  <meta name="theme-color" content="#0a0011">
+  <title>Toque Final: Cuide-se Após a Sessão — Salão Explosion</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <style>
+    .orientacao-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 900;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem clamp(1.25rem, 5vw, 3rem);
+      background: rgba(10, 0, 17, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .orientacao-header img { height: 44px; }
+
+    .orientacao-hero {
+      background: radial-gradient(ellipse at 30% 50%, rgba(228,106,160,0.16) 0%, rgba(177,78,255,0.08) 50%, transparent 70%),
+                  var(--bg-deep);
+      padding: calc(var(--header-height) + 4rem) clamp(1.25rem, 5vw, 3rem) clamp(3rem, 5vw, 4rem);
+      text-align: center;
+    }
+    .orientacao-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      color: var(--text-light);
+      line-height: 1.1;
+      max-width: 700px;
+      margin: 0 auto 1.25rem;
+    }
+    .orientacao-hero__title em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--pink), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .orientacao-hero__sub {
+      font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+      color: var(--text-light-secondary);
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .orientacao-content {
+      background: var(--bg-dark);
+      padding: clamp(3rem, 7vw, 6rem) 0 clamp(4rem, 8vw, 7rem);
+    }
+
+    .orientacao-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .orientacao-step {
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 1.25rem;
+      align-items: flex-start;
+      transition: border-color 0.3s ease;
+    }
+    .orientacao-step:hover { border-color: rgba(228,106,160,0.2); }
+    .orientacao-step__icon {
+      font-size: 2rem;
+      width: 56px;
+      height: 56px;
+      background: var(--bg-deep);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .orientacao-step__title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+    }
+    .orientacao-step__text {
+      font-size: 0.9rem;
+      color: var(--text-light-secondary);
+      line-height: 1.75;
+    }
+    .orientacao-step__list {
+      list-style: none;
+      margin-top: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .orientacao-step__list li {
+      font-size: 0.85rem;
+      color: var(--text-light-secondary);
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+    .orientacao-step__list--ok li::before { content: '✓'; color: #6dbf8a; flex-shrink: 0; }
+    .orientacao-step__list--evite li::before { content: '✕'; color: #e06060; flex-shrink: 0; }
+
+    .orientacao-step__sublabel {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin: 1rem 0 0.35rem;
+    }
+
+    .orientacao-closing {
+      max-width: 760px;
+      margin: 2.5rem auto 0;
+      background: linear-gradient(135deg, rgba(228,106,160,0.1) 0%, rgba(177,78,255,0.07) 100%);
+      border: 1px solid rgba(228,106,160,0.2);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      text-align: center;
+    }
+    .orientacao-closing p {
+      font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+      color: var(--text-light);
+      line-height: 1.8;
+      font-family: var(--font-display);
+      font-style: italic;
+    }
+
+    @media (max-width: 500px) {
+      .orientacao-step { grid-template-columns: 1fr; }
+      .orientacao-step__icon { width: 48px; height: 48px; font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="orientacao-header">
+    <a href="index.html"><img src="assets/img/logo-explosion.png" alt="Salão Explosion"></a>
+    <a href="#" class="btn-cta btn-cta-solid" data-whatsapp="Olá! Gostaria de agendar uma massagem no Salão Explosion.">Agendar pelo WhatsApp</a>
+  </header>
+
+  <section class="orientacao-hero">
+    <span class="label reveal" style="color:var(--pink);display:block;margin-bottom:1rem;">Salão Explosion · Pós-sessão</span>
+    <h1 class="orientacao-hero__title reveal"><em>Toque Final:</em><br>Cuide-se Após a Sessão</h1>
+    <p class="orientacao-hero__sub reveal">Sua massagem foi um momento de cuidado com o corpo e a mente. Para potencializar os efeitos e manter a sensação de bem-estar, siga essas dicas:</p>
+  </section>
+
+  <section class="orientacao-content">
+    <div class="container">
+
+      <div class="orientacao-steps">
+
+        <div class="orientacao-step reveal">
+          <div class="orientacao-step__icon">💧</div>
+          <div>
+            <h2 class="orientacao-step__title">Hidrate-se</h2>
+            <p class="orientacao-step__text">Beba bastante água ao longo do dia. Ela ajuda a eliminar toxinas liberadas durante a massagem e mantém os músculos hidratados — potencializando os resultados da sessão.</p>
+          </div>
+        </div>
+
+        <div class="orientacao-step reveal">
+          <div class="orientacao-step__icon">🌿</div>
+          <div>
+            <h2 class="orientacao-step__title">Respeite o ritmo do seu corpo</h2>
+            <p class="orientacao-step__text">Evite atividades físicas intensas logo após a massagem. Aproveite para continuar em um ritmo mais calmo e relaxado — seu corpo está em estado de regeneração e merece essa continuidade.</p>
+          </div>
+        </div>
+
+        <div class="orientacao-step reveal">
+          <div class="orientacao-step__icon">🥗</div>
+          <div>
+            <h2 class="orientacao-step__title">Alimentação leve</h2>
+            <p class="orientacao-step__text">Prefira refeições leves após a sessão — isso ajuda seu corpo a manter o equilíbrio e a sensação de leveza.</p>
+
+            <p class="orientacao-step__sublabel">Recomendados</p>
+            <ul class="orientacao-step__list orientacao-step__list--ok">
+              <li>Frutas frescas (mamão, melancia, abacaxi, maçã)</li>
+              <li>Sucos naturais sem açúcar</li>
+              <li>Vegetais cozidos ou crus com azeite de oliva</li>
+              <li>Caldos leves ou sopas nutritivas</li>
+              <li>Chás calmantes (camomila, erva-doce, capim-limão)</li>
+            </ul>
+
+            <p class="orientacao-step__sublabel">Evite</p>
+            <ul class="orientacao-step__list orientacao-step__list--evite">
+              <li>Alimentos gordurosos, frituras e ultraprocessados</li>
+              <li>Café e bebidas energéticas</li>
+              <li>Álcool</li>
+              <li>Excesso de açúcar refinado</li>
+            </ul>
+
+            <p style="font-size:0.82rem;color:var(--text-light-secondary);margin-top:0.85rem;line-height:1.6;">Se você quiser aprofundar esse cuidado, temos uma nutricionista parceira à sua disposição. Fale com a gente!</p>
+          </div>
+        </div>
+
+        <div class="orientacao-step reveal">
+          <div class="orientacao-step__icon">🚿</div>
+          <div>
+            <h2 class="orientacao-step__title">Espere um pouco para tomar banho</h2>
+            <p class="orientacao-step__text">Se foram usados óleos ou cremes na massagem, aguarde algumas horas antes do banho para que os ativos penetrem melhor na pele — o resultado é muito mais eficaz.</p>
+          </div>
+        </div>
+
+        <div class="orientacao-step reveal">
+          <div class="orientacao-step__icon">😴</div>
+          <div>
+            <h2 class="orientacao-step__title">Descanse</h2>
+            <p class="orientacao-step__text">Se puder, tire um tempo para descansar. Seu corpo está em processo de regeneração — uma boa noite de sono após a sessão potencializa todos os benefícios da massagem.</p>
+          </div>
+        </div>
+
+        <div class="orientacao-step reveal">
+          <div class="orientacao-step__icon">💬</div>
+          <div>
+            <h2 class="orientacao-step__title">Fale com a gente</h2>
+            <p class="orientacao-step__text">Se sentir alguma dor incomum ou tiver dúvidas após a sessão, entre em contato. Cada corpo reage de uma forma diferente — e a Emília está aqui para orientar.</p>
+            <a href="#" class="btn-cta" data-whatsapp="Olá! Tive uma sessão de massagem recentemente e tenho algumas dúvidas." style="margin-top:1rem;display:inline-flex;">Falar pelo WhatsApp</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="orientacao-closing reveal">
+        <p>Cuide do seu corpo e da sua mente. Agradecemos por escolher esse momento de cuidado — seu corpo agradece e sua mente também! 💜</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-final" id="contato">
+    <div class="container">
+      <div class="cta-final__content reveal">
+        <h2 class="cta-final__title">Gostou da experiência?</h2>
+        <p class="cta-final__text">Agende sua próxima sessão e mantenha o cuidado como parte da sua rotina.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:2rem;">
+          <a href="#" class="btn-cta btn-cta-solid btn-cta-lg" data-whatsapp="Olá! Gostaria de agendar minha próxima massagem no Salão Explosion.">Agendar próxima sessão</a>
+          <a href="massagens/index.html" class="btn-cta btn-cta-lg">Ver todos os tipos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <img src="assets/img/logo-explosion.png" alt="Salão Explosion" class="footer__logo-img">
+          <p class="footer__desc">Venha nos visitar.<br>Será um prazer fazer você sentir<br>Explosion em seu coração!</p>
+        </div>
+        <div>
+          <p class="footer__heading">Contato</p>
+          <div class="footer__links">
+            <a href="tel:+5511986542632">(11) 98654-2632</a>
+            <a href="https://wa.me/5511986542632" target="_blank">WhatsApp</a>
+            <a>Eldorado · Diadema, SP</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Redes Sociais</p>
+          <div class="footer__social">
+            <a href="https://instagram.com/salaoexplosion" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://tiktok.com/@salaoexplosion" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13a8.28 8.28 0 005.58 2.15v-3.44a4.85 4.85 0 01-3.77-1.25V6.69h3.77z"/></svg>
+            </a>
+            <a href="https://facebook.com/salaoexplosion/" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Salão Explosion. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="whatsapp-float" data-whatsapp="Olá! Gostaria de agendar uma massagem no Salão Explosion." aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

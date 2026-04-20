@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Salão Explosion — onde cada momento é uma experiência única. Conheça o salão. Diadema, SP.">
+  <meta name="theme-color" content="#0a0011">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Benefício Exclusivo — Salão Explosion">
+  <meta property="og:description" content="Chegou a hora de conhecer o salão que vai fazer você se apaixonar pelo seu cabelo. Garanta seu benefício exclusivo!">
+  <meta property="og:image" content="https://salaoexplosion.com.br/assets/img/opt/IMG_4319.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://salaoexplosion.com.br/assets/img/opt/IMG_4319.jpg">
+  <title>Salão Explosion — Venha sentir Explosion em seu coração</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <style>
+    /* ── Vídeos ── */
+    .lp-video { padding: 0 0 clamp(3rem, 8vw, 6rem); }
+    .lp-video .container { max-width: 1140px; }
+    .lp-video__title {
+      text-align: center; margin-bottom: 2.5rem;
+    }
+    .lp-video__h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700; color: var(--text-light);
+    }
+    .lp-video-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(177,78,255,0.4);
+      box-shadow: 0 0 28px rgba(177,78,255,0.18), 0 24px 60px rgba(0,0,0,0.5);
+      background: #000;
+      line-height: 0;
+    }
+    .lp-video-card video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    /* Overlay play grande — visível antes da interação */
+    .lp-video-card__play {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(10,0,17,0.35);
+      transition: opacity 0.3s;
+      cursor: pointer;
+      pointer-events: none;
+    }
+    .lp-video-card__play svg {
+      width: 72px; height: 72px;
+      color: rgba(255,255,255,0.92);
+      filter: drop-shadow(0 4px 18px rgba(177,78,255,0.7));
+    }
+    .lp-video-card.playing .lp-video-card__play { opacity: 0; }
+    .lp-video-card__label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 0.75rem 1rem;
+      background: linear-gradient(0deg,rgba(10,0,17,0.85) 0%,transparent 100%);
+      font-size: 0.82rem;
+      color: rgba(237,230,247,0.8);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Sobre ── */
+    /* ── Seção Te apresento o Explosion ── */
+    .lp-about { padding: clamp(4rem, 10vw, 7rem) 0; }
+    .lp-about__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2.5rem, 6vw, 5rem);
+      align-items: center;
+    }
+    .lp-about__eyebrow {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 0.75rem; display: block;
+    }
+    .lp-about__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700; color: var(--text-light);
+      margin-bottom: 1.25rem; line-height: 1.15;
+    }
+    .lp-about__text {
+      font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+      color: var(--text-light-secondary); line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+    .lp-about__tagline {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      background: linear-gradient(135deg, var(--accent), var(--pink));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700; margin: 1.25rem 0 2rem;
+    }
+    .lp-about__stats {
+      display: flex; gap: clamp(1.5rem, 4vw, 2.5rem);
+      margin: 1.75rem 0; flex-wrap: wrap;
+    }
+    .lp-about__stat { text-align: left; }
+    .lp-about__stat-num {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 2.6rem);
+      font-weight: 700; color: var(--gold); line-height: 1;
+    }
+    .lp-about__stat-label {
+      font-size: 0.75rem; color: var(--text-light-secondary);
+      letter-spacing: 0.08em; margin-top: 0.3rem; text-transform: uppercase;
+    }
+
+    /* Collage de fotos */
+    .lp-collage {
+      position: relative;
+      height: clamp(340px, 45vw, 480px);
+    }
+    .lp-collage__img {
+      position: absolute;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 2px solid rgba(228,106,160,0.45);
+      box-shadow: 0 0 20px rgba(228,106,160,0.2), 0 0 50px rgba(177,78,255,0.1), 0 16px 40px rgba(0,0,0,0.5);
+    }
+    .lp-collage__img--a {
+      width: clamp(150px, 22vw, 240px);
+      height: clamp(190px, 28vw, 310px);
+      top: 0; left: 50%; transform: translateX(-50%);
+      animation: lcBob 4.5s ease-in-out infinite;
+    }
+    .lp-collage__img--b {
+      width: clamp(120px, 17vw, 190px);
+      height: clamp(155px, 22vw, 250px);
+      bottom: 0; right: 0;
+      animation: lcBob 3.8s ease-in-out infinite 0.7s;
+    }
+    .lp-collage__img--c {
+      width: clamp(105px, 14vw, 165px);
+      height: clamp(135px, 18vw, 215px);
+      bottom: 10%; left: 0;
+      animation: lcBob 5s ease-in-out infinite 1.4s;
+    }
+    .lp-collage__orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .lp-collage__orb--1 {
+      width: 80px; height: 80px;
+      top: -20px; right: 25%;
+      background: rgba(177,78,255,0.15);
+      filter: blur(20px);
+      animation: lcBob 6s ease-in-out infinite;
+    }
+    .lp-collage__orb--2 {
+      width: 60px; height: 60px;
+      bottom: 15%; left: 20%;
+      background: rgba(228,106,160,0.12);
+      filter: blur(16px);
+      animation: lcBob 4.2s ease-in-out infinite 1s;
+    }
+    @keyframes lcBob {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-14px); }
+    }
+    .lp-collage__img--a { transform: translateX(-50%) translateY(0); }
+    @keyframes lcBobA {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(-14px); }
+    }
+    .lp-collage__img--a { animation: lcBobA 4.5s ease-in-out infinite; }
+
+    @media (max-width: 768px) {
+      .lp-about__grid { grid-template-columns: 1fr; }
+      .lp-about__stat { text-align: center; }
+      .lp-about__stats { justify-content: center; }
+      .lp-collage { height: 280px; }
+    }
+
+    /* ── Cards glassmorphism ── */
+    .lp-cards { padding: clamp(4rem, 10vw, 8rem) 0; }
+    .lp-cards__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: clamp(2rem, 4vw, 3rem);
+    }
+    .lp-card {
+      position: relative;
+      background: rgba(177,78,255,0.07);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(177,78,255,0.32);
+      box-shadow: 0 4px 32px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.06);
+      border-radius: var(--radius-lg);
+      padding: clamp(2rem, 4vw, 2.5rem) clamp(1.5rem, 3vw, 2rem);
+      text-align: center;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+    .lp-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 1.5rem; right: 1.5rem; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), var(--pink), transparent);
+      border-radius: 2px;
+    }
+    .lp-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(177,78,255,0.6);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.35), 0 0 28px rgba(177,78,255,0.18), inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .lp-card__icon { font-size: 2.5rem; margin-bottom: 1.25rem; display: block; }
+    .lp-card__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 1.7rem); font-weight: 700;
+      color: var(--text-light); margin-bottom: 0.75rem;
+    }
+    .lp-card__desc {
+      font-size: clamp(0.92rem, 1.1vw, 1rem); color: var(--text-light-secondary); line-height: 1.75;
+    }
+
+    /* ── Formulário ── */
+    .lp-form {
+      max-width: 440px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 0.65rem;
+    }
+    .lp-form input {
+      width: 100%; padding: 0.8rem 1.1rem;
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(177,78,255,0.28);
+      border-radius: 12px;
+      color: var(--text-light);
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .lp-form input::placeholder { color: rgba(237,230,247,0.45); }
+    .lp-form input:focus {
+      border-color: rgba(228,106,160,0.65);
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* ── Popup desconto ── */
+    .lp-popup-overlay {
+      position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: none; align-items: center; justify-content: center;
+      padding: 1rem;
+    }
+    .lp-popup-overlay.active { display: flex; }
+    .lp-popup {
+      background: rgba(18, 6, 38, 0.72);
+      backdrop-filter: blur(32px) saturate(1.4);
+      -webkit-backdrop-filter: blur(32px) saturate(1.4);
+      border: 1px solid rgba(228,106,160,0.45);
+      box-shadow: 0 0 0 1px rgba(177,78,255,0.12) inset, 0 0 40px rgba(228,106,160,0.25), 0 0 80px rgba(177,78,255,0.12), 0 32px 80px rgba(0,0,0,0.6);
+      border-radius: 28px;
+      padding: clamp(2rem, 5vw, 3rem) clamp(1.5rem, 4vw, 2.5rem);
+      text-align: center;
+      max-width: 400px; width: 100%;
+      position: relative;
+      animation: popupIn 0.5s cubic-bezier(0.34,1.2,0.64,1);
+    }
+    @keyframes popupIn {
+      from { opacity: 0; transform: scale(0.7); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .gift-scene {
+      position: relative;
+      width: 120px; height: 120px;
+      margin: 0 auto 1.5rem;
+    }
+    .gift-rays {
+      position: absolute;
+      inset: -40px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(177,78,255,0.35) 0%, rgba(228,106,160,0.15) 40%, transparent 70%);
+      animation: raysGlow 1.5s ease-in-out infinite alternate;
+    }
+    @keyframes raysGlow {
+      0% { opacity: 0.5; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1.2); }
+    }
+    .gift-box {
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 80px; height: 60px;
+      background: linear-gradient(135deg, var(--accent), #8b3fd4);
+      border-radius: 8px;
+      box-shadow: 0 8px 30px rgba(177,78,255,0.4);
+    }
+    .gift-box::before {
+      content: ''; position: absolute;
+      top: 0; left: 50%; transform: translateX(-50%);
+      width: 16px; height: 100%;
+      background: rgba(255,255,255,0.2);
+      border-radius: 2px;
+    }
+    .gift-lid {
+      position: absolute; bottom: 55px; left: 50%; transform: translateX(-50%);
+      width: 90px; height: 18px;
+      background: linear-gradient(135deg, #9b4dff, var(--accent));
+      border-radius: 6px 6px 0 0;
+      box-shadow: 0 -2px 10px rgba(177,78,255,0.3);
+      animation: lidOpen 0.8s cubic-bezier(0.34,1.2,0.64,1) 0.3s both;
+      transform-origin: bottom left;
+    }
+    .gift-lid::before {
+      content: ''; position: absolute;
+      top: 4px; left: 50%; transform: translateX(-50%);
+      width: 22px; height: 10px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 10px 10px 0 0;
+    }
+    @keyframes lidOpen {
+      0% { transform: translateX(-50%) rotate(0); }
+      100% { transform: translateX(-50%) rotate(-45deg) translateY(-15px); }
+    }
+    .lp-popup__discount {
+      font-family: var(--font-body);
+      font-size: clamp(2.8rem, 10vw, 4rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--accent), var(--pink));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 0.75rem;
+      animation: discountRise 1s cubic-bezier(0.34,1.2,0.64,1) 0.6s both;
+      text-shadow: none;
+    }
+    @keyframes discountRise {
+      0% { opacity: 0; transform: translateY(60px) scale(0.3); }
+      50% { opacity: 1; transform: translateY(-10px) scale(1.1); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .lp-popup__text {
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+      padding: 0 0.5rem;
+    }
+    .lp-popup__sub {
+      font-size: 0.78rem;
+      color: var(--text-light-secondary);
+      margin-bottom: 1.5rem;
+    }
+    .lp-popup__close {
+      position: absolute; top: 0.75rem; right: 0.75rem;
+      background: none; border: none;
+      color: var(--text-light-secondary);
+      font-size: 1.5rem; cursor: pointer;
+      transition: color 0.2s; z-index: 5;
+    }
+    .lp-popup__close:hover { color: var(--text-light); }
+    .lp-popup__wa-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      width: 100%;
+      padding: 0.9rem 1.5rem;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .lp-popup__wa-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(37,211,102,0.5);
+    }
+    .lp-popup__wa-btn svg { width: 20px; height: 20px; fill: #fff; }
+    .lp-popup__sparkles {
+      position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+      border-radius: 28px;
+    }
+    .lp-popup__sparkle {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      animation: sparkleFloat 1.4s ease infinite;
+    }
+    @keyframes sparkleFloat {
+      0%   { opacity: 0; transform: translateY(0) scale(0) rotate(0deg); }
+      20%  { opacity: 1; transform: scale(1.2) rotate(45deg); }
+      100% { opacity: 0; transform: translateY(-160px) scale(0) rotate(240deg); }
+    }
+
+    /* ── Marly ── */
+    .lp-marly { padding: clamp(4rem, 10vw, 8rem) 0; }
+    .lp-marly__inner {
+      display: flex; align-items: center; gap: clamp(2rem, 5vw, 4rem);
+      max-width: 800px; margin: 0 auto;
+    }
+    .lp-marly__foto {
+      width: clamp(140px, 22vw, 220px); height: clamp(140px, 22vw, 220px);
+      border-radius: 50%; overflow: hidden; flex-shrink: 0;
+      border: 2px solid rgba(228,106,160,0.5);
+      box-shadow: 0 0 20px rgba(228,106,160,0.2), 0 16px 40px rgba(0,0,0,0.4);
+    }
+    .lp-marly__foto img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 10%;
+    }
+    .lp-marly__content { flex: 1; }
+    .lp-marly__content .label { margin-bottom: 0.5rem; display: block; color: var(--accent); }
+    .lp-marly__name {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700; color: var(--text-light);
+      line-height: 1; margin-bottom: 0.3rem;
+    }
+    .lp-marly__role {
+      font-size: 0.72rem; color: var(--accent);
+      letter-spacing: 0.1em; text-transform: uppercase;
+      font-weight: 600; margin-bottom: 1rem;
+    }
+    .lp-marly__bio {
+      font-size: 0.9rem; color: var(--text-light-secondary);
+      line-height: 1.8; margin-bottom: 1.25rem;
+    }
+
+    /* ── CTA ── */
+    .lp-cta { padding: clamp(4rem, 10vw, 8rem) 0; text-align: center; }
+    .lp-cta__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700; color: var(--text-light);
+      max-width: 580px; margin: 0 auto 1rem; line-height: 1.15;
+    }
+    .lp-cta__sub {
+      font-size: clamp(0.92rem, 1.1vw, 1rem);
+      color: var(--text-light-secondary);
+      max-width: 440px; margin: 0 auto 2rem; line-height: 1.75;
+    }
+
+    /* ── Responsivo ── */
+    @media (max-width: 768px) {
+      .lp-cards__grid { grid-template-columns: 1fr; }
+      .lp-marly__inner { flex-direction: column; text-align: center; }
+      .lp-marly__foto { margin: 0 auto; }
+      .fh-el { display: none; }
+    }
+    @media (min-width: 480px) and (max-width: 768px) {
+      .fh-el { display: block; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .lp-cards__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ── Shine nos botões ── */
+    .btn-cta-solid {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-cta-solid::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+      animation: btnShine 3s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes btnShine {
+      0%   { left: -100%; }
+      42%  { left: 150%; }
+      100% { left: 150%; }
+    }
+
+    /* ── Galeria deslizante ── */
+    .lp-galeria { padding: clamp(3rem, 8vw, 5rem) 0; overflow: hidden; }
+    .lp-galeria__label {
+      text-align: center;
+      margin-bottom: clamp(1.25rem, 3vw, 2rem);
+    }
+    .lp-galeria__strip {
+      display: flex;
+      gap: 0.75rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 clamp(1rem, 5vw, 3rem) 1rem;
+      scrollbar-width: none;
+    }
+    .lp-galeria__strip::-webkit-scrollbar { display: none; }
+    .lp-galeria__strip img {
+      width: clamp(200px, 42vw, 300px);
+      height: clamp(250px, 52vw, 380px);
+      object-fit: cover;
+      border-radius: 18px;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      border: 1px solid rgba(228,106,160,0.35);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="scroll-orb"></div>
+  <div id="scroll-orb-2"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero__side-img hero__side-img--l1" data-depth="0.5" data-rot="-10" aria-hidden="true"><img src="../Imagens/fotos para o incio/IMG_5702.JPEG" alt="" loading="eager"></div>
+    <div class="hero__side-img hero__side-img--l2" data-depth="1.5" data-rot="-6"  aria-hidden="true"><img src="../Imagens/fotos para o incio/IMG_9280.JPEG" alt="" loading="eager"></div>
+    <div class="hero__side-img hero__side-img--l3" data-depth="2.5" data-rot="8"   aria-hidden="true"><img src="../Imagens/fotos para o incio/IMG_1579.JPEG" alt="" loading="eager"></div>
+    <div class="hero__side-img hero__side-img--l4" data-depth="1.8" data-rot="-5"  aria-hidden="true"><img src="../Imagens/fotos para o incio/IMG_4891.JPEG" alt="" loading="eager"></div>
+    <div class="hero__side-img hero__side-img--r1" data-depth="2"   data-rot="10"  aria-hidden="true"><img src="../Imagens/fotos para o incio/IMG_7627.JPEG" alt="" loading="eager"></div>
+    <div class="hero__side-img hero__side-img--r2" data-depth="1"   data-rot="6"   aria-hidden="true"><img src="../Imagens/fotos para o incio/IMG_6210.JPEG" alt="" loading="eager"></div>
+    <div class="hero__side-img hero__side-img--r3" data-depth="1.2" data-rot="-8"  aria-hidden="true"><img src="../Imagens/fotos para o incio/IMG_8532.JPEG" alt="" loading="eager"></div>
+    <div class="hero__side-img hero__side-img--r4" data-depth="2.2" data-rot="5"   aria-hidden="true"><img src="../Imagens/fotos para o incio/IMG_4416.JPEG" alt="" loading="eager"></div>
+
+    <div class="hero__content">
+      <div class="hero__title-wrap">
+        <span class="label" style="color:var(--accent);display:block;margin-bottom:1rem;">Salão Explosion · Oferta exclusiva</span>
+        <h1 class="hero__title">
+          <span class="hero__line hero__line--accent">Benefício</span>
+          <span class="hero__line">Exclusivo</span>
+        </h1>
+        <p style="font-size:clamp(1rem,1.5vw,1.2rem);color:var(--text-light-secondary);max-width:480px;line-height:1.75;margin:1.25rem auto 0;">Chegou a hora de conhecer o salão que vai fazer você se apaixonar pelo seu cabelo.</p>
+      </div>
+      <div class="hero__cta-group">
+        <button id="lpOpenForm" class="btn-cta btn-cta-solid btn-cta-lg">Tenho interesse</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Popup formulário -->
+  <div class="lp-popup-overlay" id="lpFormPopup">
+    <div class="lp-popup" style="max-width:420px;">
+      <button class="lp-popup__close" onclick="document.getElementById('lpFormPopup').classList.remove('active');document.body.style.overflow='';">&times;</button>
+      <h3 style="font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--text-light);margin-bottom:0.5rem;">Tenho interesse!</h3>
+      <p style="font-size:0.88rem;color:var(--text-light-secondary);margin-bottom:1.5rem;line-height:1.6;">Preencha seus dados e ganhe um presente especial.</p>
+      <form class="lp-form" id="lpForm">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="tel" name="telefone" placeholder="Seu WhatsApp" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <button type="submit" class="btn-cta btn-cta-solid" style="width:100%;border:none;white-space:nowrap;font-size:clamp(0.88rem,1.5vw,1rem);">🎁 Receber meu presente</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Popup desconto -->
+  <div class="lp-popup-overlay" id="lpDiscountPopup">
+    <div class="lp-popup">
+      <button class="lp-popup__close" id="lpDiscountClose">&times;</button>
+      <div class="lp-popup__sparkles" id="lpSparkles"></div>
+      <div class="gift-scene">
+        <div class="gift-rays"></div>
+        <div class="gift-box"></div>
+        <div class="gift-lid"></div>
+      </div>
+      <span class="lp-popup__discount">15% OFF</span>
+      <p class="lp-popup__text">Parabéns! Você ganhou <strong>15% de desconto</strong> no seu primeiro procedimento!</p>
+      <p class="lp-popup__sub">Fale com a gente pelo WhatsApp e mencione esse cupom.</p>
+      <a href="#" class="lp-popup__wa-btn" id="lpPopupWa">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Resgatar meu desconto
+      </a>
+    </div>
+  </div>
+
+  <!-- VÍDEO ESPAÇO -->
+  <section class="lp-video">
+    <div class="container">
+      <div class="lp-video__title reveal">
+        <span class="label" style="display:block;margin-bottom:0.75rem;color:var(--accent);">Conheça o salão</span>
+        <h2 class="lp-video__h2">Uma experiência que você precisa ver</h2>
+      </div>
+      <div class="lp-video-card reveal" id="vc2">
+        <video autoplay muted loop playsinline preload="auto" id="lv2">
+          <source src="../assets/video/salon.mp4" type="video/mp4">
+        </video>
+        <div class="lp-video-card__play" id="vp2">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <span class="lp-video-card__label">✦ Salão Explosion</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE + DIFERENCIAIS -->
+  <section class="lp-about" style="padding:clamp(4rem,10vw,8rem) 0;">
+    <div class="container">
+
+      <div style="text-align:center;max-width:680px;margin:0 auto;" class="reveal">
+        <span class="lp-about__eyebrow">Te apresento o Explosion</span>
+        <h2 class="lp-about__title">Um salão que se importa com cada detalhe.</h2>
+        <p class="lp-about__text">Fazemos um trabalho com amor, pois entendemos que a beleza vai além da aparência física — é uma força que pode despertar o melhor em cada um de nós.</p>
+        <p class="lp-about__tagline" style="margin-bottom:0;">Explosion é um sentimento.</p>
+      </div>
+
+      <div class="dif-grid" style="margin-top:clamp(2.5rem,5vw,3.5rem);">
+
+        <button class="dif-card dif-card--1 reveal lp-trigger-form" style="background:none;border:none;text-align:left;width:100%;cursor:pointer;">
+          <svg class="dif-card__deco" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
+            <line x1="20" y1="4" x2="8.12" y2="15.88"/>
+            <line x1="14.47" y1="14.48" x2="20" y2="20"/>
+            <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+          </svg>
+          <div class="dif-card__badge">
+            <span class="dif-card__dot" style="background:var(--accent)"></span>
+            Exclusividade
+          </div>
+          <div class="dif-card__body">
+            <h3 class="dif-card__title">Atendimento Individualizado</h3>
+            <p class="dif-card__desc">O horário é só seu. A cabeleireira se dedica totalmente a você, sem dividir atenção.</p>
+          </div>
+          <span class="dif-card__cta">
+            Tenho interesse
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </button>
+
+        <button class="dif-card dif-card--2 reveal reveal-delay-1 lp-trigger-form" style="background:none;border:none;text-align:left;width:100%;cursor:pointer;">
+          <svg class="dif-card__deco" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="4 13 9 19 20 6"/>
+          </svg>
+          <div class="dif-card__badge">
+            <span class="dif-card__dot" style="background:var(--pink)"></span>
+            Compromisso
+          </div>
+          <div class="dif-card__body">
+            <h3 class="dif-card__title">7 Dias de Garantia</h3>
+            <p class="dif-card__desc">Nosso compromisso é com a sua satisfação. Se algo não ficou como esperado, a gente resolve.</p>
+          </div>
+          <span class="dif-card__cta">
+            Tenho interesse
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </button>
+
+        <button class="dif-card dif-card--3 reveal reveal-delay-2 lp-trigger-form" style="background:none;border:none;text-align:left;width:100%;cursor:pointer;">
+          <svg class="dif-card__deco" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+          <div class="dif-card__badge">
+            <span class="dif-card__dot" style="background:var(--gold)"></span>
+            Cuidado
+          </div>
+          <div class="dif-card__body">
+            <h3 class="dif-card__title">Mentoria Inclusa</h3>
+            <p class="dif-card__desc">Te ensinamos a finalizar e cuidar do seu cabelo em casa. Você sai sabendo o que fazer.</p>
+          </div>
+          <span class="dif-card__cta">
+            Tenho interesse
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </button>
+
+      </div>
+
+      <div style="text-align:center;margin-top:clamp(2rem,4vw,2.5rem);" class="reveal">
+        <button class="btn-cta btn-cta-solid btn-cta-lg lp-trigger-form">Tenho interesse</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VÍDEO SALÃO -->
+  <section class="lp-video">
+    <div class="container">
+      <div class="lp-video-card reveal" id="vc1">
+        <video autoplay muted loop playsinline preload="auto" id="lv1">
+          <source src="../Imagens/espaco-salao.f299.mp4" type="video/mp4">
+        </video>
+        <div class="lp-video-card__play" id="vp1">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <span class="lp-video-card__label">✦ Nosso espaço</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARLY -->
+  <section class="lp-marly">
+    <div class="container">
+      <div class="lp-marly__inner reveal">
+        <div class="lp-marly__foto">
+          <img src="../assets/img/opt/marly-1.jpg" alt="Marly">
+        </div>
+        <div class="lp-marly__content">
+          <span class="label">Quem irá te atender</span>
+          <h2 class="lp-marly__name">Marly</h2>
+          <p class="lp-marly__role">Cabeleireira · Especialista em todos os tipos de cabelo</p>
+          <p class="lp-marly__bio">Marly é referência em cuidados para cacheados, ondulados e crespos. No Explosion você encontra acolhimento e excelência.</p>
+          <button class="btn-cta btn-cta-solid lp-trigger-form">Tenho interesse</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section class="lp-galeria">
+    <div class="lp-galeria__label reveal">
+      <span class="label" style="color:var(--accent);">Nossos trabalhos</span>
+    </div>
+    <div class="lp-galeria__strip">
+      <img src="../assets/img/opt/IMG_0238.jpg"     alt="" loading="lazy">
+      <img src="../assets/img/opt/IMG_1239.jpg"     alt="" loading="lazy">
+      <img src="../assets/img/opt/IMG_1579.jpg"     alt="" loading="lazy">
+      <img src="../assets/img/opt/IMG_1894.jpg"     alt="" loading="lazy">
+      <img src="../assets/img/opt/IMG_3732.jpg"     alt="" loading="lazy">
+      <img src="../assets/img/opt/IMG_4319.jpg"     alt="" loading="lazy">
+      <img src="../assets/img/opt/IMG_4416.jpg"     alt="" loading="lazy">
+      <img src="../assets/img/opt/IMG_4514.jpg"     alt="" loading="lazy">
+      <img src="../assets/img/opt/IMG_4891.jpg"     alt="" loading="lazy">
+      <img src="../assets/img/opt/IMG_5473.jpg"     alt="" loading="lazy">
+      <img src="../assets/img/opt/IMG_5488.jpg"     alt="" loading="lazy">
+      <img src="../assets/img/opt/IMG_5702.jpg"     alt="" loading="lazy">
+      <img src="../assets/img/opt/IMG_6210.jpg"     alt="" loading="lazy">
+      <img src="../assets/img/opt/IMG_6480.jpg"     alt="" loading="lazy">
+      <img src="../assets/img/opt/IMG_7606.jpg"     alt="" loading="lazy">
+      <img src="../assets/img/opt/IMG_7627.jpg"     alt="" loading="lazy">
+      <img src="../assets/img/opt/IMG_8532.jpg"     alt="" loading="lazy">
+      <img src="../assets/img/opt/IMG_8650.jpg"     alt="" loading="lazy">
+      <img src="../assets/img/opt/IMG_9280.jpg"     alt="" loading="lazy">
+      <img src="../assets/img/opt/IMG_6201__1_.jpg" alt="" loading="lazy">
+      <img src="../assets/img/opt/wa-1.jpg"         alt="" loading="lazy">
+      <img src="../assets/img/opt/wa-2.jpg"         alt="" loading="lazy">
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="lp-cta">
+    <div class="container">
+      <div class="reveal">
+        <h2 class="lp-cta__title">Chegou a hora de conhecer o salão que vai fazer você se apaixonar pelo seu cabelo!</h2>
+        <p class="lp-cta__sub">Venha sentir Explosion em seu coração.</p>
+        <button class="btn-cta btn-cta-solid btn-cta-lg lp-trigger-form">Tenho interesse</button>
+      </div>
+    </div>
+  </section>
+
+  <a href="#" class="whatsapp-float" data-whatsapp="Olá! Vim pela landing page e gostaria de saber mais sobre o Salão Explosion." aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="../js/main.js"></script>
+  <script>
+  (function() {
+    var openBtn = document.getElementById('lpOpenForm');
+    var formPopup = document.getElementById('lpFormPopup');
+    var discountPopup = document.getElementById('lpDiscountPopup');
+    var form = document.getElementById('lpForm');
+    var discountClose = document.getElementById('lpDiscountClose');
+    var waBtn = document.getElementById('lpPopupWa');
+    var sparklesEl = document.getElementById('lpSparkles');
+
+    function closeAll() {
+      formPopup.classList.remove('active');
+      discountPopup.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    var STAR_PATH = 'M9.82531 0.843845C10.0553 0.215178 10.9446 0.215178 11.1746 0.843845L11.8618 2.72026C12.4006 4.19229 12.3916 6.39157 13.5 7.5C14.6084 8.60843 16.8077 8.59935 18.2797 9.13822L20.1561 9.82534C20.7858 10.0553 20.7858 10.9447 20.1561 11.1747L18.2797 11.8618C16.8077 12.4007 14.6084 12.3916 13.5 13.5C12.3916 14.6084 12.4006 16.8077 11.8618 18.2798L11.1746 20.1562C10.9446 20.7858 10.0553 20.7858 9.82531 20.1562L9.13819 18.2798C8.59932 16.8077 8.60843 14.6084 7.5 13.5C6.39157 12.3916 4.19225 12.4007 2.72023 11.8618L0.843814 11.1747C0.215148 10.9447 0.215148 10.0553 0.843814 9.82534L2.72023 9.13822C4.19225 8.59935 6.39157 8.60843 7.5 7.5C8.60843 6.39157 8.59932 4.19229 9.13819 2.72026L9.82531 0.843845Z';
+    var GLITTER_CHARS = ['✦', '✧', '✸', '✺', '⋆', '★'];
+    function createSparkles() {
+      sparklesEl.innerHTML = '';
+      var COLORS = ['#b14eff', '#e46aa0', '#d9acff', '#fff', '#ffcef7', '#c084fc'];
+      for (var i = 0; i < 22; i++) {
+        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        var size = 8 + Math.random() * 20;
+        svg.setAttribute('viewBox', '0 0 21 21');
+        svg.className = 'lp-popup__sparkle';
+        svg.style.left = (Math.random() * 100) + '%';
+        svg.style.top = (10 + Math.random() * 80) + '%';
+        svg.style.animationDelay = (Math.random() * 1.8) + 's';
+        svg.style.animationDuration = (1 + Math.random() * 0.8) + 's';
+        svg.style.width = size + 'px'; svg.style.height = size + 'px';
+        path.setAttribute('d', STAR_PATH);
+        path.setAttribute('fill', COLORS[Math.floor(Math.random() * COLORS.length)]);
+        svg.appendChild(path);
+        sparklesEl.appendChild(svg);
+      }
+      for (var j = 0; j < 20; j++) {
+        var g = document.createElement('span');
+        g.className = 'lp-popup__sparkle';
+        g.textContent = GLITTER_CHARS[Math.floor(Math.random() * GLITTER_CHARS.length)];
+        g.style.left = (Math.random() * 100) + '%';
+        g.style.top = (5 + Math.random() * 85) + '%';
+        g.style.animationDelay = (Math.random() * 2) + 's';
+        g.style.animationDuration = (1 + Math.random() * 0.9) + 's';
+        g.style.fontSize = (10 + Math.random() * 16) + 'px';
+        g.style.color = COLORS[Math.floor(Math.random() * COLORS.length)];
+        g.style.width = 'auto'; g.style.height = 'auto';
+        g.style.background = 'none';
+        sparklesEl.appendChild(g);
+      }
+    }
+
+    function openForm() {
+      formPopup.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    openBtn.addEventListener('click', openForm);
+
+    document.querySelectorAll('.lp-trigger-form').forEach(function(btn) {
+      btn.addEventListener('click', openForm);
+    });
+
+    formPopup.addEventListener('click', function(e) {
+      if (e.target === formPopup) closeAll();
+    });
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var nome = form.querySelector('[name="nome"]').value.trim();
+      var tel = form.querySelector('[name="telefone"]').value.trim();
+      var email = form.querySelector('[name="email"]').value.trim();
+      if (!nome || !tel || !email) return;
+
+      formPopup.classList.remove('active');
+
+      setTimeout(function() {
+        createSparkles();
+        discountPopup.classList.add('active');
+        var msg = 'Olá! Meu nome é ' + nome + ', vim pela landing page e ganhei 15%25 de desconto! Quero agendar.';
+        waBtn.href = 'https://wa.me/5511986542632?text=' + encodeURIComponent(msg);
+        waBtn.target = '_blank';
+      }, 300);
+    });
+
+    discountClose.addEventListener('click', closeAll);
+    discountPopup.addEventListener('click', function(e) {
+      if (e.target === discountPopup) closeAll();
+    });
+  })();
+
+  // Vídeos — autoplay mudo + overlay play ao clicar
+  (function() {
+    [['lv1','vc1','vp1'],['lv2','vc2','vp2']].forEach(function(ids) {
+      var vid  = document.getElementById(ids[0]);
+      var card = document.getElementById(ids[1]);
+      var ovl  = document.getElementById(ids[2]);
+      if (!vid) return;
+
+      // autoplay mudo já declarado no atributo; garante loop
+      vid.play().catch(function() {});
+
+      // clicar no overlay ou no vídeo: remove overlay, ativa som
+      function interact() {
+        card.classList.add('playing');
+        vid.muted = false;
+        vid.volume = 1;
+        if (vid.paused) vid.play().catch(function(){});
+      }
+      ovl.style.pointerEvents = 'auto';
+      ovl.addEventListener('click', interact);
+      vid.addEventListener('click', interact);
+    });
+  })();
+  </script>
+</body>
+</html>

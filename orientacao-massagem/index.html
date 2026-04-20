@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Orientação Pré-Massagem — Salão Explosion. Como se preparar para sua sessão de massagem e aproveitar ao máximo os resultados.">
+  <meta name="theme-color" content="#0a0011">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Prepare-se para sua massagem — Salão Explosion">
+  <meta property="og:description" content="Siga estas orientações e aproveite ao máximo sua sessão de massagem com a Emília no Salão Explosion, Diadema.">
+  <meta property="og:image" content="https://salaoexplosion.com.br/imagens massagem/massagem_25s.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://salaoexplosion.com.br/imagens massagem/massagem_25s.jpg">
+  <title>Como se Preparar para sua Massagem — Salão Explosion</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <style>
+
+    @keyframes _shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes _glowPulse {
+      0%, 100% { text-shadow: 0 0 10px rgba(255,220,255,0.15), 0 0 30px rgba(177,78,255,0.1); }
+      50%       { text-shadow: 0 0 22px rgba(255,220,255,0.55), 0 0 55px rgba(177,78,255,0.35), 0 0 90px rgba(228,106,160,0.18); }
+    }
+
+    .fh-rotate {
+      display: inline-block;
+      background: linear-gradient(110deg, var(--accent) 0%, #d48aff 20%, #fff0ff 38%, #ffb8e8 50%, #fff0ff 62%, #d48aff 80%, var(--pink) 100%);
+      background-size: 300% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: _shimmer 2.8s linear infinite;
+    }
+
+    .orientacao-h1 {
+      animation: _glowPulse 2.8s ease-in-out infinite;
+    }
+
+    .orientacao-content {
+      background: transparent;
+      padding: 0 0 clamp(4rem, 8vw, 7rem);
+      text-align: center;
+    }
+
+    .orientacao-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .orientacao-step {
+      background: rgba(36, 10, 58, 0.5);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(177,78,255,0.4);
+      box-shadow: 0 0 14px rgba(177,78,255,0.15), 0 4px 20px rgba(0,0,0,0.3);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.9rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .orientacao-step:hover {
+      transform: translateY(-4px);
+      border-color: rgba(177,78,255,0.75);
+      box-shadow: 0 0 24px rgba(177,78,255,0.35), 0 16px 48px rgba(0,0,0,0.4);
+    }
+    .orientacao-step__icon {
+      font-size: 2rem;
+      width: 60px;
+      height: 60px;
+      background: transparent;
+      border: 1px solid rgba(228,106,160,0.55);
+      box-shadow: 0 0 12px rgba(228,106,160,0.3), 0 0 32px rgba(228,106,160,0.1);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .orientacao-step__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+    }
+    .orientacao-step__text {
+      font-size: clamp(0.98rem, 1.3vw, 1.1rem);
+      color: var(--text-light-secondary);
+      line-height: 1.75;
+    }
+    .orientacao-step__list {
+      list-style: none;
+      margin-top: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .orientacao-step__list li {
+      font-size: clamp(0.98rem, 1.3vw, 1.1rem);
+      color: var(--text-light-secondary);
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    .orientacao-step__list li::before { display: none; }
+    .orientacao-step__list--evite li::before { display: none; }
+
+    .orientacao-closing {
+      max-width: 760px;
+      margin: 2.5rem auto 0;
+      background: rgba(36, 10, 58, 0.5);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(177,78,255,0.5);
+      box-shadow: 0 0 14px rgba(177,78,255,0.2), 0 0 36px rgba(177,78,255,0.06), 0 4px 20px rgba(0,0,0,0.3);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      text-align: center;
+    }
+    .orientacao-closing p {
+      font-size: clamp(1.15rem, 2vw, 1.4rem);
+      color: var(--text-light);
+      line-height: 1.8;
+      font-family: var(--font-display);
+      font-style: italic;
+    }
+
+    @media (max-width: 500px) {
+      .orientacao-step__icon { width: 52px; height: 52px; font-size: 1.6rem; }
+    }
+
+    @media (max-width: 1023px) {
+      .hero .hero__side-img--l2,
+      .hero .hero__side-img--r2 { display: none !important; }
+      .hero .hero__side-img--l1,
+      .hero .hero__side-img--l3,
+      .hero .hero__side-img--r1,
+      .hero .hero__side-img--r3 { width: clamp(88px, 23vw, 110px) !important; }
+      .hero .hero__content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: calc(var(--header-height) + 0.75rem);
+        padding-bottom: 18vh;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="scroll-orb"></div>
+  <div id="scroll-orb-2"></div>
+
+  <header class="header" id="header">
+    <a href="../" class="header__logo"><img src="../assets/img/logo-explosion.png" alt="Salão Explosion"></a>
+  </header>
+
+  <section class="hero">
+    <div class="hero__side-img hero__side-img--l1" data-depth="0.5" data-rot="-10" aria-hidden="true"><img src="../imagens massagem/massagem_5s.jpg" alt="" loading="eager"></div>
+    <div class="hero__side-img hero__side-img--l2" data-depth="1.5" data-rot="-6"  aria-hidden="true"><img src="../imagens massagem/massagem_25s.jpg" alt="" loading="eager"></div>
+    <div class="hero__side-img hero__side-img--l3" data-depth="2.5" data-rot="8"   aria-hidden="true"><img src="../imagens massagem/massagem_52s.jpg" alt="" loading="eager"></div>
+    <div class="hero__side-img hero__side-img--r1" data-depth="2"   data-rot="10"  aria-hidden="true"><img src="../imagens massagem/massagem_15s.jpg" alt="" loading="eager"></div>
+    <div class="hero__side-img hero__side-img--r2" data-depth="1"   data-rot="6"   aria-hidden="true"><img src="../imagens massagem/massagem_38s.jpg" alt="" loading="eager"></div>
+    <div class="hero__side-img hero__side-img--r3" data-depth="1.2" data-rot="-8"  aria-hidden="true"><img src="../imagens massagem/massagem_65s.jpg" alt="" loading="eager"></div>
+    <div class="hero__content">
+      <div class="hero__title-wrap">
+        <span class="label reveal" style="color:var(--accent);display:block;margin-bottom:0.75rem;">Salão Explosion · Dica importante</span>
+        <h1 class="reveal orientacao-h1" style="font-family:var(--font-display);font-size:clamp(2.8rem,5.5vw,5.5rem);font-weight:700;color:var(--text-light);line-height:1.05;margin-bottom:0.75rem;">Orientação Pré<br><span class="fh-rotate">Massagem</span></h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="orientacao-content">
+    <div class="container">
+
+      <div class="reveal" style="text-align:center;max-width:680px;margin:0 auto clamp(2rem,4vw,3rem);">
+        <h2 style="font-family:var(--font-display);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--text-light);line-height:1.2;">Para garantir o melhor aproveitamento da sua experiência, siga estas orientações</h2>
+      </div>
+
+      <div class="orientacao-steps">
+
+        <div class="orientacao-step reveal">
+          <div class="orientacao-step__icon">👚</div>
+          <div>
+            <h2 class="orientacao-step__title">Traje ideal</h2>
+            <ul class="orientacao-step__list">
+              <li>Mulheres: biquíni, lingerie confortável, ou top e shorts</li>
+              <li>Homens: trazer shorts leve</li>
+              <li>Prefira roupas leves e confortáveis, fáceis de tirar</li>
+              <li>Evite roupas apertadas ou com muitos botões</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="orientacao-step reveal">
+          <div class="orientacao-step__icon">🍽️</div>
+          <div>
+            <h2 class="orientacao-step__title">Alimentação</h2>
+            <p class="orientacao-step__text">Evite refeições pesadas até <strong>1 hora antes</strong> da sessão. Estômago cheio pode causar desconforto durante a massagem e reduz o aproveitamento.</p>
+          </div>
+        </div>
+
+        <div class="orientacao-step reveal">
+          <div class="orientacao-step__icon">❌</div>
+          <div>
+            <h2 class="orientacao-step__title">Evite antes da sessão</h2>
+            <ul class="orientacao-step__list orientacao-step__list--evite">
+              <li>Perfumes fortes — mantemos um ambiente neutro e agradável</li>
+              <li>Cremes ou óleos corporais — podem interferir na absorção dos produtos da massagem</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="orientacao-step reveal">
+          <div class="orientacao-step__icon">📲</div>
+          <div>
+            <h2 class="orientacao-step__title">Desconecte-se</h2>
+            <p class="orientacao-step__text">Coloque o celular no silencioso. Este é um momento só seu — de presença, autocuidado e conexão com o próprio corpo. Você merece essa pausa.</p>
+          </div>
+        </div>
+
+        <div class="orientacao-step reveal">
+          <div class="orientacao-step__icon">🗣️</div>
+          <div>
+            <h2 class="orientacao-step__title">Comunique-se com a Emília</h2>
+            <p class="orientacao-step__text">Informe à Emília antes da sessão sobre:</p>
+            <ul class="orientacao-step__list">
+              <li>Dores, lesões ou áreas sensíveis</li>
+              <li>Condições de saúde relevantes</li>
+              <li>Preferência de intensidade (leve, moderada ou firme)</li>
+              <li>Gravidez ou amamentação</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Vídeo -->
+      <div class="reveal" style="display:flex;flex-direction:column;align-items:center;gap:1.25rem;margin:3rem 0 2.5rem;">
+        <span class="label" style="display:block;text-align:center;">Veja como é</span>
+        <h3 style="font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2rem);font-weight:700;color:var(--text-light);text-align:center;margin:0;">Uma sessão de bem-estar completo</h3>
+        <div class="massagem-video" style="width:min(360px,90%);">
+          <video class="massagem-video__el" autoplay muted loop playsinline preload="none" poster="../imagens massagem/massagem_25s.jpg">
+            <source src="../video massagem.mp4" type="video/mp4">
+          </video>
+          <div class="massagem-video__overlay"></div>
+        </div>
+      </div>
+
+      <div class="orientacao-closing reveal">
+        <p>✨ Cuide do seu corpo e da sua mente. A massagem é um momento de autocuidado e merece ser vivida com presença e tranquilidade.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-final" id="contato">
+    <div class="container">
+      <div class="cta-final__content reveal">
+        <h2 class="cta-final__title">Pronta para se cuidar?</h2>
+        <p class="cta-final__text">Agende sua sessão com a Emília e viva essa experiência de bem-estar completo.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:2rem;">
+          <a href="#" class="btn-cta btn-cta-solid btn-cta-lg" data-whatsapp="Olá! Gostaria de agendar uma massagem com a Emília no Salão Explosion.">Agendar minha massagem</a>
+          <a href="../massagens/index.html" class="btn-cta btn-cta-lg">Ver todos os tipos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="hero__photo-strip" aria-hidden="true">
+    <img src="../imagens massagem/massagem_5s.jpg"  alt="" class="hero__strip-img" loading="lazy">
+    <img src="../imagens massagem/massagem_25s.jpg" alt="" class="hero__strip-img" loading="lazy">
+    <img src="../imagens massagem/massagem_52s.jpg" alt="" class="hero__strip-img" loading="lazy">
+    <img src="../imagens massagem/massagem_15s.jpg" alt="" class="hero__strip-img" loading="lazy">
+    <img src="../imagens massagem/massagem_38s.jpg" alt="" class="hero__strip-img" loading="lazy">
+    <img src="../imagens massagem/massagem_65s.jpg" alt="" class="hero__strip-img" loading="lazy">
+  </div>
+
+  <a href="#" class="whatsapp-float" data-whatsapp="Olá! Gostaria de agendar uma massagem no Salão Explosion." aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/sparkles.js"></script>
+  <script src="../js/fancy-hero.js"></script>
+</body>
+</html>

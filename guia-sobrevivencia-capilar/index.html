@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Guia de Sobrevivência Capilar — Salão Explosion. Todas as dicas para manter seu cabelo lindo e saudável entre as visitas ao salão.">
+  <meta name="theme-color" content="#0a0011">
+  <title>Guia de Sobrevivência Capilar — Salão Explosion</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <style>
+
+    /* ── Fancy Hero — parallax + text rotate ── */
+    .fh {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: var(--header-height);
+      overflow: visible;
+    }
+    .fh-field { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+    .fh-el { position: absolute; will-change: transform; z-index: 1; }
+    .fh-img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid rgba(228,106,160,0.45);
+      box-shadow: 0 0 20px rgba(228,106,160,0.22), 0 0 50px rgba(177,78,255,0.08), 0 16px 40px rgba(0,0,0,0.5);
+    }
+    @keyframes fhBob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    .fh-bob   { animation: fhBob 4.5s ease-in-out infinite; }
+    .fh-bob-2 { animation: fhBob 3.8s ease-in-out infinite 0.6s; }
+    .fh-bob-3 { animation: fhBob 5.2s ease-in-out infinite 1.2s; }
+    .fh-bob-4 { animation: fhBob 4s   ease-in-out infinite 0.3s; }
+    .fh-bob-5 { animation: fhBob 4.8s ease-in-out infinite 1.8s; }
+
+    .fh-center {
+      padding: 0 clamp(1rem, 4vw, 2rem);
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 600px;
+      background: transparent;
+    }
+    .fh-center .label { color: var(--accent); display: block; margin-bottom: 1rem; }
+    .fh-center h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      font-weight: 700;
+      color: var(--text-light);
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+    .fh-rotate {
+      display: inline-block;
+      font-style: normal;
+      background: linear-gradient(135deg, var(--accent), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      overflow: hidden;
+      vertical-align: bottom;
+      min-width: 3ch;
+    }
+    .fh-center p {
+      font-size: clamp(0.95rem, 1.3vw, 1.08rem);
+      color: var(--text-light-secondary);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.85;
+    }
+    @media (max-width: 768px) {
+      .fh { min-height: 85vh; }
+    }
+
+    /* ── Conteúdo do Guia ── */
+    .guia-content {
+      background: transparent;
+      padding: clamp(3rem, 7vw, 6rem) 0 clamp(4rem, 8vw, 7rem);
+    }
+    .guia-content .container {
+      max-width: 960px;
+      text-align: center;
+    }
+    .guia-section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+    }
+    .guia-section-sub {
+      font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+      color: var(--text-light-secondary);
+      margin-bottom: clamp(2rem, 4vw, 3rem);
+    }
+
+    .guia-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.1rem;
+    }
+
+    .guia-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      padding: clamp(1.75rem, 3vw, 2.25rem) clamp(1.5rem, 2.5vw, 2rem);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1.1rem;
+      text-align: left;
+      text-decoration: none;
+      background: rgba(177,78,255,0.07);
+      backdrop-filter: blur(36px);
+      -webkit-backdrop-filter: blur(36px);
+      border: 1px solid rgba(177,78,255,0.22);
+      box-shadow: 0 0 18px rgba(177,78,255,0.08), 0 8px 28px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08);
+      transition: transform 0.28s cubic-bezier(0.34,1.2,0.64,1), box-shadow 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+    }
+    .guia-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(177,78,255,0.5), rgba(228,106,160,0.35), transparent);
+    }
+    .guia-card:hover {
+      transform: translateY(-5px);
+      background: rgba(177,78,255,0.12);
+      border-color: rgba(228,106,160,0.45);
+      box-shadow: 0 0 28px rgba(228,106,160,0.18), 0 16px 40px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.12);
+    }
+    .guia-card__icon {
+      font-size: 2.2rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .guia-card__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2vw, 1.7rem);
+      font-weight: 700;
+      color: var(--text-light);
+      line-height: 1.15;
+      margin: 0;
+      white-space: normal;
+      line-height: 1.25;
+    }
+    .guia-card__desc { display: none; }
+    .guia-card__arrow { display: none; }
+
+    @media (max-width: 600px) {
+      .guia-grid { grid-template-columns: 1fr; }
+    }
+
+  </style>
+</head>
+<body>
+  <div id="scroll-orb"></div>
+  <div id="scroll-orb-2"></div>
+
+
+  <section class="fh">
+    <div class="fh-field" id="fancyField">
+      <div class="fh-el" data-depth="1" style="top:3%;left:0;width:clamp(110px,13vw,185px);"><div class="fh-bob"><img src="../assets/img/hero-opt/IMG_1579.jpg" alt="" class="fh-img" style="rotate:-6deg;" loading="lazy"></div></div>
+      <div class="fh-el" data-depth="2" style="top:40%;left:clamp(0px,calc(50vw - 490px),130px);width:clamp(88px,10vw,145px);"><div class="fh-bob-2"><img src="../assets/img/opt/IMG_5635.jpg" alt="" class="fh-img" style="rotate:-3deg;" loading="lazy"></div></div>
+      <div class="fh-el" data-depth="1" style="top:74%;left:0;width:clamp(100px,12vw,168px);"><div class="fh-bob-3"><img src="../assets/img/hero-opt/IMG_5702.jpg" alt="" class="fh-img" style="rotate:-8deg;" loading="lazy"></div></div>
+      <div class="fh-el" data-depth="2" style="top:3%;right:0;width:clamp(110px,13vw,185px);"><div class="fh-bob-4"><img src="../assets/img/hero-opt/IMG_6210.jpg" alt="" class="fh-img" style="rotate:6deg;" loading="lazy"></div></div>
+      <div class="fh-el" data-depth="1" style="top:40%;right:clamp(0px,calc(50vw - 490px),130px);width:clamp(88px,10vw,145px);"><div class="fh-bob-5"><img src="../assets/img/opt/IMG_2125.jpg" alt="" class="fh-img" style="rotate:3deg;" loading="lazy"></div></div>
+      <div class="fh-el" data-depth="2" style="top:74%;right:0;width:clamp(100px,12vw,168px);"><div class="fh-bob"><img src="../assets/img/hero-opt/IMG_4416.jpg" alt="" class="fh-img" style="rotate:9deg;" loading="lazy"></div></div>
+    </div>
+    <div class="fh-center">
+      <span class="label reveal">Salão Explosion · Seu guia</span>
+      <h1 class="reveal sparkle-wrap">Guia de Sobrevivência <span class="fh-rotate" id="fancyRotate" data-texts="Capilar|do seu cabelo|entre visitas|do dia a dia">Capilar</span></h1>
+    </div>
+  </section>
+
+  <section class="guia-content">
+    <div class="container">
+      <div class="reveal">
+        <p style="font-size:clamp(0.95rem,1.3vw,1.08rem);color:var(--text-light-secondary);max-width:520px;margin:0 auto 2.5rem;line-height:1.85;">Todas as dicas para manter seu cabelo lindo e saudável entre as visitas ao salão.</p>
+        <span class="label" style="color:var(--accent);display:block;margin-bottom:0.75rem;">Escolha seu tópico</span>
+        <h2 class="guia-section-title">O que você quer aprender hoje?</h2>
+        <p class="guia-section-sub">Dicas práticas para cuidar do seu cabelo entre as visitas ao salão.</p>
+      </div>
+
+<div class="guia-grid">
+
+        <a href="finalizacao-cacheada.html" class="guia-card reveal" data-keywords="cachear cacho cacheado ondulado onda definir ativador mousse gelatina umidade frizz molhado lavagem difusor creme leave-in gel cabelo molhado secar babyliss secador definicao espiral boucle curl">
+          <span class="guia-card__icon">🌀</span>
+          <h3 class="guia-card__title">Finalização Cacheadas e Onduladas</h3>
+          <span class="guia-card__arrow">Ver dicas <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="day-after.html" class="guia-card reveal reveal-delay-1" data-keywords="day after dia seguinte segundo dia reaproveitamento reviver manha acordar cabelo dormido amassado esmagado penteado dormir travesseiro acordei">
+          <span class="guia-card__icon">🌅</span>
+          <h3 class="guia-card__title">Day After</h3>
+          <span class="guia-card__arrow">Ver dicas <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="dicas-tratamento.html" class="guia-card reveal reveal-delay-2" data-keywords="tratamento hidratacao reconstrucao nutricao mascara cronograma casa queda ressecado danificado oleoso embaracado poroso poroso poroso descolorido quimico colorido tingido cuidado seco fragilizado">
+          <span class="guia-card__icon">🧴</span>
+          <h3 class="guia-card__title">Dicas de Tratamento em Casa</h3>
+          <span class="guia-card__arrow">Ver dicas <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="finalizacao-lisa.html" class="guia-card reveal" data-keywords="liso escova progressiva chapinha babyliss alisamento finalizar escovinha prancha secador escovar liso alisado volume reduzir frizz protetor termico brush">
+          <span class="guia-card__icon">✨</span>
+          <h3 class="guia-card__title">Finalização Lisos</h3>
+          <span class="guia-card__arrow">Ver dicas <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="finalizacao-crespa.html" class="guia-card reveal reveal-delay-1" data-keywords="crespo 4c afro coily twist black power definir umidade gel creme leave-in molhado lavagem transicao capilar enrolado encrespado volumoso densa espessa">
+          <span class="guia-card__icon">💆</span>
+          <h3 class="guia-card__title">Finalização Crespas</h3>
+          <span class="guia-card__arrow">Ver dicas <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="dicas-alimentares.html" class="guia-card reveal reveal-delay-2" data-keywords="alimentacao nutricao vitamina biotina minerais dieta saude queda crescimento cabelo forte comer proteina ferro zinco ovo fruta legumes agua beber">
+          <span class="guia-card__icon">🥗</span>
+          <h3 class="guia-card__title">Dicas Alimentares</h3>
+          <span class="guia-card__arrow">Ver dicas <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="../produtos.html" class="guia-card reveal" data-keywords="produto finalizador creme leave-in shampoo condicionador comprar reiny cosmetico profissional linha capilar">
+          <span class="guia-card__icon">🛍️</span>
+          <h3 class="guia-card__title">Produtos</h3>
+          <span class="guia-card__arrow">Ver produtos <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <img src="../assets/img/logo-explosion.png" alt="Salão Explosion" class="footer__logo-img">
+          <p class="footer__desc">Venha nos visitar.<br>Será um prazer fazer você sentir<br>Explosion em seu coração!</p>
+        </div>
+        <div>
+          <p class="footer__heading">Contato</p>
+          <div class="footer__links">
+            <a href="tel:+5511986542632">(11) 98654-2632</a>
+            <a href="https://wa.me/5511986542632" target="_blank">WhatsApp</a>
+            <a>Eldorado · Diadema, SP</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Redes Sociais</p>
+          <div class="footer__social">
+            <a href="https://instagram.com/salaoexplosion" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://tiktok.com/@salaoexplosion" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13a8.28 8.28 0 005.58 2.15v-3.44a4.85 4.85 0 01-3.77-1.25V6.69h3.77z"/></svg>
+            </a>
+            <a href="https://facebook.com/salaoexplosion/" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Salão Explosion. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="whatsapp-float" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion." aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/sparkles.js"></script>
+  <script src="../js/fancy-hero.js"></script>
+</body>
+</html>

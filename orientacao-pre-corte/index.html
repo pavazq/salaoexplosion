@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Orientação Pré-Corte — Salão Explosion. Como se preparar para o corte de cabelos crespos e cacheados para garantir o melhor resultado.">
+  <meta name="theme-color" content="#0a0011">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Como se preparar para o seu corte — Salão Explosion">
+  <meta property="og:description" content="Dicas essenciais para garantir o melhor resultado no seu corte de cabelos crespos e cacheados. Venha com o cabelo finalizado, seco e solto!">
+  <meta property="og:image" content="https://salaoexplosion.com.br/assets/img/opt/IMG_1239.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://salaoexplosion.com.br/assets/img/opt/IMG_1239.jpg">
+  <title>Orientação Pré-Corte — Salão Explosion</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <style>
+    .ori { max-width: 720px; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3rem) 0; }
+    section.hero { min-height: 78svh; }
+
+    .fh-rotate {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ori { text-align: center; }
+
+    /* ── Intro statement ── */
+    .ori-intro {
+      text-align: center;
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+    .ori-intro h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 0.85rem;
+      line-height: 1.2;
+    }
+    .ori-intro p {
+      font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+      color: var(--text-light-secondary);
+      line-height: 1.85;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── 3 regras em grid ── */
+    .ori-rules {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+    .ori-rule {
+      background: rgba(177,78,255,0.07);
+      backdrop-filter: blur(36px);
+      -webkit-backdrop-filter: blur(36px);
+      border: 1px solid rgba(228,106,160,0.22);
+      box-shadow: 0 0 18px rgba(177,78,255,0.08), 0 8px 28px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08);
+      border-radius: var(--radius-md);
+      padding: clamp(1.4rem, 3vw, 2rem) 1.25rem;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .ori-rule::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--pink));
+    }
+    .ori-rule__num {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), var(--pink));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .ori-rule h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 0.4rem;
+    }
+    .ori-rule p {
+      font-size: 1.05rem;
+      color: var(--text-light-secondary);
+      line-height: 1.65;
+    }
+
+    /* ── Por que assim ── */
+    .ori-porque {
+      background: rgba(177,78,255,0.07);
+      backdrop-filter: blur(36px);
+      -webkit-backdrop-filter: blur(36px);
+      border: 1px solid rgba(177,78,255,0.22);
+      box-shadow: 0 0 18px rgba(177,78,255,0.08), 0 8px 28px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.75rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 2.5rem);
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      text-align: left;
+    }
+    .ori-porque__icon {
+      width: 46px; height: 46px; flex-shrink: 0;
+      border-radius: 14px;
+      background: rgba(177,78,255,0.15);
+      border: 1px solid rgba(177,78,255,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+    }
+    .ori-porque h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+    }
+    .ori-porque p {
+      font-size: clamp(0.97rem, 1.2vw, 1.05rem);
+      color: var(--text-light-secondary);
+      line-height: 1.85;
+    }
+    .ori-porque p strong { color: var(--text-light); }
+
+    /* ── Card de valor ── */
+    .ori-valor {
+      background: rgba(177,78,255,0.07);
+      backdrop-filter: blur(36px);
+      -webkit-backdrop-filter: blur(36px);
+      border: 1px solid rgba(196,162,78,0.28);
+      box-shadow: 0 0 18px rgba(196,162,78,0.08), 0 8px 28px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      text-align: left;
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+      position: relative; overflow: hidden;
+    }
+    .ori-valor::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--pink));
+    }
+    .ori-valor__icon {
+      width: 52px; height: 52px; flex-shrink: 0;
+      border-radius: 16px;
+      background: rgba(196,162,78,0.15);
+      border: 1px solid rgba(196,162,78,0.35);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+    }
+    .ori-valor__body h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 0.3rem;
+    }
+    .ori-valor__body p {
+      font-size: 1.05rem;
+      color: var(--text-light-secondary);
+      line-height: 1.7;
+      margin-bottom: 0.6rem;
+    }
+    .ori-preco {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--gold);
+      font-size: 1.6rem;
+      display: block;
+    }
+
+    /* ── Finalizações ── */
+    .ori-fins { margin-bottom: clamp(3rem, 6vw, 5rem); text-align: center; }
+    .ori-fins h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 0.4rem;
+    }
+    .ori-fins > p {
+      font-size: 1.05rem;
+      color: var(--text-light-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .ori-fins-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .ori-fin-card {
+      background: rgba(177,78,255,0.07);
+      backdrop-filter: blur(36px);
+      -webkit-backdrop-filter: blur(36px);
+      border: 1px solid rgba(177,78,255,0.22);
+      box-shadow: 0 0 18px rgba(177,78,255,0.08), 0 8px 28px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      text-decoration: none;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .ori-fin-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(228,106,160,0.7);
+      box-shadow: 0 0 20px rgba(228,106,160,0.3), 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .ori-fin-card__icon { font-size: 2rem; margin-bottom: 0.6rem; display: block; }
+    .ori-fin-card__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2vw, 1.4rem);
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 0.45rem;
+    }
+    .ori-fin-card__desc {
+      font-size: 1.05rem;
+      color: var(--text-light-secondary);
+      line-height: 1.65;
+    }
+    .ori-fin-card__link {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.03em;
+    }
+
+    /* ── CTA final ── */
+    .ori-cta {
+      text-align: center;
+      padding: clamp(2rem, 4vw, 3.5rem) 0 clamp(3rem, 6vw, 5rem);
+    }
+    .ori-cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 0.75rem;
+    }
+    .ori-cta p {
+      color: var(--text-light-secondary);
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 420px;
+      margin: 0 auto 2rem;
+    }
+
+    @media (max-width: 600px) {
+      .ori-rules { grid-template-columns: 1fr; }
+      .ori-fins-grid { grid-template-columns: 1fr; }
+      .ori-valor { flex-direction: column; text-align: center; }
+      .ori-porque { flex-direction: column; text-align: center; align-items: center; }
+    }
+
+    /* Mobile: 4 fotos nos cantos (topo e base) — texto usa largura total */
+    @media (max-width: 1023px) {
+      .hero .hero__side-img--l2,
+      .hero .hero__side-img--r2 { display: none !important; }
+      .hero .hero__side-img--l1,
+      .hero .hero__side-img--l3,
+      .hero .hero__side-img--r1,
+      .hero .hero__side-img--r3 { width: clamp(80px, 21vw, 100px) !important; }
+      .hero .hero__content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: calc(var(--header-height) + 2.5rem);
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="scroll-orb"></div>
+  <div id="scroll-orb-2"></div>
+
+
+
+  
+
+  <section class="hero">
+    <div class="hero__side-img hero__side-img--l1" data-depth="0.5" data-rot="-10" aria-hidden="true"><img src="../assets/img/hero-opt/IMG_1239.jpg" alt="" loading="eager"></div>
+    <div class="hero__side-img hero__side-img--l2" data-depth="1.5" data-rot="-6"  aria-hidden="true"><img src="../assets/img/opt/IMG_4891.jpg" alt="" loading="eager"></div>
+    <div class="hero__side-img hero__side-img--l3" data-depth="2.5" data-rot="8"   aria-hidden="true"><img src="../assets/img/hero-opt/IMG_5488.jpg" alt="" loading="eager"></div>
+    <div class="hero__side-img hero__side-img--r1" data-depth="2"   data-rot="10"  aria-hidden="true"><img src="../assets/img/hero-opt/IMG_4319.jpg" alt="" loading="eager"></div>
+    <div class="hero__side-img hero__side-img--r2" data-depth="1"   data-rot="6"   aria-hidden="true"><img src="../assets/img/opt/IMG_5473.jpg" alt="" loading="eager"></div>
+    <div class="hero__side-img hero__side-img--r3" data-depth="1.2" data-rot="-8"  aria-hidden="true"><img src="../assets/img/opt/IMG_7627.jpg" alt="" loading="eager"></div>
+    <div class="hero__content">
+      <div class="hero__title-wrap">
+        <span class="label reveal" style="color:var(--accent);display:block;margin-bottom:0.75rem;">Salão Explosion · Dica importante</span>
+        <h1 class="reveal sparkle-wrap" style="font-family:var(--font-display);font-size:clamp(2.8rem,5.5vw,5.5rem);font-weight:700;color:var(--text-light);line-height:1.05;">Como se preparar para o <span class="fh-rotate" id="fancyRotate" data-texts="CORTE|seu momento|a transformação|o novo visual">CORTE</span> aqui no salão!</h1>
+      </div>
+    </div>
+  </section>
+
+  <main class="ori">
+
+    <!-- Intro -->
+    <div class="ori-intro reveal">
+      <h2>Venha com o cabelo finalizado, seco e solto</h2>
+      <p>No intuito de garantir o melhor resultado possível para o corte de cabelos crespos e cacheados, gostaríamos de compartilhar uma orientação importante para suas visitas ao salão.</p>
+    </div>
+
+    <!-- 3 regras -->
+    <div class="ori-rules">
+      <div class="ori-rule reveal">
+        <span class="ori-rule__num">01</span>
+        <h3>Seco</h3>
+        <p>Realizamos o corte com os fios já secos — isso nos permite compreender a forma e o comprimento real do seu cabelo.</p>
+      </div>
+      <div class="ori-rule reveal reveal-delay-1">
+        <span class="ori-rule__num">02</span>
+        <h3>Solto</h3>
+        <p>Sem prender ou comprimir por muito tempo antes de vir ao salão.</p>
+      </div>
+      <div class="ori-rule reveal reveal-delay-2">
+        <span class="ori-rule__num">03</span>
+        <h3>Finalizado</h3>
+        <p>Do jeito que você costuma usar no dia a dia, para entendermos sua rotina e estilo.</p>
+      </div>
+    </div>
+
+    <!-- Por que assim? -->
+    <div class="ori-porque reveal">
+      <div class="ori-porque__icon">💡</div>
+      <div>
+        <h3>Por que assim?</h3>
+        <p>Para obtermos um resultado que valorize a textura natural dos seus cabelos, realizamos o corte com os fios já secos. Isso nos permite compreender melhor a forma e o comprimento real do seu cabelo, evitando surpresas indesejadas relacionadas ao fator de encolhimento. Dessa forma, podemos compreender melhor a sua rotina e estilo, garantindo um corte que se encaixe perfeitamente na sua vida.</p>
+      </div>
+    </div>
+
+    <!-- Valor adicional -->
+    <div class="ori-valor reveal">
+      <div class="ori-valor__icon">✨</div>
+      <div class="ori-valor__body">
+        <h3>Não conseguiu vir com o cabelo pronto?</h3>
+        <p>Entendemos que nem sempre é possível vir ao salão com os cabelos prontos. Caso não consiga vir conforme a orientação, oferecemos finalizar o seu cabelo antes do corte por um valor adicional.</p>
+        <p style="font-size:0.85rem;color:var(--text-light-secondary);margin-top:0.5rem;">PS: Fique tranquila — após o corte você já tem uma finalização inclusa e vai sair do salão com os cabelos maravilhosos!</p>
+        <span class="ori-preco">39</span>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="ori-cta reveal">
+      <h2>Ficou com alguma dúvida?</h2>
+      <p>Tiramos todas as suas dúvidas no atendimento pelo WhatsApp, antes da sua visita. Nossa equipe está aqui para te ajudar!</p>
+      <a href="#" class="btn-cta btn-cta-solid" data-whatsapp="Olá! Tenho dúvidas sobre como me preparar para o corte no Salão Explosion.">Falar com a equipe</a>
+    </div>
+
+  </main>
+
+  <div class="hero__photo-strip" aria-hidden="true">
+    <img src="../assets/img/hero-opt/IMG_1239.jpg" alt="" class="hero__strip-img" loading="lazy">
+    <img src="../assets/img/hero-opt/IMG_5488.jpg" alt="" class="hero__strip-img" loading="lazy">
+    <img src="../assets/img/hero-opt/IMG_4319.jpg" alt="" class="hero__strip-img" loading="lazy">
+    <img src="../assets/img/opt/IMG_7627.jpg"      alt="" class="hero__strip-img" loading="lazy">
+  </div>
+
+  <a href="#" class="whatsapp-float" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion." aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/sparkles.js"></script>
+  <script src="../js/fancy-hero.js"></script>
+</body>
+</html>

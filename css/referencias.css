@@ -1,0 +1,190 @@
+/* ============================================
+   SALÃO EXPLOSION — Páginas de Referências
+   ============================================ */
+
+/* Hero da página de referência */
+.ref-page-hero {
+  min-height: 38vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: calc(var(--header-height) + 3rem) clamp(1.5rem, 5vw, 4rem) 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.ref-page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(177,78,255,0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.ref-page-hero__back {
+  margin-bottom: 2rem;
+}
+
+.ref-page-hero__back a {
+  color: var(--text-light-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  transition: color 0.2s;
+}
+
+.ref-page-hero__back a:hover {
+  color: var(--accent);
+}
+
+.ref-page-hero__content {
+  max-width: 700px;
+}
+
+.ref-page-hero__content .label {
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.ref-page-hero__content h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, #ede6f7 30%, var(--accent) 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ref-page-hero__content p {
+  color: var(--text-light-secondary);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  max-width: 500px;
+}
+
+/* Variações de destaque por categoria */
+.ref-page-hero--moreno::before {
+  background: radial-gradient(ellipse at 30% 50%, rgba(196,162,78,0.12) 0%, transparent 60%);
+}
+.ref-page-hero--mechas::before {
+  background: radial-gradient(ellipse at 30% 50%, rgba(228,106,160,0.12) 0%, transparent 60%);
+}
+.ref-page-hero--coloridos::before {
+  background: radial-gradient(ellipse at 30% 50%, rgba(177,78,255,0.2) 0%, transparent 60%);
+}
+
+/* ---- Galeria ---- */
+.ref-page-gallery {
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
+}
+
+.ref-page-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.ref-page-card {
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-dark);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.ref-page-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.55), 0 0 0 1px rgba(177,78,255,0.2);
+}
+
+.ref-page-card img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.ref-page-card:hover img {
+  transform: scale(1.05);
+}
+
+.ref-page-card__info {
+  padding: 1rem 1.1rem 1.1rem;
+}
+
+.ref-page-card__info h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 0.2rem;
+}
+
+.ref-page-card__info p {
+  font-size: 0.82rem;
+  color: var(--text-light-secondary);
+  line-height: 1.4;
+}
+
+/* ---- CTA da página ---- */
+.ref-page-cta {
+  text-align: center;
+  padding: 3rem 1rem;
+  border-top: none;
+}
+
+.ref-page-cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  color: var(--text-light);
+  margin-bottom: 0.75rem;
+}
+
+.ref-page-cta p {
+  color: var(--text-light-secondary);
+  font-size: 1rem;
+  margin-bottom: 1.75rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---- Footer simplificado ---- */
+.ref-page-footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--text-light-secondary);
+  opacity: 0.5;
+}
+
+.ref-page-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .ref-page-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .ref-page-hero__content h1 {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .ref-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ref-page-card img {
+    aspect-ratio: 4/3;
+  }
+}

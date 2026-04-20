@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Moreno Iluminado no Salao Explosion - tecnica com descoloracao ou com coloracao. Diadema, SP.">
+  <meta name="theme-color" content="#0a0011">
+  <title>Moreno Iluminado - Salao Explosion</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <style>
+    .mi-cards { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2.5rem; }
+    .mi-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: linear-gradient(135deg, rgba(36,10,58,0.7), rgba(22,6,42,0.8));
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(177,78,255,0.3);
+      box-shadow: 0 0 16px rgba(177,78,255,0.08), 0 4px 24px rgba(0,0,0,0.35);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.4rem,3vw,2rem);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .mi-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(228,106,160,0.55);
+      box-shadow: 0 0 24px rgba(228,106,160,0.2), 0 8px 36px rgba(0,0,0,0.45);
+    }
+    .mi-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--pink));
+    }
+    .mi-card__head { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 0.75rem; }
+    .mi-card__icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      border-radius: 12px;
+      background: rgba(177,78,255,0.15);
+      border: 1px solid rgba(177,78,255,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+    }
+    .mi-card__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.15rem,2.2vw,1.45rem);
+      font-weight: 700;
+      color: var(--text-light);
+    }
+    .mi-card__tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.45rem;
+    }
+    .mi-card p {
+      font-size: clamp(0.88rem,1.2vw,0.95rem);
+      color: var(--text-light-secondary);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+    .mi-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .mi-card__link svg { width: 14px; height: 14px; transition: transform 0.2s ease; }
+    .mi-card:hover .mi-card__link svg { transform: translateX(4px); }
+    .cat-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .cat-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.5rem 2rem;
+      background: var(--bg-dark);
+      border: 1px solid rgba(228,106,160,0.55);
+      box-shadow: 0 0 12px rgba(228,106,160,0.28), 0 0 32px rgba(228,106,160,0.1), 0 4px 20px rgba(0,0,0,0.3);
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      color: var(--text-light);
+      transition: all var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .cat-item::before {
+      content: "";
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px; background: linear-gradient(180deg, var(--accent), var(--pink));
+      opacity: 0; transition: opacity var(--transition);
+    }
+    .cat-item:hover { background: var(--bg-card); border-color: rgba(228,106,160,0.9); box-shadow: 0 0 20px rgba(228,106,160,0.45), 0 0 50px rgba(228,106,160,0.15), 0 8px 30px rgba(0,0,0,0.4); transform: translateX(4px); }
+    .cat-item:hover::before { opacity: 1; }
+    .cat-item__name { font-family: var(--font-display); font-size: clamp(1.2rem, 3vw, 1.5rem); font-weight: 600; }
+    .cat-item__arrow { width: 36px; height: 36px; border-radius: 50%; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; color: var(--accent); flex-shrink: 0; transition: all var(--transition); }
+    .cat-item:hover .cat-item__arrow { background: var(--accent); color: white; }
+    .cat-item__arrow svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <a href="../" class="header__logo"><img src="../assets/img/logo-explosion.png" alt="Salao Explosion"></a>
+    <nav class="header__nav">
+      <a href="../servicos.html">Serviços</a>
+      <a href="../massagens/index.html">Massagens</a>
+      <a href="../equipe.html">Equipe</a>
+      <a href="../sobre.html">Sobre</a>
+      <a href="../contato.html">Contato</a>
+      <a href="../playlist.html">Playlist</a>
+      <a href="#" class="btn-cta" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion.">Agende seu horário</a>
+    </nav>
+    <div class="header__toggle" aria-label="Menu"><span></span><span></span><span></span></div>
+  </header>
+
+  <div class="mobile-menu">
+    <a href="../servicos.html">Serviços</a>
+    <a href="../massagens/index.html">Massagens</a>
+    <a href="../equipe.html">Equipe</a>
+    <a href="../sobre.html">Sobre</a>
+    <a href="../contato.html">Contato</a>
+    <a href="../playlist.html">Playlist</a>
+    <a href="#" class="btn-cta btn-cta-solid" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion." style="margin-top:1rem;">Agendar pelo WhatsApp</a>
+  </div>
+
+  <section class="proc-hero">
+    <div class="proc-hero__bg" style="background-image:url('../assets/img/hero.jpg');"></div>
+    <div class="container proc-hero__content">
+      <p class="proc-hero__breadcrumb"><a href="../">Início</a> &rsaquo; <a href="../servicos.html">Serviços</a> &rsaquo; Moreno Iluminado</p>
+      <span class="label proc-hero__category">Cor &middot; Técnica de iluminação</span>
+      <h1 class="proc-hero__title">Moreno Iluminado</h1>
+    </div>
+  </section>
+
+  <section class="proc-content" style="padding:clamp(3rem,6vw,5rem) 0;">
+    <div class="container" style="max-width:760px;">
+
+      <div style="text-align:center;margin-bottom:2rem;" class="reveal">
+        <span class="label" style="display:block;margin-bottom:0.6rem;">Qual é a diferença?</span>
+        <h2 style="font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2rem);font-weight:700;color:var(--text-light);line-height:1.2;">Escolha a técnica certa para o seu cabelo</h2>
+      </div>
+
+      <div class="mi-cards">
+
+        <a href="moreno-iluminado-descoloracao.html" class="mi-card reveal">
+          <div class="mi-card__head">
+            <div class="mi-card__icon">&#10024;</div>
+            <h3 class="mi-card__title">Com Descoloração</h3>
+          </div>
+          <span class="mi-card__tag">Para cabelos escuros e naturais</span>
+          <p>Usa descoloração para abrir o tom dos fios e criar reflexos expressivos. Iluminação intensa e cheia de brilho, ideal para cabelos escuros que querem presença e movimento.</p>
+          <span class="mi-card__link">Ver procedimento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="moreno-iluminado-coloracao.html" class="mi-card reveal reveal-delay-1">
+          <div class="mi-card__head">
+            <div class="mi-card__icon">&#127912;</div>
+            <h3 class="mi-card__title">Com Coloração</h3>
+          </div>
+          <span class="mi-card__tag">Para cabelos naturais sem química</span>
+          <p>Utiliza apenas coloração, sem descolorir os fios. Ideal para cabelos naturais que nunca passaram por processos químicos. O resultado é mais sutil e saudável, com iluminação delicada e natural.</p>
+          <span class="mi-card__link">Ver procedimento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+      </div>
+
+      <div class="reveal" style="margin-top:3rem;text-align:center;padding:2.5rem;background:var(--bg-dark);border-radius:var(--radius-lg);border:1px solid rgba(177,78,255,0.15);">
+        <span class="label" style="color:var(--accent);display:block;margin-bottom:0.75rem;">Nossa equipe</span>
+        <h3 style="margin-bottom:1rem;">Não sabe qual técnica é para você?</h3>
+        <p style="color:var(--text-light-secondary);max-width:48ch;margin:0 auto 2rem;">Tiramos todas as suas dúvidas pelo WhatsApp antes de você agendar.</p>
+        <a href="#" class="btn-cta btn-cta-solid" data-whatsapp="Olá! Tenho dúvidas sobre o Moreno Iluminado no Salão Explosion.">Falar com a equipe</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <img src="../assets/img/logo-explosion.png" alt="Salao Explosion" class="footer__logo-img">
+          <p class="footer__desc">Venha sentir<br>Explosion<br>em seu coração. Acolhimento, tecnologia e amor em cada atendimento.</p>
+        </div>
+        <div>
+          <p class="footer__heading">Navegação</p>
+          <div class="footer__links">
+            <a href="../">Início</a>
+            <a href="../servicos.html">Serviços</a>
+            <a href="../massagens/index.html">Massagens</a>
+            <a href="../produtos.html">Produtos</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Contato</p>
+          <div class="footer__links">
+            <a href="tel:+5511986542632">(11) 98654-2632</a>
+            <a href="https://wa.me/5511986542632" target="_blank">WhatsApp</a>
+            <a>Eldorado &middot; Diadema</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Redes Sociais</p>
+          <div class="footer__social">
+            <a href="https://instagram.com/salaoexplosion" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://tiktok.com/@salaoexplosion" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13a8.28 8.28 0 005.58 2.15v-3.44a4.85 4.85 0 01-3.77-1.25V6.69h3.77z"/></svg>
+            </a>
+            <a href="https://facebook.com/salaoexplosion/" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Salão Explosion. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="whatsapp-float" data-whatsapp="Olá! Gostaria de saber mais sobre o Moreno Iluminado no Salão Explosion." aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

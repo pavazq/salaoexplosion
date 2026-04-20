@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Referências de Coloridos — Salão Explosion. Tons vibrantes, coloração criativa, cachos coloridos.">
+  <title>Referências de Coloridos — Salão Explosion</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/referencias.css">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <style>
+    .cat-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .cat-item {
+      display: flex; align-items: center; gap: 1.25rem;
+      padding: 1rem 1.5rem;
+      background: rgba(177,78,255,0.07);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(177,78,255,0.3);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05);
+      border-radius: var(--radius-md);
+      color: var(--text-light);
+      transition: all var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .cat-item::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px; background: linear-gradient(180deg, var(--accent), var(--pink));
+      opacity: 0; transition: opacity var(--transition);
+    }
+    .cat-item:hover { background: rgba(177,78,255,0.14); border-color: rgba(177,78,255,0.65); box-shadow: 0 0 24px rgba(177,78,255,0.2), 0 16px 40px rgba(0,0,0,0.3); transform: translateX(4px); }
+    .cat-item:hover::before { opacity: 1; }
+    .cat-item__thumb {
+      width: 60px; height: 60px;
+      border-radius: 10px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid rgba(177,78,255,0.25);
+    }
+    .cat-item__text { flex: 1; }
+    .cat-item__name { font-family: var(--font-display); font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 600; }
+    .cat-item__sub { font-size: 0.82rem; color: var(--text-light-secondary); margin-top: 0.2rem; }
+    .cat-item__arrow { width: 36px; height: 36px; border-radius: 50%; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; color: var(--accent); flex-shrink: 0; transition: all var(--transition); }
+    .cat-item:hover .cat-item__arrow { background: var(--accent); color: white; }
+    .cat-item__arrow svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <a href="../index.html" class="header__logo">
+      <img src="../assets/img/logo-explosion.png" alt="Salão Explosion">
+    </a>
+    <nav class="header__nav">
+      <a href="../servicos.html">Serviços</a>
+      <a href="../massagens/index.html">Massagens</a>
+      <a href="../equipe.html">Equipe</a>
+      <a href="../sobre.html">Sobre</a>
+      <a href="../contato.html">Contato</a>
+      <a href="../playlist.html">Playlist</a>
+      <a href="#" class="btn-cta" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion.">Agende seu horário</a>
+    </nav>
+    <div class="header__toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <a href="../servicos.html">Serviços</a>
+    <a href="../massagens/index.html">Massagens</a>
+    <a href="../equipe.html">Equipe</a>
+    <a href="../sobre.html">Sobre</a>
+    <a href="../contato.html">Contato</a>
+    <a href="../playlist.html">Playlist</a>
+    <a href="#" class="btn-cta btn-cta-solid" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion." style="margin-top:1rem;">Agendar pelo WhatsApp</a>
+  </div>
+
+  <section class="ref-page-hero ref-page-hero--coloridos">
+    <div class="ref-page-hero__back">
+      <a href="../index.html#referencias">← Referências</a>
+    </div>
+    <div class="ref-page-hero__content">
+      <span class="label">Referências</span>
+      <h1>Coloridos</h1>
+      <p>Roxo, rosa, vermelho, azul. Expressão que vai além do óbvio.</p>
+    </div>
+  </section>
+
+  <section class="ref-page-gallery">
+    <div class="container" style="max-width:760px;">
+      <div class="cat-list">
+
+        <div class="cat-item reveal">
+          <img src="../Imagens/IMG_6937.JPEG" alt="Cachos coloridos" class="cat-item__thumb" loading="lazy">
+          <div class="cat-item__text">
+            <div class="cat-item__name">Cachos coloridos</div>
+            <div class="cat-item__sub">Rosa que abraça os cachos</div>
+          </div>
+          <span class="cat-item__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+        <div class="cat-item reveal">
+          <img src="../Imagens/IMG_6325.JPEG" alt="Cor vibrante" class="cat-item__thumb" loading="lazy">
+          <div class="cat-item__text">
+            <div class="cat-item__name">Cor vibrante</div>
+            <div class="cat-item__sub">Personalidade que não esconde</div>
+          </div>
+          <span class="cat-item__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+        <div class="cat-item reveal">
+          <img src="../Imagens/IMG_1579.JPEG" alt="Cachos com cor" class="cat-item__thumb" loading="lazy">
+          <div class="cat-item__text">
+            <div class="cat-item__name">Cachos com cor</div>
+            <div class="cat-item__sub">Vida em cada mola</div>
+          </div>
+          <span class="cat-item__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+        <div class="cat-item reveal">
+          <img src="../Imagens/IMG_5486.JPEG" alt="Tom especial" class="cat-item__thumb" loading="lazy">
+          <div class="cat-item__text">
+            <div class="cat-item__name">Tom especial</div>
+            <div class="cat-item__sub">Para quem quer ser lembrado</div>
+          </div>
+          <span class="cat-item__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+        <div class="cat-item reveal">
+          <img src="../Imagens/IMG_6474.JPEG" alt="Roxo intenso" class="cat-item__thumb" loading="lazy">
+          <div class="cat-item__text">
+            <div class="cat-item__name">Roxo intenso</div>
+            <div class="cat-item__sub">Profundidade e mistério</div>
+          </div>
+          <span class="cat-item__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+        <div class="cat-item reveal">
+          <img src="../Imagens/IMG_6480.JPEG" alt="Gradiente criativo" class="cat-item__thumb" loading="lazy">
+          <div class="cat-item__text">
+            <div class="cat-item__name">Gradiente criativo</div>
+            <div class="cat-item__sub">Dois tons que se encontram</div>
+          </div>
+          <span class="cat-item__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+        <div class="cat-item reveal">
+          <img src="../Imagens/IMG_7604.JPEG" alt="Vermelho poderoso" class="cat-item__thumb" loading="lazy">
+          <div class="cat-item__text">
+            <div class="cat-item__name">Vermelho poderoso</div>
+            <div class="cat-item__sub">Quem usa, marca presença</div>
+          </div>
+          <span class="cat-item__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+        <div class="cat-item reveal">
+          <img src="../Imagens/IMG_7627.JPEG" alt="Coloração ousada" class="cat-item__thumb" loading="lazy">
+          <div class="cat-item__text">
+            <div class="cat-item__name">Coloração ousada</div>
+            <div class="cat-item__sub">Arte que você usa todos os dias</div>
+          </div>
+          <span class="cat-item__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+      </div>
+
+      <div class="ref-page-cta">
+        <h2>Pronta para se destacar?</h2>
+        <p>A Marly tem 30 anos de experiência em coloração criativa. Bora transformar?</p>
+        <a href="#" class="btn-cta btn-cta-solid" data-whatsapp="Olá! Vi as referências de Coloridos no site e quero agendar meu horário!">Agendar pelo WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ref-page-footer">
+    <p>© 2024 Salão Explosion · <a href="../index.html">Voltar ao site</a></p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

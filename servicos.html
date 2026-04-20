@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Todos os serviços do Salão Explosion — cronogramas, cortes, tratamentos, alisamentos, descolorações, coloração, estética e massagens.">
+  <meta name="theme-color" content="#0a0011">
+  <title>Serviços — Salão Explosion</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Serviços — Salão Explosion">
+  <meta property="og:description" content="Cronogramas, cortes, tratamentos, alisamentos, colorações, estética e massagens — tudo com o cuidado do Salão Explosion.">
+  <meta property="og:image" content="https://salaoexplosion.com.br/assets/img/hero.jpg">
+  <meta property="og:url" content="https://salaoexplosion.com.br/servicos.html">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://salaoexplosion.com.br/assets/img/hero.jpg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+  <style>
+    body { background: var(--bg-deep); }
+
+    .servicos-page {
+      padding: calc(var(--header-height) + 4rem) 0 6rem;
+      background: var(--bg-deep);
+    }
+
+    .servicos-page__header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .servicos-page__label {
+      color: var(--pink);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .servicos-page__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      color: var(--text-light);
+      line-height: 1.2;
+    }
+
+    /* ── Grid 2 colunas desktop ── */
+    .categorias-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.9rem;
+    }
+
+    /* ── Card compacto com glassmorphism + glow rosa ── */
+    .categoria-card {
+      background: rgba(36, 10, 58, 0.55);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(228, 106, 160, 0.55);
+      border-radius: 18px;
+      padding: 1.6rem 1.8rem;
+      text-decoration: none;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 12px rgba(228, 106, 160, 0.28), 0 0 32px rgba(228, 106, 160, 0.1), 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Shimmer lateral rosa */
+    .categoria-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--accent), var(--pink));
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .categoria-card:hover {
+      transform: translateY(-3px);
+      background: rgba(50, 14, 80, 0.7);
+      border-color: rgba(228, 106, 160, 0.5);
+      box-shadow:
+        0 0 18px rgba(228, 106, 160, 0.35),
+        0 0 40px rgba(177, 78, 255, 0.2),
+        0 8px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .categoria-card:hover::before { opacity: 1; }
+
+    /* Ícone/número lateral */
+    .categoria-card__num {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      font-weight: 700;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--pink), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      min-width: 2.4rem;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    /* Texto */
+    .categoria-card__body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .categoria-card__name {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+      font-weight: 600;
+      color: var(--text-light);
+      line-height: 1.25;
+      margin: 0;
+    }
+
+    .categoria-card__count {
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(228, 106, 160, 0.75);
+      margin-top: 0.3rem;
+      display: block;
+    }
+
+    /* Seta */
+    .categoria-card__arrow {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(228, 106, 160, 0.12);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--pink);
+      transition: all 0.25s ease;
+      flex-shrink: 0;
+    }
+
+    .categoria-card:hover .categoria-card__arrow {
+      background: var(--pink);
+      color: white;
+      transform: translateX(3px);
+      box-shadow: 0 0 12px rgba(228, 106, 160, 0.6);
+    }
+
+    .categoria-card__arrow svg { width: 12px; height: 12px; }
+
+    /* Card de Massagens — acento mais forte no pink */
+    .categoria-card--massagens {
+      border-color: rgba(228, 106, 160, 0.35);
+      background: rgba(50, 14, 60, 0.55);
+    }
+
+    /* ── Seção Referências ── */
+    .refs-section {
+      margin-top: 3.5rem;
+      padding-top: 2.5rem;
+      border-top: none;
+    }
+
+    .refs-section__header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .refs-section__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      font-weight: 600;
+      color: var(--text-light);
+    }
+
+    .refs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.9rem;
+    }
+
+    @media (max-width: 680px) {
+      .categorias-grid { grid-template-columns: 1fr; }
+      .refs-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Busca ── */
+    .svc-search { margin-bottom: 1.75rem; }
+
+    .svc-search__wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .svc-search__icon {
+      position: absolute;
+      left: 1.1rem;
+      width: 18px; height: 18px;
+      color: rgba(177,78,255,0.85);
+      pointer-events: none;
+      z-index: 2;
+    }
+    .svc-search__input {
+      width: 100%;
+      padding: 0.85rem 3rem 0.85rem 3rem;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(177,78,255,0.3);
+      border-radius: 14px;
+      color: var(--text-light);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .svc-search__input::placeholder { color: rgba(237,230,247,0.35); }
+    .svc-search__input:focus {
+      border-color: rgba(177,78,255,0.65);
+      background: rgba(255,255,255,0.08);
+    }
+    .svc-search__clear {
+      position: absolute;
+      right: 0.85rem;
+      background: none; border: none;
+      color: rgba(237,230,247,0.45);
+      font-size: 1rem; cursor: pointer;
+      display: none;
+      padding: 0.25rem 0.4rem;
+      transition: color 0.2s;
+    }
+    .svc-search__clear:hover { color: var(--text-light); }
+    .svc-search__clear.visible { display: block; }
+
+    .svc-search__chips-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.85rem;
+      justify-content: center;
+    }
+    .svc-search__chips-label {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(237,230,247,0.35);
+      white-space: nowrap;
+      margin-right: 0.15rem;
+    }
+    .svc-chip {
+      background: rgba(177,78,255,0.07);
+      border: 1px solid rgba(177,78,255,0.28);
+      border-radius: 100px;
+      color: rgba(237,230,247,0.65);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      padding: 0.35rem 1rem;
+      cursor: pointer;
+      transition: background 0.18s, border-color 0.18s, color 0.18s, transform 0.15s;
+    }
+    .svc-chip:hover {
+      background: rgba(177,78,255,0.16);
+      border-color: rgba(177,78,255,0.55);
+      color: var(--text-light);
+      transform: translateY(-1px);
+    }
+    .svc-chip.active {
+      background: rgba(177,78,255,0.22);
+      border-color: rgba(177,78,255,0.75);
+      color: var(--text-light);
+      padding-right: 0.65rem;
+    }
+    .svc-chip.active::after {
+      content: '✕';
+      display: inline-block;
+      margin-left: 0.4rem;
+      font-size: 0.65rem;
+      opacity: 0.7;
+      vertical-align: middle;
+    }
+
+    .svc-no-results {
+      text-align: center;
+      color: rgba(237,230,247,0.45);
+      font-size: 0.9rem;
+      padding: 1.5rem 0;
+      margin: 0;
+    }
+    .svc-no-results span { color: var(--accent); }
+
+    .categoria-card--hidden {
+      display: none !important;
+    }
+    .categoria-card--match {
+      animation: cardMatch 0.3s ease;
+    }
+    @keyframes cardMatch {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <a href="index.html" class="header__logo"><img src="assets/img/logo-explosion.png" alt="Salão Explosion"></a>
+    <nav class="header__nav">
+      <a href="servicos.html">Serviços</a>
+      <a href="massagens/index.html">Massagens</a>
+      <a href="equipe.html">Equipe</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="playlist.html">Playlist</a>
+      <a href="#" class="btn-cta" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion.">Agende seu horário</a>
+    </nav>
+    <div class="header__toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <!-- ========== MOBILE MENU ========== -->
+  <div class="mobile-menu">
+    <a href="servicos.html">Serviços</a>
+    <a href="massagens/index.html">Massagens</a>
+    <a href="equipe.html">Equipe</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="contato.html">Contato</a>
+    <a href="playlist.html">Playlist</a>
+    <a href="#" class="btn-cta btn-cta-solid" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion." style="margin-top:1rem;">Agendar pelo WhatsApp</a>
+  </div>
+
+  <!-- ========== CATEGORIAS ========== -->
+  <section class="servicos-page">
+    <div class="container">
+
+      <div class="servicos-page__header reveal">
+        <span class="label servicos-page__label">Nossos serviços</span>
+        <h1 class="servicos-page__title">Procedimentos</h1>
+      </div>
+
+      <!-- Busca -->
+      <div class="svc-search reveal">
+        <div class="svc-search__wrap">
+          <svg class="svc-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input id="svcSearchInput" class="svc-search__input" type="text" placeholder="Buscar serviço... ex: progressiva, mechas, drenagem" autocomplete="off">
+          <button id="svcSearchClear" class="svc-search__clear" aria-label="Limpar busca">✕</button>
+        </div>
+        <div class="svc-search__chips-row">
+          <span class="svc-search__chips-label">Atalhos</span>
+          <button class="svc-chip" data-q="corte">Corte</button>
+          <button class="svc-chip" data-q="mechas">Mechas</button>
+          <button class="svc-chip" data-q="progressiva">Progressiva</button>
+          <button class="svc-chip" data-q="hidratação">Hidratação</button>
+          <button class="svc-chip" data-q="massagem">Massagem</button>
+          <button class="svc-chip" data-q="coloração">Coloração</button>
+          <button class="svc-chip" data-q="botox">Botox</button>
+          <button class="svc-chip" data-q="sobrancelha">Sobrancelha</button>
+        </div>
+      </div>
+      <p class="svc-no-results" id="svcNoResults" style="display:none;">Nenhum serviço encontrado para "<span id="svcNoResultsTerm"></span>"</p>
+
+      <div class="categorias-grid">
+
+        <a href="procedimentos/cronograma.html" class="categoria-card reveal" data-keywords="cronograma hidratacao nutricao reconstrucao umectacao proteina capilar">
+          <span class="categoria-card__num">01</span>
+          <div class="categoria-card__body">
+            <h2 class="categoria-card__name">Cronograma Capilar</h2>
+            <span class="categoria-card__count">2 protocolos</span>
+          </div>
+          <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="procedimentos/tratamentos.html" class="categoria-card reveal" data-keywords="botox btx selagem queratina cauterizacao hidratacao proteina fortalecimento nutricao tratamento">
+          <span class="categoria-card__num">02</span>
+          <div class="categoria-card__body">
+            <h2 class="categoria-card__name">Tratamentos</h2>
+            <span class="categoria-card__count">9 procedimentos</span>
+          </div>
+          <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="procedimentos/cortes.html" class="categoria-card reveal" data-keywords="corte tesoura degrade franja cabelo curto cacheado aparar">
+          <span class="categoria-card__num">03</span>
+          <div class="categoria-card__body">
+            <h2 class="categoria-card__name">Cortes</h2>
+            <span class="categoria-card__count">2 procedimentos</span>
+          </div>
+          <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="procedimentos/finalizacoes.html" class="categoria-card reveal" data-keywords="finalizacao blow dry babyliss escova definicao cachos difusor secador">
+          <span class="categoria-card__num">04</span>
+          <div class="categoria-card__body">
+            <h2 class="categoria-card__name">Finalização</h2>
+            <span class="categoria-card__count">2 procedimentos</span>
+          </div>
+          <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="procedimentos/alisamentos.html" class="categoria-card reveal" data-keywords="alisamento progressiva escova progressiva quimica liso definitivo relaxamento">
+          <span class="categoria-card__num">05</span>
+          <div class="categoria-card__body">
+            <h2 class="categoria-card__name">Alisamentos</h2>
+            <span class="categoria-card__count">3 procedimentos</span>
+          </div>
+          <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="procedimentos/harmonizacoes.html" class="categoria-card reveal" data-keywords="volume frizz anti-frizz controle reducao crespo ondulado">
+          <span class="categoria-card__num">06</span>
+          <div class="categoria-card__body">
+            <h2 class="categoria-card__name">Redução de Volume</h2>
+            <span class="categoria-card__count">2 procedimentos</span>
+          </div>
+          <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="procedimentos/coloracao.html" class="categoria-card reveal" data-keywords="coloracao tintura cor ruiva loira castanha black pintura">
+          <span class="categoria-card__num">07</span>
+          <div class="categoria-card__body">
+            <h2 class="categoria-card__name">Coloração</h2>
+            <span class="categoria-card__count">1 procedimento</span>
+          </div>
+          <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="procedimentos/coloracoes.html" class="categoria-card reveal" data-keywords="mechas tecnicas ombre balayage babylights iluminacao luzes reflexo californiana">
+          <span class="categoria-card__num">08</span>
+          <div class="categoria-card__body">
+            <h2 class="categoria-card__name">Mechas & Técnicas</h2>
+            <span class="categoria-card__count">8 procedimentos</span>
+          </div>
+          <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="procedimentos/moreno-iluminado.html" class="categoria-card reveal" data-keywords="moreno iluminado reflexo cabelo escuro luzes em morena descoloracao">
+          <span class="categoria-card__num">09</span>
+          <div class="categoria-card__body">
+            <h2 class="categoria-card__name">Moreno Iluminado</h2>
+            <span class="categoria-card__count">2 procedimentos</span>
+          </div>
+          <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="procedimentos/coloridos.html" class="categoria-card reveal" data-keywords="colorido fantasia azul verde rosa violeta cor especial">
+          <span class="categoria-card__num">10</span>
+          <div class="categoria-card__body">
+            <h2 class="categoria-card__name">Coloridos</h2>
+            <span class="categoria-card__count">5 categorias</span>
+          </div>
+          <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="procedimentos/estetica.html" class="categoria-card reveal" data-keywords="estetica sobrancelha limpeza de pele design facial">
+          <span class="categoria-card__num">11</span>
+          <div class="categoria-card__body">
+            <h2 class="categoria-card__name">Estética</h2>
+            <span class="categoria-card__count">2 serviços</span>
+          </div>
+          <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="massagens/index.html" class="categoria-card categoria-card--massagens reveal" data-keywords="massagem relaxante drenagem linfatica modeladora redutora miofascial detox argila corpo bem-estar">
+          <span class="categoria-card__num">12</span>
+          <div class="categoria-card__body">
+            <h2 class="categoria-card__name">Massagens</h2>
+            <span class="categoria-card__count">6 tipos</span>
+          </div>
+          <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <img src="assets/img/logo-explosion.png" alt="Salão Explosion" class="footer__logo-img">
+          <p class="footer__desc">Venha sentir<br>Explosion<br>em seu coração. Acolhimento, tecnologia e amor em cada atendimento.</p>
+        </div>
+        <div>
+          <p class="footer__heading">Navegação</p>
+          <div class="footer__links">
+            <a href="index.html">Início</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="massagens/index.html">Massagens</a>
+            <a href="produtos.html">Produtos</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Contato</p>
+          <div class="footer__links">
+            <a href="tel:+5511986542632">(11) 98654-2632</a>
+            <a href="https://wa.me/5511986542632" target="_blank">WhatsApp</a>
+            <a>Eldorado · Diadema</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Redes Sociais</p>
+          <div class="footer__social">
+            <a href="https://instagram.com/salaoexplosion" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://tiktok.com/@salaoexplosion" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13a8.28 8.28 0 005.58 2.15v-3.44a4.85 4.85 0 01-3.77-1.25V6.69h3.77z"/></svg>
+            </a>
+            <a href="https://facebook.com/salaoexplosion/" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Salão Explosion. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="whatsapp-float" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion." aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+  <script src="js/carousel.js"></script>
+  <script>
+  (function() {
+    var input  = document.getElementById('svcSearchInput');
+    var clear  = document.getElementById('svcSearchClear');
+    var noRes  = document.getElementById('svcNoResults');
+    var noTerm = document.getElementById('svcNoResultsTerm');
+    var cards  = Array.prototype.slice.call(document.querySelectorAll('.categoria-card'));
+    var chips  = Array.prototype.slice.call(document.querySelectorAll('.svc-chip[data-q]'));
+
+    function norm(s) {
+      return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function filter(q) {
+      var t = norm(q.trim());
+      var count = 0;
+      cards.forEach(function(card) {
+        var name = norm(card.querySelector('.categoria-card__name').textContent);
+        var kw   = norm(card.getAttribute('data-keywords') || '');
+        var match = !t || name.indexOf(t) !== -1 || kw.indexOf(t) !== -1;
+        if (match) {
+          card.classList.remove('categoria-card--hidden');
+          card.classList.remove('categoria-card--match');
+          void card.offsetWidth; // reflow para reiniciar animação
+          if (t) card.classList.add('categoria-card--match');
+          count++;
+        } else {
+          card.classList.add('categoria-card--hidden');
+          card.classList.remove('categoria-card--match');
+        }
+      });
+      noRes.style.display = (t && count === 0) ? 'block' : 'none';
+      if (t && count === 0) noTerm.textContent = q.trim();
+      clear.classList.toggle('visible', t.length > 0);
+      chips.forEach(function(c) {
+        c.classList.toggle('active', norm(c.getAttribute('data-q')) === t);
+      });
+    }
+
+    input.addEventListener('input', function() { filter(input.value); });
+
+    clear.addEventListener('click', function() {
+      input.value = '';
+      filter('');
+      input.focus();
+    });
+
+    chips.forEach(function(chip) {
+      chip.addEventListener('click', function() {
+        if (chip.classList.contains('active')) {
+          input.value = '';
+          filter('');
+          input.focus();
+        } else {
+          var q = chip.getAttribute('data-q');
+          input.value = q;
+          filter(q);
+        }
+      });
+    });
+  })();
+  </script>
+</body>
+</html>

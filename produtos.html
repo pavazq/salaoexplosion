@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Produtos Reiny — linha exclusiva de finalizadores capilares disponíveis no Salão Explosion. Ativador de Cachos, Mousse, Gel Cola e Óleo Premium.">
+  <meta name="theme-color" content="#0a0011">
+  <title>Produtos Reiny — Salão Explosion</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Produtos Reiny — Salão Explosion">
+  <meta property="og:description" content="Linha exclusiva Reiny de finalizadores capilares — Ativador, Mousse, Gel Cola e Óleo Premium — disponível no Salão Explosion.">
+  <meta property="og:image" content="https://salaoexplosion.com.br/assets/img/hero.jpg">
+  <meta property="og:url" content="https://salaoexplosion.com.br/produtos.html">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://salaoexplosion.com.br/assets/img/hero.jpg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+  <style>
+    body { background: var(--bg-deep); }
+
+    .produtos-page {
+      padding: calc(var(--header-height) + 3rem) 0 clamp(4rem, 8vw, 7rem);
+    }
+
+    .produtos-hero {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto clamp(3rem, 6vw, 5rem);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+    }
+
+    .produtos-hero .label { display: block; color: var(--accent); margin-bottom: 0.75rem; }
+
+    .produtos-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 600;
+      color: var(--text-light);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .produtos-hero h1 span {
+      background: linear-gradient(110deg, var(--accent), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .produtos-hero p {
+      color: var(--text-light-secondary);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* Grid de produtos */
+    .produtos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 960px;
+      margin: 0 auto clamp(3rem, 6vw, 5rem);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+    }
+
+    .prod-card {
+      background: rgba(36, 10, 58, 0.55);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(228, 106, 160, 0.2);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .prod-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--accent), var(--pink));
+      border-radius: 2px 0 0 2px;
+    }
+
+    .prod-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 20px rgba(177,78,255,0.15);
+    }
+
+    .prod-card__img-wrap {
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: rgba(20, 8, 40, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .prod-card__img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .prod-card__body {
+      padding: 1.5rem 1.75rem 2rem;
+    }
+
+    .prod-card__body .label {
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .prod-card__name {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .prod-card__desc {
+      color: var(--text-light-secondary);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .prod-card__features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .prod-card__features li {
+      font-size: 0.88rem;
+      color: var(--text-light-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .prod-card__features li::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 0.45em;
+      flex-shrink: 0;
+    }
+
+    /* Bloco de destaque da marca */
+    .reiny-destaque {
+      max-width: 760px;
+      margin: 0 auto clamp(2rem, 4vw, 3.5rem);
+      padding: 0 clamp(1rem, 4vw, 3rem);
+    }
+
+    .reiny-card {
+      background: rgba(36, 10, 58, 0.55);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(177, 78, 255, 0.2);
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    .reiny-card h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 0.75rem;
+    }
+
+    .reiny-card p {
+      color: var(--text-light-secondary);
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 52ch;
+      margin: 0 auto 2rem;
+    }
+
+    @media (max-width: 600px) {
+      .produtos-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <a href="index.html" class="header__logo">
+      <img src="assets/img/logo-explosion.png" alt="Salão Explosion">
+    </a>
+    <nav class="header__nav">
+      <a href="servicos.html">Serviços</a>
+      <a href="massagens/index.html">Massagens</a>
+      <a href="equipe.html">Equipe</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="playlist.html">Playlist</a>
+      <a href="#" class="btn-cta" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion.">Agende seu horário</a>
+    </nav>
+    <div class="header__toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <a href="servicos.html">Serviços</a>
+    <a href="massagens/index.html">Massagens</a>
+    <a href="equipe.html">Equipe</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="contato.html">Contato</a>
+    <a href="playlist.html">Playlist</a>
+    <a href="#" class="btn-cta btn-cta-solid" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion." style="margin-top:1rem;">Agendar pelo WhatsApp</a>
+  </div>
+
+  <main class="produtos-page">
+
+    <!-- Hero -->
+    <div class="produtos-hero reveal">
+      <span class="label">Conheça os produtos que usamos</span>
+      <h1>Linha <span>Reiny</span></h1>
+      <p>Finalizadores profissionais selecionados pela Marly para manter o resultado do salão em casa. Tecnologia capilar que cuida dos seus fios todos os dias.</p>
+    </div>
+
+    <!-- Grid de produtos -->
+    <div class="produtos-grid">
+
+      <div class="prod-card reveal">
+        <div class="prod-card__img-wrap">
+          <img src="produtos reiny/Ativador de Cachos Radiante Cachoeira.png" alt="Ativador de Cachos Reiny" class="prod-card__img" loading="lazy">
+        </div>
+        <div class="prod-card__body">
+          <span class="label">Definição</span>
+          <h2 class="prod-card__name">Ativador de Cachos</h2>
+          <p class="prod-card__desc">Produto vegano e liberado. Define, hidrata e combate o frizz sem pesar nos fios.</p>
+          <ul class="prod-card__features">
+            <li>Vegano e liberado</li>
+            <li>Define e revitaliza os cachos</li>
+            <li>Combate o frizz sem resíduo</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prod-card reveal reveal-delay-1">
+        <div class="prod-card__img-wrap">
+          <img src="produtos reiny/Mousse Disciplinante em destaque.png" alt="Mousse Reiny" class="prod-card__img" loading="lazy">
+        </div>
+        <div class="prod-card__body">
+          <span class="label">Fixação</span>
+          <h2 class="prod-card__name">Mousse</h2>
+          <p class="prod-card__desc">Alta fixação de até 24 horas. Ideal para curvaturas 3A a 4C, sem deixar resíduo nem peso.</p>
+          <ul class="prod-card__features">
+            <li>Fixação de até 24 horas</li>
+            <li>Ideal para curvaturas 3A a 4C</li>
+            <li>Sem resíduo e sem peso</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prod-card reveal reveal-delay-2">
+        <div class="prod-card__img-wrap">
+          <img src="produtos reiny/Pote de Gel Cola sobre madeira.png" alt="Geleia Reiny" class="prod-card__img" loading="lazy">
+        </div>
+        <div class="prod-card__body">
+          <span class="label">Modelagem</span>
+          <h2 class="prod-card__name">Geleia</h2>
+          <p class="prod-card__desc">Composta por extrato de linhaça e óleos poderosos. Modela e define com acabamento natural.</p>
+          <ul class="prod-card__features">
+            <li>Extrato de linhaça</li>
+            <li>Óleos poderosos</li>
+            <li>Modelagem e definição natural</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prod-card reveal reveal-delay-3">
+        <div class="prod-card__img-wrap">
+          <img src="produtos reiny/Frascos de óleo premium e frutas.png" alt="Óleo Premium Reiny" class="prod-card__img" loading="lazy">
+        </div>
+        <div class="prod-card__body">
+          <span class="label">Nutrição</span>
+          <h2 class="prod-card__name">Blend Reiny Ômega+</h2>
+          <p class="prod-card__desc">Óleo desenvolvido com biomoléculas de Oliveira, Damasco, Groselha Negra, Figo da Índia e Algodão. Repara, revitaliza e devolve brilho intenso aos fios.</p>
+          <ul class="prod-card__features">
+            <li>Biomoléculas de Oliveira e Damasco</li>
+            <li>Groselha Negra, Figo da Índia e Algodão</li>
+            <li>Repara e revitaliza profundamente</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Destaque Reiny -->
+    <div class="reiny-destaque reveal">
+      <div class="reiny-card">
+        <h2>Adquira no Salão Explosion</h2>
+        <p>Os produtos Reiny estão disponíveis para compra direto no salão. Fale com a gente para saber qual é o ideal para o seu tipo de cabelo.</p>
+        <a href="#" class="btn-cta btn-cta-solid" data-whatsapp="Olá! Gostaria de saber mais sobre os produtos Reiny disponíveis no Salão Explosion." style="display:inline-flex;align-items:center;gap:0.5rem;white-space:nowrap;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Falar com nossa equipe
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <a href="#" class="whatsapp-float" data-whatsapp="Olá! Gostaria de saber mais sobre os produtos Reiny do Salão Explosion." aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

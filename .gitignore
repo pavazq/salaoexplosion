@@ -1,0 +1,21 @@
+# Pastas de desenvolvimento (não vão pro deploy)
+_nao-usados/
+.agents/
+.claude/
+
+# Documentação interna
+CLAUDE.md
+skills-lock.json
+
+# Backups e temporários
+*.bak
+*.zip
+*.tmp
+Thumbs.db
+.DS_Store
+
+# Arquivos órfãos >100MB (não referenciados no site, GitHub não aceita)
+imagens 2/copy_86486C3C-E824-40E3-A9D9-B54E5568386A.MOV
+
+# Pasta raw não usada (458 MB de referências de design, não referenciada por nenhuma página live)
+Imagens/fotos/

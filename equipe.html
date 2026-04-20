@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Conheça a equipe do Salão Explosion — Marly, Hellen, Emília e Paloma. Diadema, SP.">
+  <meta name="theme-color" content="#0a0011">
+  <title>Nossa Equipe — Salão Explosion</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nossa Equipe — Salão Explosion">
+  <meta property="og:description" content="Marly, Hellen, Emília e Paloma — as pessoas por trás do Salão Explosion em Diadema, SP.">
+  <meta property="og:image" content="https://salaoexplosion.com.br/assets/img/hero.jpg">
+  <meta property="og:url" content="https://salaoexplosion.com.br/equipe.html">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://salaoexplosion.com.br/assets/img/hero.jpg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+  <style>
+    /* ═══ Header da página ═══ */
+    .eq-header {
+      padding: calc(var(--header-height) + clamp(3rem,6vw,5rem)) 0 clamp(1.5rem,3vw,2rem);
+      text-align: center;
+    }
+    .eq-header .label { color: var(--accent); display: block; margin-bottom: 0.75rem; }
+    .eq-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 700;
+      color: var(--text-light);
+      line-height: 1.1;
+    }
+
+    /* ═══ Galeria de fotos espalhadas ═══ */
+    .eq-gallery {
+      position: relative;
+      height: clamp(220px, 28vw, 300px);
+      margin: clamp(0.5rem,1vw,1rem) auto 0;
+      max-width: 980px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .eq-gallery-hint {
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(237,230,247,0.5);
+      letter-spacing: 0.06em;
+      margin: 0.6rem 0 1.5rem;
+    }
+    /* Blur rosa neon atrás das fotos */
+    .eq-gallery::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: clamp(300px, 50vw, 600px);
+      height: clamp(200px, 28vw, 320px);
+      background: radial-gradient(ellipse, rgba(228,106,160,0.3) 0%, rgba(177,78,255,0.15) 40%, transparent 70%);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .eq-photo-wrap {
+      position: absolute;
+      left: 50%;
+      top: 40%;
+      cursor: grab;
+      transition: transform 0.5s cubic-bezier(0.34,1.2,0.64,1), box-shadow 0.3s ease;
+      will-change: transform;
+      -webkit-user-select: none;
+      user-select: none;
+      touch-action: none;
+    }
+    .eq-photo-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -22px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(228,106,160,0.38) 0%, rgba(177,78,255,0.14) 45%, transparent 70%);
+      filter: blur(18px);
+      z-index: -1;
+      pointer-events: none;
+      animation: galleryGlow 3.8s ease-in-out infinite alternate;
+    }
+    @keyframes galleryGlow {
+      from { opacity: 0.4; transform: scale(0.92); }
+      to   { opacity: 0.85; transform: scale(1.08); }
+    }
+    .eq-photo-wrap:hover {
+      z-index: 100 !important;
+    }
+    .eq-photo-wrap:hover::before {
+      opacity: 1;
+      filter: blur(22px);
+    }
+    .eq-photo-wrap:active {
+      cursor: grabbing;
+      z-index: 200 !important;
+      transform: scale(1.12) !important;
+    }
+    .eq-photo-wrap img {
+      display: block;
+      width: clamp(120px, 16vw, 175px);
+      height: clamp(120px, 16vw, 175px);
+      object-fit: cover;
+      border-radius: 50%;
+      filter: drop-shadow(0 0 6px rgba(228,106,160,0.3));
+      pointer-events: none;
+    }
+    .eq-person {
+      transition: background 0.6s ease;
+      border-radius: 12px;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+    .eq-person--highlight {
+      background: rgba(228,106,160,0.08);
+    }
+
+    /* Flutuação */
+    @keyframes eqFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-16px); }
+    }
+    .eq-photo-wrap:nth-child(1) img { animation: eqFloat 4.2s ease-in-out infinite; }
+    .eq-photo-wrap:nth-child(2) img { animation: eqFloat 3.6s ease-in-out infinite 0.5s; }
+    .eq-photo-wrap:nth-child(3) img { animation: eqFloat 4.8s ease-in-out infinite 1s; }
+    .eq-photo-wrap:nth-child(4) img { animation: eqFloat 3.9s ease-in-out infinite 1.5s; }
+
+    /* ═══ Info da equipe ═══ */
+    .eq-info {
+      padding: 0 0 clamp(4rem,8vw,7rem);
+    }
+    .eq-info .container { max-width: 760px; }
+    .eq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .eq-person {
+      display: flex;
+      align-items: center;
+      gap: clamp(1.25rem, 3vw, 2rem);
+      padding: clamp(1.5rem, 3vw, 2rem) 0;
+      border-bottom: 1px solid rgba(177,78,255,0.1);
+    }
+    .eq-person:last-child { border-bottom: none; }
+
+    .eq-avatar-wrap {
+      position: relative;
+      flex-shrink: 0;
+      width: clamp(72px, 10vw, 96px);
+      height: clamp(72px, 10vw, 96px);
+    }
+    .eq-avatar-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -14px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(228,106,160,0.35) 0%, rgba(177,78,255,0.12) 45%, transparent 70%);
+      filter: blur(14px);
+      z-index: 0;
+      animation: avatarGlow 3.5s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+    @keyframes avatarGlow {
+      from { opacity: 0.35; transform: scale(0.94); }
+      to   { opacity: 0.8;  transform: scale(1.06); }
+    }
+    .eq-avatar {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: none;
+      filter: drop-shadow(0 0 5px rgba(228,106,160,0.25));
+      transition: filter 0.3s ease;
+      display: block;
+    }
+    .eq-person:hover .eq-avatar {
+      filter: drop-shadow(0 0 8px rgba(228,106,160,0.5));
+    }
+
+    .eq-details { flex: 1; }
+    .eq-name {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 0.15rem;
+    }
+    .eq-role {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .eq-bio {
+      font-size: 0.88rem;
+      color: var(--text-light-secondary);
+      line-height: 1.7;
+    }
+    .eq-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 0.5rem;
+      padding: 0.25rem 0.7rem;
+      background: rgba(196,162,78,0.1);
+      border: 1px solid var(--gold-line);
+      border-radius: 100px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    /* ═══ Stack de avatares — mobile only ═══ */
+    .eq-stack {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 0 2.5rem;
+    }
+    .eq-stack-img {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: none;
+      outline: none;
+      margin-left: -24px;
+      filter: drop-shadow(0 0 6px rgba(228,106,160,0.35));
+      position: relative;
+      transition: transform 0.35s cubic-bezier(0.34,1.2,0.64,1), z-index 0s;
+      box-shadow:
+        0 0 8px 2px rgba(228,106,160,0.3),
+        0 0 22px 6px rgba(228,106,160,0.15),
+        0 6px 20px rgba(0,0,0,0.5);
+    }
+    @keyframes stackNeon {
+      from { box-shadow: 0 0 8px 2px rgba(228,106,160,0.25), 0 0 22px 6px rgba(228,106,160,0.1),  0 6px 20px rgba(0,0,0,0.5); }
+      to   { box-shadow: 0 0 12px 4px rgba(228,106,160,0.45), 0 0 32px 10px rgba(228,106,160,0.2), 0 6px 22px rgba(0,0,0,0.5); }
+    }
+    .eq-stack-img:first-child { margin-left: 0; }
+    .eq-stack-img:active { transform: translateY(-12px) scale(1.12); z-index: 10 !important; animation-play-state: paused; }
+    .eq-stack-img { cursor: pointer; }
+
+    @keyframes eqStackFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-9px); }
+    }
+    .eq-stack-img:nth-child(1) { animation: eqStackFloat 4.0s ease-in-out infinite,        stackNeon 3.2s ease-in-out infinite alternate; }
+    .eq-stack-img:nth-child(2) { animation: eqStackFloat 3.5s ease-in-out infinite 0.45s, stackNeon 3.2s ease-in-out 0.8s infinite alternate; }
+    .eq-stack-img:nth-child(3) { animation: eqStackFloat 4.3s ease-in-out infinite 0.9s,  stackNeon 3.2s ease-in-out 1.6s infinite alternate; }
+    .eq-stack-img:nth-child(4) { animation: eqStackFloat 3.8s ease-in-out infinite 1.3s,  stackNeon 3.2s ease-in-out 2.4s infinite alternate; }
+
+    .eq-stack-hint { display: none; }
+
+    /* ═══ Mobile ═══ */
+    @media (max-width: 640px) {
+      .eq-gallery { display: none; }
+      .eq-gallery-hint { display: none; }
+      .eq-stack   { display: flex; }
+      .eq-stack-hint {
+        display: block;
+        text-align: center;
+        font-size: 0.78rem;
+        color: rgba(237,230,247,0.55);
+        letter-spacing: 0.06em;
+        margin-top: -0.5rem;
+        margin-bottom: 1rem;
+      }
+      .eq-person {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <a href="index.html" class="header__logo">
+      <img src="assets/img/logo-explosion.png" alt="Salão Explosion">
+    </a>
+    <nav class="header__nav">
+      <a href="servicos.html">Serviços</a>
+      <a href="massagens/index.html">Massagens</a>
+      <a href="equipe.html">Equipe</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="playlist.html">Playlist</a>
+      <a href="#" class="btn-cta" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion.">Agende seu horário</a>
+    </nav>
+    <div class="header__toggle" aria-label="Menu"><span></span><span></span><span></span></div>
+  </header>
+
+  <div class="mobile-menu">
+    <a href="servicos.html">Serviços</a>
+    <a href="massagens/index.html">Massagens</a>
+    <a href="equipe.html">Equipe</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="contato.html">Contato</a>
+    <a href="playlist.html">Playlist</a>
+    <a href="#" class="btn-cta btn-cta-solid" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion." style="margin-top:1rem;">Agendar pelo WhatsApp</a>
+  </div>
+
+  <!-- Cabeçalho -->
+  <section class="eq-header">
+    <span class="label reveal">Salão Explosion</span>
+    <h1 class="reveal">Quem cuida de você</h1>
+  </section>
+
+  <!-- Avatares empilhados — mobile only -->
+  <div class="eq-stack reveal">
+    <img src="assets/img/opt/marly-1.jpg"  alt="Marly"   class="eq-stack-img" style="z-index:4; object-position:center 10%;">
+    <img src="assets/img/opt/hellen.jpg"   alt="Hellen"  class="eq-stack-img" style="z-index:3;">
+    <img src="assets/img/opt/emilia.jpg"   alt="Emília"  class="eq-stack-img" style="z-index:2;">
+    <img src="assets/img/opt/paloma.jpg"   alt="Paloma"  class="eq-stack-img" style="z-index:1;">
+  </div>
+  <p class="eq-stack-hint reveal">Toque em uma foto para destacar a profissional</p>
+
+  <!-- Galeria de fotos espalhadas — desktop only -->
+  <div class="eq-gallery reveal" id="eqGallery">
+    <div class="eq-photo-wrap" data-x="-290" data-y="-30" data-rot="-5" style="z-index:50;">
+      <img src="assets/img/opt/marly-1.jpg" alt="Marly" draggable="false">
+    </div>
+    <div class="eq-photo-wrap" data-x="-100" data-y="40" data-rot="4" style="z-index:40;">
+      <img src="assets/img/opt/hellen.jpg" alt="Hellen" draggable="false">
+    </div>
+    <div class="eq-photo-wrap" data-x="100" data-y="-25" data-rot="-3" style="z-index:30;">
+      <img src="assets/img/opt/emilia.jpg" alt="Emília" draggable="false">
+    </div>
+    <div class="eq-photo-wrap" data-x="290" data-y="35" data-rot="6" style="z-index:20;">
+      <img src="assets/img/opt/paloma.jpg" alt="Paloma" draggable="false">
+    </div>
+  </div>
+
+  <p class="eq-gallery-hint">Clique em uma foto para conhecer a profissional</p>
+
+  <!-- Info de cada pessoa -->
+  <section class="eq-info">
+    <div class="container">
+      <div class="eq-list">
+
+        <div class="eq-person reveal">
+          <div class="eq-avatar-wrap"><img src="assets/img/opt/marly-1.jpg" alt="Marly" class="eq-avatar" style="object-position:center 10%;"></div>
+          <div class="eq-details">
+            <h2 class="eq-name">Marly</h2>
+            <p class="eq-role">Fundadora · Cabeleireira</p>
+            <p class="eq-bio">Inicialmente especializada em cabelos lisos, sua jornada de transição capilar a levou a se especializar em todos os tipos de curvatura — cacheados, ondulados e crespos. Especialista em coloridos vibrantes e cortes personalizados, no Explosion você encontrará um espaço acolhedor onde a beleza única de cada cliente é realçada com carinho e excelência.</p>
+          </div>
+        </div>
+
+        <div class="eq-person reveal">
+          <div class="eq-avatar-wrap"><img src="assets/img/opt/hellen.jpg" alt="Hellen" class="eq-avatar" style="object-position:center 20%;"></div>
+          <div class="eq-details">
+            <h2 class="eq-name">Hellen</h2>
+            <p class="eq-role">Coordenação & Marketing</p>
+            <p class="eq-bio">A força que move o Explosion nos bastidores e na frente das câmeras. Cuida do financeiro, da estrutura operacional e de toda a engrenagem que faz o salão funcionar. Mas não fica só nos bastidores — grava, edita, pensa na estratégia de marketing e cria os conteúdos que conectam o Explosion às clientes. É quem garante que tudo aconteça.</p>
+          </div>
+        </div>
+
+        <div class="eq-person reveal">
+          <div class="eq-avatar-wrap"><img src="assets/img/opt/emilia.jpg" alt="Emília" class="eq-avatar" style="object-position:center 20%;"></div>
+          <div class="eq-details">
+            <h2 class="eq-name">Emília</h2>
+            <p class="eq-role">Massoterapeuta</p>
+            <p class="eq-bio">Especialista em diversas técnicas de massagem — desde relaxante até modeladora. Ajuda a aliviar tensões, melhorar a circulação e renovar as energias. Sempre atenta às necessidades de cada cliente, garantindo uma experiência única e personalizada. Seu trabalho vai muito além do toque: é um verdadeiro cuidado para o corpo e a mente.</p>
+          </div>
+        </div>
+
+        <div class="eq-person reveal">
+          <div class="eq-avatar-wrap"><img src="assets/img/opt/paloma.jpg" alt="Paloma" class="eq-avatar" style="object-position:center 15%;"></div>
+          <div class="eq-details">
+            <h2 class="eq-name">Paloma</h2>
+            <p class="eq-role">Suporte & Desenvolvimento</p>
+            <p class="eq-bio">Desenvolvedora do site e da identidade digital do Explosion. Cuida da precificação dos serviços e transforma ideias em experiências visuais que conectam o salão às clientes — com olhar estratégico, sensibilidade estética e atenção a cada detalhe. Nutricionista de formação.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-final" id="contato">
+    <div class="container">
+      <div class="cta-final__content reveal">
+        <h2 class="cta-final__title">Pronta para começar?</h2>
+        <p class="cta-final__text">Agende pelo WhatsApp e venha sentir a diferença.</p>
+        <a href="#" class="btn-cta btn-cta-solid btn-cta-lg" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion.">Falar pelo WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <img src="assets/img/logo-explosion.png" alt="Salão Explosion" class="footer__logo-img">
+          <p class="footer__desc">Venha sentir<br>Explosion<br>em seu coração.</p>
+        </div>
+        <div>
+          <p class="footer__heading">Navegação</p>
+          <div class="footer__links">
+            <a href="index.html">Início</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="massagens/index.html">Massagens</a>
+            <a href="produtos.html">Produtos</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Contato</p>
+          <div class="footer__links">
+            <a href="tel:+5511986542632">(11) 98654-2632</a>
+            <a href="https://wa.me/5511986542632" target="_blank">WhatsApp</a>
+            <a>Eldorado · Diadema</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Redes Sociais</p>
+          <div class="footer__social">
+            <a href="https://instagram.com/salaoexplosion" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://tiktok.com/@salaoexplosion" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13a8.28 8.28 0 005.58 2.15v-3.44a4.85 4.85 0 01-3.77-1.25V6.69h3.77z"/></svg>
+            </a>
+            <a href="https://facebook.com/salaoexplosion/" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Salão Explosion. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="whatsapp-float" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion." aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+  <script>
+  // Galeria de fotos espalhadas — animação + drag + clique
+  (function() {
+    var wraps = document.querySelectorAll('.eq-photo-wrap');
+    var list  = document.querySelector('.eq-list');
+    if (!wraps.length) return;
+
+    var isMobile = window.innerWidth <= 640;
+
+    wraps.forEach(function(el, i) {
+      var x = parseInt(el.dataset.x) * (isMobile ? 0.3 : 1);
+      var y = parseInt(el.dataset.y);
+      var rot = parseInt(el.dataset.rot);
+      el.style.transform = 'translate(-50%, -50%) rotate(0deg) scale(0.8)';
+      el.style.opacity = '0';
+      setTimeout(function() {
+        el.style.opacity = '1';
+        el.style.transform = 'translate(calc(-50% + ' + x + 'px), calc(-50% + ' + y + 'px)) rotate(' + rot + 'deg) scale(1)';
+      }, 600 + i * 180);
+    });
+
+    var dragging = null, startX, startY, hasDragged = false;
+
+    function onDown(e) {
+      dragging = e.currentTarget;
+      var pt = e.touches ? e.touches[0] : e;
+      startX = pt.clientX;
+      startY = pt.clientY;
+      hasDragged = false;
+      dragging.style.transition = 'none';
+      dragging.style.zIndex = 200;
+      if (e.touches) e.preventDefault();
+    }
+
+    function onMove(e) {
+      if (!dragging) return;
+      var pt = e.touches ? e.touches[0] : e;
+      var dx = pt.clientX - startX;
+      var dy = pt.clientY - startY;
+      if (Math.abs(dx) > 5 || Math.abs(dy) > 5) hasDragged = true;
+      var x = parseInt(dragging.dataset.x) * (isMobile ? 0.3 : 1);
+      var y = parseInt(dragging.dataset.y);
+      var rot = parseInt(dragging.dataset.rot);
+      dragging.style.transform = 'translate(calc(-50% + ' + (x + dx) + 'px), calc(-50% + ' + (y + dy) + 'px)) rotate(' + (rot + dx * 0.04) + 'deg) scale(1.1)';
+      if (e.touches) e.preventDefault();
+    }
+
+    function onUp(e) {
+      if (!dragging) return;
+      var el = dragging;
+      var wasClick = !hasDragged;
+      dragging = null;
+      var x = parseInt(el.dataset.x) * (isMobile ? 0.3 : 1);
+      var y = parseInt(el.dataset.y);
+      var rot = parseInt(el.dataset.rot);
+      el.style.transition = 'transform 0.5s cubic-bezier(0.34,1.2,0.64,1)';
+      el.style.transform = 'translate(calc(-50% + ' + x + 'px), calc(-50% + ' + y + 'px)) rotate(' + rot + 'deg) scale(1)';
+
+      if (wasClick && list) {
+        var img = el.querySelector('img');
+        if (!img) return;
+        var name = img.getAttribute('alt');
+        var match = null;
+        list.querySelectorAll('.eq-person').forEach(function(p) {
+          var av = p.querySelector('.eq-avatar');
+          if (av && av.getAttribute('alt') === name) match = p;
+        });
+        if (!match) return;
+        list.prepend(match);
+        list.querySelectorAll('.eq-person').forEach(function(p) { p.classList.remove('eq-person--highlight'); });
+        match.classList.add('eq-person--highlight');
+        setTimeout(function() { match.classList.remove('eq-person--highlight'); }, 1000);
+      }
+    }
+
+    wraps.forEach(function(el) {
+      el.addEventListener('mousedown', onDown);
+      el.addEventListener('touchstart', onDown, { passive: false });
+    });
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('touchmove', onMove, { passive: false });
+    document.addEventListener('mouseup', onUp);
+    document.addEventListener('touchend', onUp);
+  })();
+
+  // Mobile stack click — move person to first place
+  (function() {
+    var stack = document.querySelector('.eq-stack');
+    var list  = document.querySelector('.eq-list');
+    if (!stack || !list) return;
+    stack.addEventListener('click', function(e) {
+      var img = e.target.closest('.eq-stack-img');
+      if (!img) return;
+      var name = img.getAttribute('alt');
+      stack.prepend(img);
+      list.querySelectorAll('.eq-person').forEach(function(person) {
+        var av = person.querySelector('.eq-avatar');
+        if (av && av.getAttribute('alt') === name) list.prepend(person);
+      });
+    });
+  })();
+  </script>
+</body>
+</html>

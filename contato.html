@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Fale com o Salão Explosion — WhatsApp (11) 98654-2632 — Eldorado, Diadema/SP. Agendamento somente com hora marcada.">
+  <meta name="theme-color" content="#0a0011">
+  <title>Contato — Salão Explosion</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contato — Salão Explosion">
+  <meta property="og:description" content="Fale com o Salão Explosion. WhatsApp (11) 98654-2632. Agendamento só com hora marcada — Eldorado, Diadema/SP.">
+  <meta property="og:image" content="https://salaoexplosion.com.br/assets/img/hero.jpg">
+  <meta property="og:url" content="https://salaoexplosion.com.br/contato.html">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://salaoexplosion.com.br/assets/img/hero.jpg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+  <style>
+    body { background: var(--bg-deep); overflow-x: hidden; }
+
+    /* ── Fundo animado ── */
+    .contato-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .contato-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.55;
+    }
+    .contato-blob--1 {
+      width: 600px; height: 500px;
+      top: -10%; left: -15%;
+      background: radial-gradient(ellipse, #b14eff 0%, transparent 70%);
+      animation: blobFloat1 22s ease-in-out infinite;
+    }
+    .contato-blob--2 {
+      width: 500px; height: 400px;
+      bottom: -5%; right: -10%;
+      background: radial-gradient(ellipse, #e46aa0 0%, transparent 70%);
+      animation: blobFloat2 28s ease-in-out infinite;
+    }
+    .contato-blob--3 {
+      width: 350px; height: 350px;
+      top: 40%; left: 55%;
+      background: radial-gradient(ellipse, #5b21b6 0%, transparent 70%);
+      opacity: 0.35;
+      animation: blobFloat1 18s ease-in-out infinite reverse;
+    }
+    @keyframes blobFloat1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(-30px, 20px) scale(1.05); }
+      66% { transform: translate(20px, -15px) scale(0.97); }
+    }
+    @keyframes blobFloat2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(25px, -20px) scale(1.04); }
+      66% { transform: translate(-15px, 18px) scale(0.98); }
+    }
+
+    /* ── Layout ── */
+    .contato-page {
+      position: relative;
+      z-index: 1;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: calc(var(--header-height) + 3rem) clamp(1rem, 4vw, 3rem) clamp(3rem, 6vw, 5rem);
+    }
+
+    .contato-inner {
+      width: 100%;
+      max-width: 680px;
+      text-align: center;
+    }
+
+    .contato-inner .label {
+      display: block;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .contato-inner h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 600;
+      color: var(--text-light);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .contato-inner > p {
+      color: var(--text-light-secondary);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      max-width: 44ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── CTA principal WhatsApp ── */
+    .contato-wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 1rem 2rem;
+      border-radius: 100px;
+      margin-bottom: 2.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 8px 32px rgba(37, 211, 102, 0.35);
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+    }
+    .contato-wa-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(37, 211, 102, 0.5);
+    }
+    .contato-wa-btn svg { width: 22px; height: 22px; fill: #fff; flex-shrink: 0; }
+
+    /* ── Cards de info ── */
+    .contato-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      text-align: left;
+    }
+
+    .contato-card {
+      background: rgba(28, 15, 48, 0.65);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(177, 78, 255, 0.2);
+      border-radius: 20px;
+      padding: 1.6rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .contato-card:hover {
+      border-color: rgba(177, 78, 255, 0.45);
+      transform: translateY(-2px);
+    }
+    .contato-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--accent), var(--pink));
+      border-radius: 2px 0 0 2px;
+    }
+
+    .contato-card__icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: rgba(177, 78, 255, 0.15);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 0.85rem;
+      color: var(--accent);
+    }
+    .contato-card__icon svg { width: 18px; height: 18px; }
+
+    .contato-card__label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .contato-card__value {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-light);
+      line-height: 1.4;
+    }
+
+    .contato-card__sub {
+      font-size: 0.82rem;
+      color: var(--text-light-secondary);
+      margin-top: 0.25rem;
+      line-height: 1.5;
+    }
+
+    /* ── Redes sociais ── */
+    .contato-socials {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 0;
+      flex-wrap: wrap;
+    }
+
+    .contato-social {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid rgba(177,78,255,0.25);
+      border-radius: 100px;
+      color: var(--text-light-secondary);
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      text-decoration: none;
+    }
+    .contato-social:hover {
+      border-color: var(--accent);
+      color: var(--text-light);
+      background: rgba(177, 78, 255, 0.08);
+    }
+    .contato-social svg { width: 15px; height: 15px; }
+
+    /* ── Divisor ── */
+    .contato-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.75rem 0;
+      color: var(--text-light-secondary);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .contato-divider::before,
+    .contato-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(177, 78, 255, 0.15);
+    }
+
+    @media (max-width: 480px) {
+      .contato-cards { grid-template-columns: 1fr; }
+    }
+
+    /* Sparkles — CSS no style.css global */
+
+    /* Typewriter */
+    .typewriter-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      min-height: 1.2em;
+      flex-wrap: wrap;
+    }
+    .typewriter-cursor {
+      display: inline-block;
+      width: 4px;
+      height: 0.85em;
+      background: linear-gradient(135deg, var(--accent), var(--pink));
+      border-radius: 2px;
+      animation: blinkCursor 0.8s infinite;
+      margin-left: 2px;
+      vertical-align: middle;
+    }
+    .typewriter .tw-highlight {
+      background: linear-gradient(135deg, var(--accent), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    @keyframes blinkCursor {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fundo animado -->
+  <div class="contato-bg" aria-hidden="true">
+    <div class="contato-blob contato-blob--1"></div>
+    <div class="contato-blob contato-blob--2"></div>
+    <div class="contato-blob contato-blob--3"></div>
+  </div>
+
+  <header class="header" id="header">
+    <a href="index.html" class="header__logo">
+      <img src="assets/img/logo-explosion.png" alt="Salão Explosion">
+    </a>
+    <nav class="header__nav">
+      <a href="servicos.html">Serviços</a>
+      <a href="massagens/index.html">Massagens</a>
+      <a href="equipe.html">Equipe</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="playlist.html">Playlist</a>
+      <a href="#" class="btn-cta" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion.">Agende seu horário</a>
+    </nav>
+    <div class="header__toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <a href="servicos.html">Serviços</a>
+    <a href="massagens/index.html">Massagens</a>
+    <a href="equipe.html">Equipe</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="contato.html">Contato</a>
+    <a href="playlist.html">Playlist</a>
+    <a href="#" class="btn-cta btn-cta-solid" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion." style="margin-top:1rem;">Agendar pelo WhatsApp</a>
+  </div>
+
+  <main class="contato-page">
+    <div class="contato-inner">
+
+      <span class="label reveal">Fale conosco</span>
+      <h1 class="reveal sparkle-wrap typewriter-title">
+        <span class="typewriter" id="typewriter"></span><span class="typewriter-cursor"></span>
+      </h1>
+      <p class="reveal">A forma mais rápida de agendar é pelo WhatsApp.</p>
+
+      <!-- CTA WhatsApp principal -->
+      <a href="#" class="contato-wa-btn reveal" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion.">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+
+      <!-- Cards de informação -->
+      <div class="contato-cards">
+        <div class="contato-card reveal">
+          <div class="contato-card__icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div class="contato-card__label">WhatsApp</div>
+          <div class="contato-card__value">(11) 98654-2632</div>
+          <div class="contato-card__sub">Principal canal de contato e agendamentos</div>
+        </div>
+        <div class="contato-card reveal">
+          <div class="contato-card__icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div class="contato-card__label">Localização</div>
+          <div class="contato-card__value">Eldorado, Diadema</div>
+          <div class="contato-card__sub">Diadema · SP</div>
+        </div>
+        <div class="contato-card reveal">
+          <div class="contato-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="contato-card__label">Agendamento</div>
+          <div class="contato-card__value">Somente com hora marcada</div>
+          <div class="contato-card__sub">Para seu conforto e atendimento exclusivo</div>
+        </div>
+        <div class="contato-card reveal">
+          <div class="contato-card__icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </div>
+          <div class="contato-card__label">Instagram</div>
+          <div class="contato-card__value">@salaoexplosion</div>
+          <div class="contato-card__sub">Acompanhe novidades e resultados</div>
+        </div>
+      </div>
+
+      <div class="contato-divider reveal">ou siga nas redes</div>
+
+      <!-- Redes sociais -->
+      <div class="contato-socials reveal">
+        <a href="https://www.instagram.com/salaoexplosion" target="_blank" rel="noopener" class="contato-social">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.tiktok.com/@salaoexplosion" target="_blank" rel="noopener" class="contato-social">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.2 8.2 0 004.79 1.53V6.77a4.85 4.85 0 01-1.02-.08z"/></svg>
+          TikTok
+        </a>
+        <a href="https://www.facebook.com/salaoexplosion" target="_blank" rel="noopener" class="contato-social">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <a href="#" class="whatsapp-float" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion." aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+  <script src="js/sparkles.js"></script>
+  <script>
+  (function() {
+    var el = document.getElementById('typewriter');
+    if (!el) return;
+    var words = [
+      { text: 'Entre', cls: '' },
+      { text: 'em', cls: '' },
+      { text: 'contato', cls: 'tw-highlight' }
+    ];
+    var wordIdx = 0, charIdx = 0;
+    function type() {
+      if (wordIdx >= words.length) return;
+      var w = words[wordIdx];
+      if (charIdx === 0) {
+        var span = document.createElement('span');
+        if (w.cls) span.className = w.cls;
+        el.appendChild(span);
+      }
+      var currentSpan = el.lastChild;
+      if (charIdx < w.text.length) {
+        currentSpan.textContent += w.text.charAt(charIdx);
+        charIdx++;
+        setTimeout(type, 80);
+      } else {
+        el.appendChild(document.createTextNode('\u00A0'));
+        wordIdx++;
+        charIdx = 0;
+        setTimeout(type, 180);
+      }
+    }
+    setTimeout(type, 400);
+  })();
+  </script>
+</body>
+</html>
