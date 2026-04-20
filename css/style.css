@@ -908,6 +908,24 @@ section {
   animation: pulse-line 2s ease-in-out infinite;
 }
 
+.hero__scroll-hint {
+  display: none;
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--text-light);
+  opacity: 0.45;
+  margin: 0.6rem 0 0;
+  font-weight: 400;
+  animation: pulse-hint 2.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse-hint {
+  0%, 100% { opacity: 0.35; transform: translateY(0); }
+  50% { opacity: 0.6; transform: translateY(2px); }
+}
+
 @keyframes pulse-line {
   0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
   50% { opacity: 1; transform: scaleY(1); }
@@ -4788,6 +4806,10 @@ section {
   .hero__strip-img:nth-child(4) { animation-delay: 0.3s; }
   .hero__strip-img:nth-child(5) { animation-delay: 1.7s; }
   .hero__strip-img:nth-child(6) { animation-delay: 0.9s; }
+
+  .hero__scroll-hint {
+    display: block;
+  }
 
   .hero__title--rotate {
     font-size: clamp(2rem, 8vw, 3.2rem);
