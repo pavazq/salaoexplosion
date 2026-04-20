@@ -922,8 +922,8 @@ section {
 }
 
 @keyframes pulse-hint {
-  0%, 100% { opacity: 0.35; transform: translateY(0); }
-  50% { opacity: 0.6; transform: translateY(2px); }
+  0%, 100% { opacity: 0.35; letter-spacing: 0.08em; }
+  50% { opacity: 0.6; letter-spacing: 0.12em; }
 }
 
 @keyframes pulse-line {
