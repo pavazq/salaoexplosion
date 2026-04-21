@@ -5586,6 +5586,8 @@ a.massage-card {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  align-items: center;
+  text-align: center;
 }
 
 /* Badge clicável que leva ao Google */
@@ -5639,7 +5641,7 @@ a.massage-card {
 .google-reviews__count {
   font-size: 0.82rem;
   color: var(--text-light-secondary);
-  text-align: left;
+  text-align: center;
 }
 
 .google-reviews__only-positive {
@@ -5761,6 +5763,7 @@ a.massage-card {
   font-size: 0.875rem;
   color: var(--text-light);
   line-height: 1.65;
+  text-align: center;
 }
 
 .gr-card__author {
@@ -5769,6 +5772,7 @@ a.massage-card {
   letter-spacing: 0.05em;
   font-weight: 500;
   font-family: var(--font-body);
+  text-align: center;
 }
 
 /* Indicador de scroll */

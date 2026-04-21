@@ -8,11 +8,11 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Como se preparar para o seu corte — Salão Explosion">
   <meta property="og:description" content="Dicas essenciais para garantir o melhor resultado no seu corte de cabelos crespos e cacheados. Venha com o cabelo finalizado, seco e solto!">
-  <meta property="og:image" content="https://salaoexplosion.com.br/assets/img/opt/IMG_1239.jpg">
+  <meta property="og:image" content="https://salaoexplosion.com.br/assets/img/og4/pre-corte.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://salaoexplosion.com.br/assets/img/opt/IMG_1239.jpg">
+  <meta name="twitter:image" content="https://salaoexplosion.com.br/assets/img/og4/pre-corte.jpg">
   <title>Orientação Pré-Corte — Salão Explosion</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
@@ -94,7 +94,7 @@
       margin-bottom: 0.4rem;
     }
     .ori-rule p {
-      font-size: 1.05rem;
+      font-size: clamp(1.05rem, 2.2vw, 1.15rem);
       color: var(--text-light-secondary);
       line-height: 1.65;
     }
@@ -124,7 +124,7 @@
     }
     .ori-porque h3 {
       font-family: var(--font-display);
-      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      font-size: clamp(1.35rem, 2.8vw, 1.6rem);
       font-weight: 700;
       color: var(--text-light);
       margin-bottom: 0.5rem;
@@ -266,11 +266,24 @@
       margin: 0 auto 2rem;
     }
 
+    /* hint abaixo do strip de fotos */
+    .hero__strip-hint {
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(237,230,247,0.42);
+      letter-spacing: 0.08em;
+      margin: 0.5rem 0 1rem;
+    }
+
     @media (max-width: 600px) {
       .ori-rules { grid-template-columns: 1fr; }
       .ori-fins-grid { grid-template-columns: 1fr; }
       .ori-valor { flex-direction: column; text-align: center; }
       .ori-porque { flex-direction: column; text-align: center; align-items: center; }
+      .hero-subtitle-ori {
+        font-size: clamp(1.5rem, 6vw, 2rem) !important;
+      }
+      .ori-rule p { font-size: 1.1rem; }
     }
 
     /* Mobile: 4 fotos nos cantos (topo e base) — texto usa largura total */
@@ -309,6 +322,7 @@
       <div class="hero__title-wrap">
         <span class="label reveal" style="color:var(--accent);display:block;margin-bottom:0.75rem;">Salão Explosion · Dica importante</span>
         <h1 class="reveal sparkle-wrap" style="font-family:var(--font-display);font-size:clamp(2.8rem,5.5vw,5.5rem);font-weight:700;color:var(--text-light);line-height:1.05;">Como se preparar para o <span class="fh-rotate" id="fancyRotate" data-texts="CORTE|seu momento|a transformação|o novo visual">CORTE</span> aqui no salão!</h1>
+        <p class="hero-subtitle-ori reveal" style="font-family:var(--font-display);font-size:clamp(1.45rem,3vw,2rem);font-weight:700;color:var(--text-light);margin-top:1.1rem;line-height:1.2;opacity:0.92;">Venha com o cabelo finalizado, seco e solto</p>
       </div>
     </div>
   </section>
@@ -317,7 +331,6 @@
 
     <!-- Intro -->
     <div class="ori-intro reveal">
-      <h2>Venha com o cabelo finalizado, seco e solto</h2>
       <p>No intuito de garantir o melhor resultado possível para o corte de cabelos crespos e cacheados, gostaríamos de compartilhar uma orientação importante para suas visitas ao salão.</p>
     </div>
 
@@ -326,7 +339,7 @@
       <div class="ori-rule reveal">
         <span class="ori-rule__num">01</span>
         <h3>Seco</h3>
-        <p>Realizamos o corte com os fios já secos — isso nos permite compreender a forma e o comprimento real do seu cabelo.</p>
+        <p>Realizamos o corte com os fios já secos. Assim compreendemos a forma e o comprimento real do seu cabelo.</p>
       </div>
       <div class="ori-rule reveal reveal-delay-1">
         <span class="ori-rule__num">02</span>
@@ -355,8 +368,8 @@
       <div class="ori-valor__body">
         <h3>Não conseguiu vir com o cabelo pronto?</h3>
         <p>Entendemos que nem sempre é possível vir ao salão com os cabelos prontos. Caso não consiga vir conforme a orientação, oferecemos finalizar o seu cabelo antes do corte por um valor adicional.</p>
+        <span class="ori-preco">R$ 39,00</span>
         <p style="font-size:0.85rem;color:var(--text-light-secondary);margin-top:0.5rem;">PS: Fique tranquila — após o corte você já tem uma finalização inclusa e vai sair do salão com os cabelos maravilhosos!</p>
-        <span class="ori-preco">39</span>
       </div>
     </div>
 
@@ -375,6 +388,7 @@
     <img src="../assets/img/hero-opt/IMG_4319.jpg" alt="" class="hero__strip-img" loading="lazy">
     <img src="../assets/img/opt/IMG_7627.jpg"      alt="" class="hero__strip-img" loading="lazy">
   </div>
+  <p class="hero__strip-hint" aria-hidden="true">passe o dedo para arrastar</p>
 
   <a href="#" class="whatsapp-float" data-whatsapp="Olá! Gostaria de agendar um horário no Salão Explosion." aria-label="WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>

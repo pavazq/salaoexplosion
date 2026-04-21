@@ -5,7 +5,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // --- BOTÃO VOLTAR FLUTUANTE ---
-  if (document.body.getAttribute('data-page') !== 'home') {
+  const pathNorm = window.location.pathname.replace(/\\/g, '/').replace(/\/index\.html$/i, '/');
+  const pagesNoBack = [
+    '/orientacao-pre-corte/',
+    '/orientacao-massagem/',
+    '/orientacao-massagem-pos/',
+    '/guia-sobrevivencia-capilar/',
+    '/landing/',
+  ];
+  if (document.body.getAttribute('data-page') !== 'home' && !pagesNoBack.includes(pathNorm)) {
     const inSubdir = window.location.pathname.replace(/\\/g, '/').split('/').filter(Boolean).length > 1;
     const fallback  = inSubdir ? '../' : 'index.html';
     const backBtn = document.createElement('button');

@@ -1,0 +1,12 @@
+ErrorDocument 404 /404.html
+
+RewriteEngine On
+
+# Redireciona www → sem www (resolve o erro de certificado no HTTP)
+RewriteCond %{HTTP_HOST} ^www\.salaoexplosion\.com\.br$ [NC]
+RewriteRule ^ https://salaoexplosion.com.br%{REQUEST_URI} [R=301,L]
+
+# Força HTTPS no domínio sem www
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^salaoexplosion\.com\.br$ [NC]
+RewriteRule ^ https://salaoexplosion.com.br%{REQUEST_URI} [R=301,L]
