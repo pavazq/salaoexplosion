@@ -3634,11 +3634,12 @@ section {
 .proc-hero__bg {
   position: absolute;
   inset: 0;
+  background-image: linear-gradient(135deg, #f3e8ff 0%, #d8b4fe 50%, #a855f7 100%) !important;
   background-size: cover;
   background-position: center;
-  opacity: 0.3;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 55%, transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 55%, transparent 100%);
+  opacity: 1;
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 
 /* Pseudo-elementos removidos — mask-image faz a transição suave sem camada opaca */
