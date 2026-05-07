@@ -3638,8 +3638,8 @@ section {
   background-size: cover;
   background-position: center;
   opacity: 1;
-  -webkit-mask-image: none;
-  mask-image: none;
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
 }
 
 /* Pseudo-elementos removidos — mask-image faz a transição suave sem camada opaca */
