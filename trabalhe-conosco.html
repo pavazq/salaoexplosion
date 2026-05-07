@@ -14,7 +14,7 @@
   <meta property="og:locale" content="pt_BR">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://salaoexplosion.com.br/assets/img/og-image.png">
-  <link rel="stylesheet" href="css/style.css?v=20260507c">
+  <link rel="stylesheet" href="css/style.css?v=20260507d">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/favicon.png">
   <style>
@@ -63,25 +63,30 @@
     .tc-page {
       position: relative; z-index: 1;
       min-height: 100dvh;
-      padding: calc(var(--header-height) + 3rem) clamp(1rem, 4vw, 3rem) clamp(3rem, 6vw, 5rem);
+      padding: calc(var(--header-height) + 3rem) clamp(1.25rem, 4vw, 3rem) clamp(3rem, 6vw, 5rem);
     }
 
     .tc-container {
       width: 100%;
-      max-width: 760px;
+      max-width: 1180px;
       margin: 0 auto;
     }
 
     /* ── Hero ── */
-    .tc-hero { text-align: center; margin-bottom: 4rem; }
-    .tc-hero .label { display: block; color: var(--accent); margin-bottom: 0.75rem; }
+    .tc-hero { text-align: center; margin-bottom: clamp(3rem, 6vw, 5rem); }
+    .tc-hero .label {
+      display: block;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      font-size: 0.85rem;
+    }
     .tc-hero h1 {
       font-family: var(--font-display);
-      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
       font-weight: 600;
       color: var(--text-light);
-      line-height: 1.15;
-      margin-bottom: 1rem;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
     }
     .tc-hero h1 .it {
       font-style: italic; font-weight: 400;
@@ -92,36 +97,40 @@
     }
     .tc-hero p {
       color: var(--text-light-secondary);
-      font-size: 1.05rem; line-height: 1.8;
-      max-width: 50ch;
+      font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+      line-height: 1.7;
+      max-width: 56ch;
       margin: 0 auto;
     }
 
     /* ── Section title ── */
-    .tc-section { margin-bottom: 3.5rem; }
+    .tc-section { margin-bottom: clamp(3rem, 5vw, 4.5rem); }
     .tc-section__title {
       font-family: var(--font-display);
-      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
       font-weight: 600;
       color: var(--text-light);
       text-align: center;
-      margin-bottom: 0.5rem;
-    }
-    .tc-section__sub {
-      color: var(--text-light-secondary);
-      font-size: 0.95rem;
-      text-align: center;
       margin-bottom: 2rem;
-      max-width: 50ch;
-      margin-left: auto;
-      margin-right: auto;
+      line-height: 1.2;
     }
 
-    /* ── Cards de perfil ── */
+    /* ── Cards (Quem buscamos / Vagas) ── */
     .tc-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .tc-cards--vagas {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (max-width: 900px) {
+      .tc-cards { grid-template-columns: repeat(2, 1fr); }
+      .tc-cards--vagas { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .tc-cards,
+      .tc-cards--vagas { grid-template-columns: 1fr; }
     }
     .tc-card {
       background: rgba(28, 15, 48, 0.65);
@@ -129,7 +138,7 @@
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(177, 78, 255, 0.2);
       border-radius: 20px;
-      padding: 1.6rem 1.5rem;
+      padding: 1.85rem 1.6rem;
       position: relative;
       overflow: hidden;
       transition: border-color 0.25s, transform 0.25s;
@@ -147,54 +156,31 @@
       border-radius: 2px 0 0 2px;
     }
     .tc-card__icon {
-      width: 38px; height: 38px;
-      border-radius: 10px;
+      width: 44px; height: 44px;
+      border-radius: 12px;
       background: rgba(177, 78, 255, 0.15);
       display: flex; align-items: center; justify-content: center;
-      margin-bottom: 0.85rem;
+      margin-bottom: 1rem;
       color: var(--accent);
     }
-    .tc-card__icon svg { width: 18px; height: 18px; }
+    .tc-card__icon svg { width: 22px; height: 22px; }
     .tc-card__title {
       font-family: var(--font-display);
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       font-weight: 600;
       color: var(--text-light);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
     }
     .tc-card__desc {
-      font-size: 0.9rem;
+      font-size: 1rem;
       color: var(--text-light-secondary);
       line-height: 1.6;
     }
-
-    /* ── Lista o que oferecemos ── */
-    .tc-perks {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 0.85rem;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .tc-perks li {
-      display: flex;
-      gap: 0.75rem;
-      align-items: flex-start;
-      padding: 0.85rem 1rem;
-      background: rgba(28, 15, 48, 0.45);
-      border: 1px solid rgba(177, 78, 255, 0.12);
-      border-radius: 14px;
-      color: var(--text-light);
-      font-size: 0.92rem;
-      line-height: 1.45;
-    }
-    .tc-perks li::before {
-      content: '✦';
-      color: var(--accent);
-      flex-shrink: 0;
-      font-size: 0.9rem;
-      margin-top: 1px;
+    @media (max-width: 520px) {
+      .tc-card { padding: 1.5rem 1.35rem; }
+      .tc-card__title { font-size: 1.2rem; }
+      .tc-card__desc { font-size: 0.98rem; }
     }
 
     /* ── Formulário ── */
@@ -204,20 +190,22 @@
       -webkit-backdrop-filter: blur(24px);
       border: 1px solid rgba(177, 78, 255, 0.25);
       border-radius: 24px;
-      padding: clamp(1.5rem, 4vw, 2.5rem);
+      padding: clamp(1.75rem, 4vw, 3rem);
+      max-width: 760px;
+      margin: 0 auto;
     }
-    .tc-form { display: grid; gap: 1rem; }
+    .tc-form { display: grid; gap: 1.25rem; }
     .tc-form__row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+      gap: 1.25rem;
     }
     @media (max-width: 540px) {
-      .tc-form__row { grid-template-columns: 1fr; }
+      .tc-form__row { grid-template-columns: 1fr; gap: 1.25rem; }
     }
-    .tc-field { display: flex; flex-direction: column; gap: 0.4rem; }
+    .tc-field { display: flex; flex-direction: column; gap: 0.5rem; }
     .tc-field label {
-      font-size: 0.78rem;
+      font-size: 0.85rem;
       font-weight: 600;
       color: var(--text-light-secondary);
       letter-spacing: 0.08em;
@@ -228,13 +216,13 @@
     .tc-select,
     .tc-textarea {
       width: 100%;
-      padding: 0.85rem 1rem;
+      padding: 0.95rem 1.1rem;
       background: rgba(10, 0, 17, 0.6);
       border: 1px solid rgba(177, 78, 255, 0.25);
       border-radius: 12px;
       color: var(--text-light);
       font-family: inherit;
-      font-size: 0.95rem;
+      font-size: 1rem;
       transition: border-color 0.2s, background 0.2s;
     }
     .tc-input:focus,
@@ -248,7 +236,7 @@
     .tc-textarea::placeholder {
       color: rgba(196, 179, 211, 0.5);
     }
-    .tc-textarea { min-height: 110px; resize: vertical; }
+    .tc-textarea { min-height: 130px; resize: vertical; line-height: 1.6; }
     .tc-select {
       appearance: none;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%23b14eff' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
@@ -377,7 +365,6 @@
       <!-- Quem buscamos -->
       <section class="tc-section reveal">
         <h2 class="tc-section__title">Quem buscamos</h2>
-        <p class="tc-section__sub">O perfil que combina com o Salão Explosion</p>
         <div class="tc-cards">
           <div class="tc-card">
             <div class="tc-card__icon">
@@ -406,8 +393,7 @@
       <!-- Vagas -->
       <section class="tc-section reveal">
         <h2 class="tc-section__title">Vagas</h2>
-        <p class="tc-section__sub">Estamos sempre abertos a profissionais talentosos. Se a sua especialidade não estiver listada, mande mesmo assim!</p>
-        <div class="tc-cards">
+        <div class="tc-cards tc-cards--vagas">
           <div class="tc-card">
             <div class="tc-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l3 6m0 0l-3 6m3-6h12M9 21h12"/></svg>
@@ -439,24 +425,9 @@
         </div>
       </section>
 
-      <!-- O que oferecemos -->
-      <section class="tc-section reveal">
-        <h2 class="tc-section__title">O que oferecemos</h2>
-        <p class="tc-section__sub">Um ambiente para você crescer com a gente</p>
-        <ul class="tc-perks">
-          <li>Ambiente acolhedor e equipe que se ajuda</li>
-          <li>Estrutura moderna com tecnologia capilar</li>
-          <li>Treinamentos e atualizações constantes</li>
-          <li>Clientela fidelizada e em crescimento</li>
-          <li>Localização privilegiada em Diadema/SP</li>
-          <li>Reconhecimento pelo seu trabalho</li>
-        </ul>
-      </section>
-
       <!-- Formulário -->
       <section class="tc-section reveal" id="candidatura">
         <h2 class="tc-section__title">Envie sua candidatura</h2>
-        <p class="tc-section__sub">Preencha o formulário e nossa equipe entrará em contato. O envio também aciona uma mensagem rápida no nosso WhatsApp.</p>
 
         <div class="tc-form-wrap">
           <form id="tcForm" class="tc-form" action="https://formsubmit.co/salaoexplosion@gmail.com" method="POST">
