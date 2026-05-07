@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="description" content="Trabalhe Conosco — Faça parte da equipe do Salão Explosion. Vagas para cabeleireiro(a), manicure, auxiliar e outras especialidades em Diadema/SP.">
+  <meta name="theme-color" content="#0a0011">
+  <title>Trabalhe Conosco — Salão Explosion</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Trabalhe Conosco — Salão Explosion">
+  <meta property="og:description" content="Faça parte da nossa equipe. Vagas para cabeleireiro(a), manicure, auxiliar e outras especialidades.">
+  <meta property="og:image" content="https://salaoexplosion.com.br/assets/img/og-image.png">
+  <meta property="og:url" content="https://salaoexplosion.com.br/trabalhe-conosco.html">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://salaoexplosion.com.br/assets/img/og-image.png">
+  <link rel="stylesheet" href="css/style.css?v=20260507c">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+  <style>
+    body { background: var(--bg-deep); overflow-x: hidden; }
+
+    /* ── Fundo animado ── */
+    .tc-bg {
+      position: fixed; inset: 0; z-index: 0;
+      overflow: hidden; pointer-events: none;
+    }
+    .tc-blob {
+      position: absolute; border-radius: 50%;
+      filter: blur(80px); opacity: 0.5;
+    }
+    .tc-blob--1 {
+      width: 600px; height: 500px;
+      top: -10%; left: -15%;
+      background: radial-gradient(ellipse, #b14eff 0%, transparent 70%);
+      animation: tcFloat1 22s ease-in-out infinite;
+    }
+    .tc-blob--2 {
+      width: 500px; height: 400px;
+      bottom: -5%; right: -10%;
+      background: radial-gradient(ellipse, #e46aa0 0%, transparent 70%);
+      animation: tcFloat2 28s ease-in-out infinite;
+    }
+    .tc-blob--3 {
+      width: 350px; height: 350px;
+      top: 50%; left: 55%;
+      background: radial-gradient(ellipse, #5b21b6 0%, transparent 70%);
+      opacity: 0.3;
+      animation: tcFloat1 18s ease-in-out infinite reverse;
+    }
+    @keyframes tcFloat1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(-30px, 20px) scale(1.05); }
+      66% { transform: translate(20px, -15px) scale(0.97); }
+    }
+    @keyframes tcFloat2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(25px, -20px) scale(1.04); }
+      66% { transform: translate(-15px, 18px) scale(0.98); }
+    }
+
+    /* ── Layout ── */
+    .tc-page {
+      position: relative; z-index: 1;
+      min-height: 100dvh;
+      padding: calc(var(--header-height) + 3rem) clamp(1rem, 4vw, 3rem) clamp(3rem, 6vw, 5rem);
+    }
+
+    .tc-container {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* ── Hero ── */
+    .tc-hero { text-align: center; margin-bottom: 4rem; }
+    .tc-hero .label { display: block; color: var(--accent); margin-bottom: 0.75rem; }
+    .tc-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 600;
+      color: var(--text-light);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .tc-hero h1 .it {
+      font-style: italic; font-weight: 400;
+      background: linear-gradient(135deg, var(--accent), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .tc-hero p {
+      color: var(--text-light-secondary);
+      font-size: 1.05rem; line-height: 1.8;
+      max-width: 50ch;
+      margin: 0 auto;
+    }
+
+    /* ── Section title ── */
+    .tc-section { margin-bottom: 3.5rem; }
+    .tc-section__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 600;
+      color: var(--text-light);
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    .tc-section__sub {
+      color: var(--text-light-secondary);
+      font-size: 0.95rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      max-width: 50ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── Cards de perfil ── */
+    .tc-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .tc-card {
+      background: rgba(28, 15, 48, 0.65);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(177, 78, 255, 0.2);
+      border-radius: 20px;
+      padding: 1.6rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .tc-card:hover {
+      border-color: rgba(177, 78, 255, 0.45);
+      transform: translateY(-2px);
+    }
+    .tc-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--accent), var(--pink));
+      border-radius: 2px 0 0 2px;
+    }
+    .tc-card__icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: rgba(177, 78, 255, 0.15);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 0.85rem;
+      color: var(--accent);
+    }
+    .tc-card__icon svg { width: 18px; height: 18px; }
+    .tc-card__title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 0.4rem;
+    }
+    .tc-card__desc {
+      font-size: 0.9rem;
+      color: var(--text-light-secondary);
+      line-height: 1.6;
+    }
+
+    /* ── Lista o que oferecemos ── */
+    .tc-perks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.85rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .tc-perks li {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      padding: 0.85rem 1rem;
+      background: rgba(28, 15, 48, 0.45);
+      border: 1px solid rgba(177, 78, 255, 0.12);
+      border-radius: 14px;
+      color: var(--text-light);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+    .tc-perks li::before {
+      content: '✦';
+      color: var(--accent);
+      flex-shrink: 0;
+      font-size: 0.9rem;
+      margin-top: 1px;
+    }
+
+    /* ── Formulário ── */
+    .tc-form-wrap {
+      background: rgba(28, 15, 48, 0.7);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(177, 78, 255, 0.25);
+      border-radius: 24px;
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+    }
+    .tc-form { display: grid; gap: 1rem; }
+    .tc-form__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 540px) {
+      .tc-form__row { grid-template-columns: 1fr; }
+    }
+    .tc-field { display: flex; flex-direction: column; gap: 0.4rem; }
+    .tc-field label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-light-secondary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .tc-field label .req { color: var(--pink); margin-left: 2px; }
+    .tc-input,
+    .tc-select,
+    .tc-textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background: rgba(10, 0, 17, 0.6);
+      border: 1px solid rgba(177, 78, 255, 0.25);
+      border-radius: 12px;
+      color: var(--text-light);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .tc-input:focus,
+    .tc-select:focus,
+    .tc-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: rgba(10, 0, 17, 0.8);
+    }
+    .tc-input::placeholder,
+    .tc-textarea::placeholder {
+      color: rgba(196, 179, 211, 0.5);
+    }
+    .tc-textarea { min-height: 110px; resize: vertical; }
+    .tc-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%23b14eff' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+    .tc-select option {
+      background: #1c0f30;
+      color: var(--text-light);
+    }
+    .tc-submit {
+      width: 100%;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, var(--accent), var(--pink));
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 8px 28px rgba(177, 78, 255, 0.35);
+      font-family: inherit;
+      margin-top: 0.5rem;
+    }
+    .tc-submit:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 40px rgba(177, 78, 255, 0.5);
+    }
+    .tc-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* ── Mensagem de sucesso ── */
+    .tc-success {
+      display: none;
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+    }
+    .tc-success.is-visible { display: block; }
+    .tc-success__icon {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--pink));
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem;
+      color: #fff;
+    }
+    .tc-success__icon svg { width: 30px; height: 30px; }
+    .tc-success h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+    }
+    .tc-success p {
+      color: var(--text-light-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── Erro ── */
+    .tc-error {
+      color: var(--pink);
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      text-align: center;
+      display: none;
+    }
+    .tc-error.is-visible { display: block; }
+  </style>
+</head>
+<body>
+
+  <!-- Fundo animado -->
+  <div class="tc-bg" aria-hidden="true">
+    <div class="tc-blob tc-blob--1"></div>
+    <div class="tc-blob tc-blob--2"></div>
+    <div class="tc-blob tc-blob--3"></div>
+  </div>
+
+  <header class="header" id="header">
+    <a href="index.html" class="header__logo">
+      <img src="assets/img/logo-explosion.png" alt="Salão Explosion">
+    </a>
+    <nav class="header__nav">
+      <a href="servicos.html">Serviços</a>
+      <a href="massagens/index.html">Massagens</a>
+      <a href="equipe.html">Equipe</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="trabalhe-conosco.html">Trabalhe Conosco</a>
+      <a href="contato.html">Contato</a>
+      <a href="playlist.html">Playlist</a>
+      <a href="#" class="btn-cta" data-whatsapp="Olá! Gostaria de agendar um horário.">Agende seu horário</a>
+    </nav>
+    <div class="header__toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <a href="servicos.html">Serviços</a>
+    <a href="massagens/index.html">Massagens</a>
+    <a href="equipe.html">Equipe</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="trabalhe-conosco.html">Trabalhe Conosco</a>
+    <a href="contato.html">Contato</a>
+    <a href="playlist.html">Playlist</a>
+    <a href="#" class="btn-cta btn-cta-solid" data-whatsapp="Olá! Gostaria de agendar um horário." style="margin-top:1rem;">Agendar pelo WhatsApp</a>
+  </div>
+
+  <main class="tc-page">
+    <div class="tc-container">
+
+      <!-- Hero -->
+      <section class="tc-hero reveal">
+        <span class="label">Carreira</span>
+        <h1>Faça parte da nossa <span class="it">equipe</span></h1>
+        <p>Procuramos profissionais apaixonados por beleza e cuidado. Aqui você cresce com tecnologia, treinamentos e um ambiente que valoriza o seu trabalho.</p>
+      </section>
+
+      <!-- Quem buscamos -->
+      <section class="tc-section reveal">
+        <h2 class="tc-section__title">Quem buscamos</h2>
+        <p class="tc-section__sub">O perfil que combina com o Salão Explosion</p>
+        <div class="tc-cards">
+          <div class="tc-card">
+            <div class="tc-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="tc-card__title">Pontualidade</div>
+            <div class="tc-card__desc">Compromisso com horários e com a confiança que a cliente deposita em você.</div>
+          </div>
+          <div class="tc-card">
+            <div class="tc-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="tc-card__title">Maior de 18 anos</div>
+            <div class="tc-card__desc">Idade mínima para fazer parte da equipe e atender as nossas clientes.</div>
+          </div>
+          <div class="tc-card">
+            <div class="tc-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div class="tc-card__title">Paixão pela área</div>
+            <div class="tc-card__desc">Vontade de aprender, evoluir e oferecer o melhor cuidado para cada cliente.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vagas -->
+      <section class="tc-section reveal">
+        <h2 class="tc-section__title">Vagas</h2>
+        <p class="tc-section__sub">Estamos sempre abertos a profissionais talentosos. Se a sua especialidade não estiver listada, mande mesmo assim!</p>
+        <div class="tc-cards">
+          <div class="tc-card">
+            <div class="tc-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l3 6m0 0l-3 6m3-6h12M9 21h12"/></svg>
+            </div>
+            <div class="tc-card__title">Cabeleireiro(a)</div>
+            <div class="tc-card__desc">Cortes, coloração, mechas, tratamentos e finalizações.</div>
+          </div>
+          <div class="tc-card">
+            <div class="tc-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 2 7 5 7 8v6c0 2 1 3 5 3s5-1 5-3V8c0-3-1-6-5-6z"/><path d="M7 14v4a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4"/></svg>
+            </div>
+            <div class="tc-card__title">Manicure</div>
+            <div class="tc-card__desc">Manicure, pedicure, técnicas em gel, alongamento e nail art.</div>
+          </div>
+          <div class="tc-card">
+            <div class="tc-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            </div>
+            <div class="tc-card__title">Auxiliar</div>
+            <div class="tc-card__desc">Apoio à equipe, organização e aprendizado prático no dia a dia.</div>
+          </div>
+          <div class="tc-card">
+            <div class="tc-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div class="tc-card__title">Outras especialidades</div>
+            <div class="tc-card__desc">Estética, massagem, depilação ou outra área da beleza? Conta pra gente!</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- O que oferecemos -->
+      <section class="tc-section reveal">
+        <h2 class="tc-section__title">O que oferecemos</h2>
+        <p class="tc-section__sub">Um ambiente para você crescer com a gente</p>
+        <ul class="tc-perks">
+          <li>Ambiente acolhedor e equipe que se ajuda</li>
+          <li>Estrutura moderna com tecnologia capilar</li>
+          <li>Treinamentos e atualizações constantes</li>
+          <li>Clientela fidelizada e em crescimento</li>
+          <li>Localização privilegiada em Diadema/SP</li>
+          <li>Reconhecimento pelo seu trabalho</li>
+        </ul>
+      </section>
+
+      <!-- Formulário -->
+      <section class="tc-section reveal" id="candidatura">
+        <h2 class="tc-section__title">Envie sua candidatura</h2>
+        <p class="tc-section__sub">Preencha o formulário e nossa equipe entrará em contato. O envio também aciona uma mensagem rápida no nosso WhatsApp.</p>
+
+        <div class="tc-form-wrap">
+          <form id="tcForm" class="tc-form" action="https://formsubmit.co/salaoexplosion@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Nova candidatura — Trabalhe Conosco">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" style="display:none">
+
+            <div class="tc-field">
+              <label for="nome">Nome completo <span class="req">*</span></label>
+              <input class="tc-input" type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+            </div>
+
+            <div class="tc-form__row">
+              <div class="tc-field">
+                <label for="idade">Idade <span class="req">*</span></label>
+                <input class="tc-input" type="number" id="idade" name="idade" min="18" max="80" required placeholder="Mínimo 18">
+              </div>
+              <div class="tc-field">
+                <label for="telefone">WhatsApp <span class="req">*</span></label>
+                <input class="tc-input" type="tel" id="telefone" name="telefone" required placeholder="(11) 99999-9999">
+              </div>
+            </div>
+
+            <div class="tc-field">
+              <label for="email">E-mail <span class="req">*</span></label>
+              <input class="tc-input" type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
+            </div>
+
+            <div class="tc-form__row">
+              <div class="tc-field">
+                <label for="vaga">Vaga de interesse <span class="req">*</span></label>
+                <select class="tc-select" id="vaga" name="vaga" required>
+                  <option value="" disabled selected>Selecione</option>
+                  <option value="Cabeleireiro(a)">Cabeleireiro(a)</option>
+                  <option value="Manicure">Manicure</option>
+                  <option value="Auxiliar">Auxiliar</option>
+                  <option value="Outra">Outra especialidade</option>
+                </select>
+              </div>
+              <div class="tc-field">
+                <label for="experiencia">Anos de experiência</label>
+                <input class="tc-input" type="number" id="experiencia" name="experiencia" min="0" max="60" placeholder="0 = iniciante">
+              </div>
+            </div>
+
+            <div class="tc-field">
+              <label for="especialidade">Especialidade ou descreva "Outra"</label>
+              <input class="tc-input" type="text" id="especialidade" name="especialidade" placeholder="Ex: coloração, alongamento de unha, esteticista...">
+            </div>
+
+            <div class="tc-field">
+              <label for="disponibilidade">Disponibilidade</label>
+              <input class="tc-input" type="text" id="disponibilidade" name="disponibilidade" placeholder="Ex: integral, meio período, fins de semana">
+            </div>
+
+            <div class="tc-field">
+              <label for="mensagem">Conte um pouco sobre você</label>
+              <textarea class="tc-textarea" id="mensagem" name="mensagem" placeholder="Conte sua trajetória, o que te motiva, ou qualquer informação relevante."></textarea>
+            </div>
+
+            <button type="submit" class="tc-submit" id="tcSubmit">Enviar candidatura</button>
+            <div class="tc-error" id="tcError"></div>
+          </form>
+
+          <!-- Sucesso -->
+          <div class="tc-success" id="tcSuccess">
+            <div class="tc-success__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3>Candidatura enviada!</h3>
+            <p>Recebemos seus dados por e-mail. Vamos abrir o WhatsApp para você nos avisar — só precisa apertar enviar. A gente retorna em breve!</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <a href="#" class="whatsapp-float" data-whatsapp="Olá! Gostaria de agendar um horário." aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+  <script>
+  (function() {
+    var form = document.getElementById('tcForm');
+    if (!form) return;
+    var btn = document.getElementById('tcSubmit');
+    var errorEl = document.getElementById('tcError');
+    var successEl = document.getElementById('tcSuccess');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      errorEl.classList.remove('is-visible');
+      errorEl.textContent = '';
+
+      var idade = parseInt(form.idade.value, 10);
+      if (!isFinite(idade) || idade < 18) {
+        errorEl.textContent = 'É necessário ter no mínimo 18 anos para se candidatar.';
+        errorEl.classList.add('is-visible');
+        return;
+      }
+
+      var nome = form.nome.value.trim();
+      var vaga = form.vaga.value;
+      var especialidade = form.especialidade.value.trim();
+      var vagaTexto = vaga === 'Outra' && especialidade ? especialidade : vaga;
+
+      btn.disabled = true;
+      btn.textContent = 'Enviando...';
+
+      var fd = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: fd,
+        headers: { 'Accept': 'application/json' }
+      }).then(function(resp) {
+        if (!resp.ok) throw new Error('falha');
+        form.style.display = 'none';
+        successEl.classList.add('is-visible');
+
+        var msg = 'Olá! Acabei de enviar meu currículo pelo formulário do site. Nome: ' + nome + ' · Vaga: ' + vagaTexto;
+        var waUrl = 'https://wa.me/5511986542632?text=' + encodeURIComponent(msg);
+        setTimeout(function() {
+          window.open(waUrl, '_blank');
+        }, 800);
+      }).catch(function() {
+        btn.disabled = false;
+        btn.textContent = 'Enviar candidatura';
+        errorEl.textContent = 'Não foi possível enviar agora. Tente novamente em instantes ou fale com a gente pelo WhatsApp.';
+        errorEl.classList.add('is-visible');
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
