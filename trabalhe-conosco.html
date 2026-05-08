@@ -533,35 +533,53 @@
       }
 
       var nome = form.nome.value.trim();
+      var telefone = form.telefone.value.trim();
+      var email = form.email.value.trim();
       var vaga = form.vaga.value;
       var especialidade = form.especialidade.value.trim();
+      var experiencia = form.experiencia.value.trim();
+      var disponibilidade = form.disponibilidade.value.trim();
+      var mensagem = form.mensagem.value.trim();
       var vagaTexto = vaga === 'Outra' && especialidade ? especialidade : vaga;
 
       btn.disabled = true;
       btn.textContent = 'Enviando...';
 
       var fd = new FormData(form);
+      // Fire-and-forget: tenta o e-mail mas nao bloqueia o sucesso
+      try {
+        fetch(form.action, {
+          method: 'POST',
+          body: fd,
+          headers: { 'Accept': 'application/json' }
+        }).catch(function() {});
+      } catch (err) {}
 
-      fetch(form.action, {
-        method: 'POST',
-        body: fd,
-        headers: { 'Accept': 'application/json' }
-      }).then(function(resp) {
-        if (!resp.ok) throw new Error('falha');
-        form.style.display = 'none';
-        successEl.classList.add('is-visible');
+      // Monta a mensagem completa de WhatsApp com todos os dados
+      var linhas = [
+        'Olá! Acabei de enviar minha candidatura pelo site.',
+        '',
+        '*Nome:* ' + nome,
+        '*Idade:* ' + idade,
+        '*WhatsApp:* ' + telefone,
+        '*E-mail:* ' + email,
+        '*Vaga:* ' + vagaTexto
+      ];
+      if (especialidade && vaga !== 'Outra') linhas.push('*Especialidade:* ' + especialidade);
+      if (experiencia) linhas.push('*Experiência:* ' + experiencia + ' ano(s)');
+      if (disponibilidade) linhas.push('*Disponibilidade:* ' + disponibilidade);
+      if (mensagem) {
+        linhas.push('');
+        linhas.push('*Sobre mim:* ' + mensagem);
+      }
+      var msg = linhas.join('\n');
+      var waUrl = 'https://wa.me/5511986542632?text=' + encodeURIComponent(msg);
 
-        var msg = 'Olá! Acabei de enviar meu currículo pelo formulário do site. Nome: ' + nome + ' · Vaga: ' + vagaTexto;
-        var waUrl = 'https://wa.me/5511986542632?text=' + encodeURIComponent(msg);
-        setTimeout(function() {
-          window.open(waUrl, '_blank');
-        }, 800);
-      }).catch(function() {
-        btn.disabled = false;
-        btn.textContent = 'Enviar candidatura';
-        errorEl.textContent = 'Não foi possível enviar agora. Tente novamente em instantes ou fale com a gente pelo WhatsApp.';
-        errorEl.classList.add('is-visible');
-      });
+      form.style.display = 'none';
+      successEl.classList.add('is-visible');
+      setTimeout(function() {
+        window.open(waUrl, '_blank');
+      }, 600);
     });
   })();
   </script>
