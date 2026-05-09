@@ -212,6 +212,93 @@
       border-radius: 8px;
       border: 1px solid rgba(255,255,255,0.06);
     }
+
+    /* ── Guia de porções ── */
+    .porcao-section {
+      margin-top: clamp(2rem, 4vw, 3rem);
+      padding: clamp(2rem, 4vw, 3rem);
+      background: rgba(28, 15, 48, 0.55);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(228, 106, 160, 0.22);
+      border-radius: 24px;
+    }
+    .porcao-section h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+    .porcao-intro {
+      color: var(--text-light-secondary);
+      line-height: 1.7;
+      font-size: 1rem;
+      margin-bottom: 1.75rem;
+      max-width: 70ch;
+    }
+    .porcao-block-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--text-light);
+      margin: 1.75rem 0 1rem;
+      font-weight: 600;
+    }
+    .medida-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.85rem;
+    }
+    .medida-card {
+      background: rgba(10, 0, 17, 0.55);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 1rem 1.15rem;
+    }
+    .medida-card__nome {
+      font-weight: 600;
+      color: var(--text-light);
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .medida-card__valor {
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .medida-card__obs {
+      color: var(--text-light-secondary);
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+    .mao-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 0.85rem;
+    }
+    .mao-card {
+      background: rgba(228, 106, 160, 0.06);
+      border: 1px solid rgba(228, 106, 160, 0.18);
+      border-radius: 14px;
+      padding: 1rem 1.15rem;
+    }
+    .mao-card__top {
+      display: flex; align-items: center; gap: 0.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .mao-card__emoji { font-size: 1.6rem; line-height: 1; }
+    .mao-card__nome {
+      font-weight: 600; color: var(--text-light); font-size: 0.98rem;
+    }
+    .mao-card__desc {
+      color: var(--text-light-secondary);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+    .mao-card__desc strong { color: var(--pink); font-weight: 600; }
   </style>
 
   <section class="section-dark" style="padding: clamp(3rem,7vw,6rem) 0 clamp(4rem,8vw,7rem);">
@@ -365,6 +452,160 @@
             <span>Diatase</span>
             <span>Açúcar invertido líquido</span>
             <span>Sacarose hidrolisada</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="porcao-section reveal">
+        <h3><span style="margin-right:0.5rem;">🥄</span>Guia de porções e medidas caseiras</h3>
+        <p class="porcao-intro">
+          Não precisa balança nem aplicativo. Use o que você já tem em casa — colheres, copos e até a sua própria mão. Aqui vai um guia prático pra você não exagerar nem comer de menos.
+        </p>
+
+        <p class="porcao-block-title">Medidas com utensílios da cozinha</p>
+        <div class="medida-grid">
+
+          <div class="medida-card">
+            <div class="medida-card__nome">🥄 Colher de sopa</div>
+            <div class="medida-card__valor">≈ 15 ml • 15 g</div>
+            <div class="medida-card__obs">A colher grande de servir comida. Usada pra azeite, arroz, feijão.</div>
+          </div>
+
+          <div class="medida-card">
+            <div class="medida-card__nome">🥄 Colher de sobremesa</div>
+            <div class="medida-card__valor">≈ 10 ml • 10 g</div>
+            <div class="medida-card__obs">Aquela média, de comer pudim. Metade de uma colher de sopa.</div>
+          </div>
+
+          <div class="medida-card">
+            <div class="medida-card__nome">🥄 Colher de chá</div>
+            <div class="medida-card__valor">≈ 5 ml • 5 g</div>
+            <div class="medida-card__obs">A pequenininha. Usada pra sal, açúcar, tempero.</div>
+          </div>
+
+          <div class="medida-card">
+            <div class="medida-card__nome">☕ Colher de café</div>
+            <div class="medida-card__valor">≈ 2-3 ml</div>
+            <div class="medida-card__obs">A menorzinha de todas. Pra mexer cafezinho.</div>
+          </div>
+
+          <div class="medida-card">
+            <div class="medida-card__nome">🥃 Copo americano</div>
+            <div class="medida-card__valor">≈ 200 ml</div>
+            <div class="medida-card__obs">Aquele copo baixo de vidro com gomos. O mais comum no Brasil.</div>
+          </div>
+
+          <div class="medida-card">
+            <div class="medida-card__nome">🍶 Copo de requeijão</div>
+            <div class="medida-card__valor">≈ 250 ml</div>
+            <div class="medida-card__obs">Pote de requeijão tradicional reaproveitado como copo.</div>
+          </div>
+
+          <div class="medida-card">
+            <div class="medida-card__nome">☕ Xícara de chá</div>
+            <div class="medida-card__valor">≈ 240 ml</div>
+            <div class="medida-card__obs">A xícara grande com pires. Quase um copo americano cheio.</div>
+          </div>
+
+          <div class="medida-card">
+            <div class="medida-card__nome">☕ Xícara de café</div>
+            <div class="medida-card__valor">≈ 50-60 ml</div>
+            <div class="medida-card__obs">A xícara pequena de cafezinho preto.</div>
+          </div>
+
+          <div class="medida-card">
+            <div class="medida-card__nome">🥣 Concha (de feijão)</div>
+            <div class="medida-card__valor">≈ 80-100 ml</div>
+            <div class="medida-card__obs">A concha que você serve feijão ou sopa.</div>
+          </div>
+
+          <div class="medida-card">
+            <div class="medida-card__nome">🍷 Taça de vinho</div>
+            <div class="medida-card__valor">≈ 150 ml</div>
+            <div class="medida-card__obs">Tamanho padrão de uma dose servida.</div>
+          </div>
+
+        </div>
+
+        <p class="porcao-block-title">Medidas usando a sua mão</p>
+        <p class="porcao-intro" style="margin-bottom:1rem;">
+          Sua mão acompanha o tamanho do seu corpo — mãos maiores, porções maiores. Funciona pra qualquer pessoa.
+        </p>
+        <div class="mao-grid">
+
+          <div class="mao-card">
+            <div class="mao-card__top">
+              <span class="mao-card__emoji">✊</span>
+              <span class="mao-card__nome">Punho fechado</span>
+            </div>
+            <div class="mao-card__desc">Porção de <strong>carboidrato</strong> (arroz, macarrão, batata, mandioca) por refeição.</div>
+          </div>
+
+          <div class="mao-card">
+            <div class="mao-card__top">
+              <span class="mao-card__emoji">✋</span>
+              <span class="mao-card__nome">Palma da mão</span>
+            </div>
+            <div class="mao-card__desc">Porção de <strong>proteína</strong> (carne, frango, peixe, ovo). Espessura igual à da palma.</div>
+          </div>
+
+          <div class="mao-card">
+            <div class="mao-card__top">
+              <span class="mao-card__emoji">👍</span>
+              <span class="mao-card__nome">Polegar</span>
+            </div>
+            <div class="mao-card__desc">Porção de <strong>gordura boa</strong> (azeite, manteiga, queijo, pasta de amendoim).</div>
+          </div>
+
+          <div class="mao-card">
+            <div class="mao-card__top">
+              <span class="mao-card__emoji">🤲</span>
+              <span class="mao-card__nome">Mão em concha</span>
+            </div>
+            <div class="mao-card__desc">Porção de <strong>oleaginosas</strong> (castanhas, nozes, amêndoas) ou de cereais.</div>
+          </div>
+
+          <div class="mao-card">
+            <div class="mao-card__top">
+              <span class="mao-card__emoji">🙌</span>
+              <span class="mao-card__nome">Duas mãos em concha</span>
+            </div>
+            <div class="mao-card__desc">Porção de <strong>folhas e legumes</strong> crus (alface, rúcula, salada). Pode caprichar.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="porcao-section reveal" style="border-color: rgba(177, 78, 255, 0.22);">
+        <h3><span style="margin-right:0.5rem;">🚦</span>Sinais de fome (e quando é só sede)</h3>
+        <p class="porcao-intro">
+          O corpo nem sempre sabe distinguir fome de sede — os dois sinais saem da mesma região do cérebro. Antes de comer fora de hora, beba um copo d'água e espere 15 minutos. Muitas vezes a "fome" passa.
+        </p>
+
+        <div class="rotulo-exemplos" style="margin-bottom: 0;">
+          <div class="rotulo-ex">
+            <h4>✅ Sinais de fome real</h4>
+            <p>
+              Estômago roncando, leve fraqueza, queda de energia, dificuldade de concentração, irritação leve. Vontade de comer <em>qualquer coisa</em> que mate a fome.
+            </p>
+          </div>
+          <div class="rotulo-ex">
+            <h4>🥤 Pode ser sede</h4>
+            <p>
+              Vontade de "beliscar" sem fome no estômago, boca seca, leve dor de cabeça, cansaço sem motivo, urina escura. <strong>Beba água primeiro</strong> e espere 15 minutos.
+            </p>
+          </div>
+          <div class="rotulo-ex">
+            <h4>🍫 Provavelmente é vontade</h4>
+            <p>
+              Quando você quer um alimento <em>específico</em> (chocolate, salgadinho, doce). Costuma vir do tédio, ansiedade ou hábito — não é fome de verdade.
+            </p>
+          </div>
+          <div class="rotulo-ex">
+            <h4>😴 Pode ser cansaço</h4>
+            <p>
+              Noite mal dormida aumenta a fome no dia seguinte (hormônios grelina/leptina). Se dormiu pouco, o corpo pede comida pra compensar — descansar resolve.
+            </p>
           </div>
         </div>
       </div>
