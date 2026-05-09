@@ -118,6 +118,100 @@
       margin-top: clamp(2rem, 4vw, 3rem);
     }
     @media (max-width: 768px) { .alim-grid { grid-template-columns: 1fr; } }
+
+    /* ── Como ler o rótulo ── */
+    .rotulo-section {
+      margin-top: clamp(3rem, 5vw, 4.5rem);
+      padding: clamp(2rem, 4vw, 3rem);
+      background: rgba(28, 15, 48, 0.55);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(177, 78, 255, 0.22);
+      border-radius: 24px;
+    }
+    .rotulo-section h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+    .rotulo-section h3 .rotulo-emoji { margin-right: 0.5rem; }
+    .rotulo-section .rotulo-intro {
+      color: var(--text-light-secondary);
+      line-height: 1.7;
+      font-size: 1rem;
+      margin-bottom: 1.75rem;
+      max-width: 70ch;
+    }
+    .rotulo-rule {
+      background: rgba(177, 78, 255, 0.08);
+      border-left: 3px solid var(--accent);
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 1.75rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+    .rotulo-rule strong { color: var(--accent); }
+
+    .rotulo-exemplos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+    @media (max-width: 700px) { .rotulo-exemplos { grid-template-columns: 1fr; } }
+    .rotulo-ex {
+      background: rgba(10, 0, 17, 0.5);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 1.1rem 1.25rem;
+    }
+    .rotulo-ex h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 0.6rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .rotulo-ex p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-light-secondary);
+      margin: 0;
+    }
+    .rotulo-ex .ok { color: #7dd87d; font-weight: 600; }
+    .rotulo-ex .nao { color: #ff8a8a; font-weight: 600; }
+
+    .acucar-block h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+    }
+    .acucar-block .acucar-sub {
+      color: var(--text-light-secondary);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .acucar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.55rem 0.85rem;
+      margin-top: 0.5rem;
+    }
+    .acucar-grid span {
+      font-size: 0.88rem;
+      color: var(--text-light-secondary);
+      padding: 0.45rem 0.7rem;
+      background: rgba(255,255,255,0.04);
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
   </style>
 
   <section class="section-dark" style="padding: clamp(3rem,7vw,6rem) 0 clamp(4rem,8vw,7rem);">
@@ -157,6 +251,122 @@
           </ul>
         </div>
 
+      </div>
+
+      <div class="rotulo-section reveal">
+        <h3><span class="rotulo-emoji">🔍</span>Como ler o rótulo de verdade</h3>
+        <p class="rotulo-intro">
+          Saber ler a lista de ingredientes é o passo mais importante pra escolher um alimento de verdade. A indústria usa nomes técnicos pra disfarçar o que está realmente dentro da embalagem.
+        </p>
+
+        <div class="rotulo-rule">
+          <strong>Regra de ouro:</strong> a lista de ingredientes é sempre em <strong>ordem decrescente</strong> — o primeiro ingrediente é o que mais tem no produto, o último é o que tem em menor quantidade. Se açúcar aparece em segundo lugar, o produto é praticamente açúcar.
+        </div>
+
+        <h4 style="font-family:var(--font-display);font-size:1.2rem;color:var(--text-light);margin-bottom:1rem;">Exemplos práticos do dia a dia</h4>
+        <div class="rotulo-exemplos">
+
+          <div class="rotulo-ex">
+            <h4>🍞 Pão "integral"</h4>
+            <p>
+              <span class="ok">Integral de verdade:</span> o 1º ingrediente é "<strong>farinha de trigo integral</strong>".<br>
+              <span class="nao">Falso integral:</span> o 1º ingrediente é "farinha de trigo enriquecida" (refinada) e o integral aparece lá no fim.
+            </p>
+          </div>
+
+          <div class="rotulo-ex">
+            <h4>🧃 Suco de caixinha</h4>
+            <p>
+              Geralmente os primeiros ingredientes são <strong>água, açúcar e suco concentrado</strong> — ou seja, é água com açúcar com gostinho de fruta. Suco de verdade tem fruta como 1º ingrediente, idealmente sem açúcar adicionado.
+            </p>
+          </div>
+
+          <div class="rotulo-ex">
+            <h4>🥣 Iogurte / cereais</h4>
+            <p>
+              Se "açúcar" (ou qualquer um dos nomes abaixo) aparece nos 3 primeiros ingredientes, é mais sobremesa do que alimento. Procure versões com <strong>fruta ou leite primeiro</strong>.
+            </p>
+          </div>
+
+          <div class="rotulo-ex">
+            <h4>🥖 Biscoitos / barrinhas</h4>
+            <p>
+              "Light", "fit", "natural" e "zero" no rótulo da frente <strong>não significam nada</strong>. Vire a embalagem e leia a lista de ingredientes — a verdade está ali.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="acucar-block">
+          <h4>🍬 Os 60+ nomes que o açúcar pode aparecer</h4>
+          <p class="acucar-sub">
+            A indústria usa esses nomes pra esconder o açúcar. Quando você vir qualquer um deles entre os primeiros ingredientes, está consumindo açúcar — mesmo que esteja escrito "sem açúcar" na frente da embalagem.
+          </p>
+          <div class="acucar-grid">
+            <span>Açúcar</span>
+            <span>Açúcar invertido</span>
+            <span>Açúcar de cana</span>
+            <span>Açúcar mascavo</span>
+            <span>Açúcar demerara</span>
+            <span>Açúcar refinado</span>
+            <span>Açúcar cristal</span>
+            <span>Açúcar de coco</span>
+            <span>Açúcar de confeiteiro</span>
+            <span>Açúcar turbinado</span>
+            <span>Açúcar muscovado</span>
+            <span>Açúcar de palma</span>
+            <span>Açúcar amarelo</span>
+            <span>Açúcar de tâmara</span>
+            <span>Açúcar de uva</span>
+            <span>Açúcar de beterraba</span>
+            <span>Sacarose</span>
+            <span>Glicose</span>
+            <span>Frutose</span>
+            <span>Dextrose</span>
+            <span>Maltose</span>
+            <span>Lactose</span>
+            <span>Galactose</span>
+            <span>Manose</span>
+            <span>Trealose</span>
+            <span>Isomaltose</span>
+            <span>Maltodextrina</span>
+            <span>Dextrina</span>
+            <span>Amido modificado</span>
+            <span>Xarope de milho</span>
+            <span>Xarope de milho de alta frutose</span>
+            <span>Xarope de glicose</span>
+            <span>Xarope de frutose</span>
+            <span>Xarope de bordo (maple)</span>
+            <span>Xarope de agave</span>
+            <span>Xarope de arroz</span>
+            <span>Xarope dourado</span>
+            <span>Xarope de malte</span>
+            <span>Xarope de carob</span>
+            <span>Mel</span>
+            <span>Melado</span>
+            <span>Melaço</span>
+            <span>Caldo de cana evaporado</span>
+            <span>Suco de cana evaporado</span>
+            <span>Suco de cana desidratado</span>
+            <span>Cristais de cana</span>
+            <span>Néctar de coco</span>
+            <span>Néctar de agave</span>
+            <span>Concentrado de suco de fruta</span>
+            <span>Suco de fruta concentrado</span>
+            <span>Polidextrose</span>
+            <span>Sorbitol</span>
+            <span>Manitol</span>
+            <span>Maltitol</span>
+            <span>Xilitol</span>
+            <span>Eritritol</span>
+            <span>Caramelo</span>
+            <span>Etil maltol</span>
+            <span>Glicose de milho</span>
+            <span>Diatase</span>
+            <span>Açúcar invertido líquido</span>
+            <span>Sacarose hidrolisada</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
