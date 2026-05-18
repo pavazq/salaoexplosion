@@ -430,10 +430,7 @@
         <h2 class="tc-section__title">Envie sua candidatura</h2>
 
         <div class="tc-form-wrap">
-          <form id="tcForm" class="tc-form" action="https://formsubmit.co/ajax/salaoexplosion@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="Nova candidatura — Trabalhe Conosco">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
+          <form id="tcForm" class="tc-form">
             <input type="text" name="_honey" style="display:none">
 
             <div class="tc-field">
@@ -499,7 +496,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <h3>Candidatura enviada!</h3>
-            <p>Recebemos seus dados por e-mail. Vamos abrir o WhatsApp para você nos avisar — só precisa apertar enviar. A gente retorna em breve!</p>
+            <p>Vamos abrir o WhatsApp para você nos enviar sua candidatura — só precisa apertar enviar. A gente retorna em breve!</p>
           </div>
         </div>
       </section>
@@ -544,16 +541,6 @@
 
       btn.disabled = true;
       btn.textContent = 'Enviando...';
-
-      var fd = new FormData(form);
-      // Fire-and-forget: tenta o e-mail mas nao bloqueia o sucesso
-      try {
-        fetch(form.action, {
-          method: 'POST',
-          body: fd,
-          headers: { 'Accept': 'application/json' }
-        }).catch(function() {});
-      } catch (err) {}
 
       // Monta a mensagem completa de WhatsApp com todos os dados
       var linhas = [
