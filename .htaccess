@@ -10,3 +10,7 @@ RewriteRule ^ https://salaoexplosion.com.br%{REQUEST_URI} [R=301,L]
 RewriteCond %{HTTPS} off
 RewriteCond %{HTTP_HOST} ^salaoexplosion\.com\.br$ [NC]
 RewriteRule ^ https://salaoexplosion.com.br%{REQUEST_URI} [R=301,L]
+
+# Redireciona variacoes antigas da landing page para /landing/
+RewriteRule ^landing\.html$ /landing/ [R=301,L]
+RewriteRule ^landing$ /landing/ [R=301,L]
