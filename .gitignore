@@ -19,3 +19,6 @@ imagens 2/copy_86486C3C-E824-40E3-A9D9-B54E5568386A.MOV
 
 # Pasta raw não usada (458 MB de referências de design, não referenciada por nenhuma página live)
 Imagens/fotos/
+
+# Fotos originais do hero (pesadas, ~18MB) — só as versões otimizadas em assets/img/hero-clientes/ vão pro site
+imagens hero/

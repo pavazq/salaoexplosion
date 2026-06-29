@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <meta name="description" content="Massagens Terapêuticas no Salão Explosion — 6 tipos de massagem com a massoterapeuta Emilia. Relaxante, Drenagem Linfática, Modeladora, Detox com Argila, Miofascial e Redutora. Diadema, SP.">
+  <meta name="description" content="Massagens Terapêuticas no Salão Explosion, 6 tipos de massagem com a massoterapeuta Emilia. Relaxante, Drenagem Linfática, Modeladora, Detox com Argila, Miofascial e Redutora. Diadema, SP.">
   <meta name="theme-color" content="#0a0011">
-  <title>Massagens Terapêuticas — Salão Explosion</title>
-  <link rel="stylesheet" href="../css/style.css?v=20260507d">
+  <title>Massagens Terapêuticas, Salão Explosion</title>
+  <link rel="stylesheet" href="../css/style.css?v=20260629c">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <style>
     /* ── Search ── */
@@ -26,6 +26,23 @@
     .svc-chip.active { background: rgba(177,78,255,0.22); border-color: rgba(177,78,255,0.75); color: var(--text-light); padding-right: 0.65rem; }
     .svc-chip.active::after { content: '✕'; display: inline-block; margin-left: 0.4rem; font-size: 0.65rem; opacity: 0.7; }
     .svc-no-results { text-align: center; color: var(--text-light-secondary); font-size: 0.9rem; padding: 2rem 0; }
+
+    /* Atalhos no mobile: uma linha só, rolável por swipe, sem barra de rolagem visível */
+    @media (max-width: 680px) {
+      .svc-search__chips-row {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        scroll-snap-type: x proximity;
+        padding-bottom: 0.2rem;
+      }
+      .svc-search__chips-row::-webkit-scrollbar { display: none; }
+      .svc-search__chips-label,
+      .svc-chip { flex-shrink: 0; }
+      .svc-chip { scroll-snap-align: start; }
+    }
 
     .cat-list { display: flex; flex-direction: column; gap: 0.75rem; }
     .cat-item { justify-content: center; text-align: center;

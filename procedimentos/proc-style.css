@@ -2,7 +2,7 @@
    PROC-STYLE.CSS — Design premium para páginas individuais
    Salão Explosion — compartilhado por todas as proc pages
 ──────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Outfit:wght@300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,400;1,500&display=swap');
 
 :root {
   --bg:    #0b0418;
@@ -17,7 +17,7 @@
   --t3:    rgba(245,240,255,.32);
   --bdr:   rgba(168,85,247,.16);
   --ff:    'Outfit', sans-serif;
-  --fi:    'Cormorant Garamond', serif;
+  --fi:    'Outfit', sans-serif;
 }
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }

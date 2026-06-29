@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <meta name="description" content="Todos os serviços do Salão Explosion — cronogramas, cortes, tratamentos, alisamentos, descolorações, coloração, estética e massagens.">
+  <meta name="description" content="Todos os serviços do Salão Explosion, cronogramas, cortes, tratamentos, alisamentos, descolorações, coloração, estética e massagens.">
   <meta name="theme-color" content="#0a0011">
-  <title>Serviços — Salão Explosion</title>
+  <title>Serviços, Salão Explosion</title>
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Serviços — Salão Explosion">
-  <meta property="og:description" content="Cronogramas, cortes, tratamentos, alisamentos, colorações, estética e massagens — tudo com o cuidado do Salão Explosion.">
+  <meta property="og:title" content="Serviços, Salão Explosion">
+  <meta property="og:description" content="Cronogramas, cortes, tratamentos, alisamentos, colorações, estética e massagens, tudo com o cuidado do Salão Explosion.">
   <meta property="og:image" content="https://salaoexplosion.com.br/assets/img/og-image-v2.png">
   <meta property="og:url" content="https://salaoexplosion.com.br/servicos.html">
   <meta property="og:locale" content="pt_BR">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://salaoexplosion.com.br/assets/img/og-image-v2.png">
-  <link rel="stylesheet" href="css/style.css?v=20260507d">
+  <link rel="stylesheet" href="css/style.css?v=20260629c">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/favicon.png">
   <style>
@@ -115,11 +115,12 @@
     }
 
     .categoria-card__name {
-      font-family: var(--font-display);
-      font-size: clamp(1.2rem, 2.5vw, 1.55rem);
-      font-weight: 600;
+      font-family: var(--font-body);
+      font-size: clamp(1.1rem, 2.3vw, 1.4rem);
+      font-weight: 500;
+      letter-spacing: -0.01em;
       color: var(--text-light);
-      line-height: 1.25;
+      line-height: 1.3;
       margin: 0;
     }
 
@@ -152,7 +153,7 @@
 
     .categoria-card__arrow svg { width: 12px; height: 12px; }
 
-    /* Card de Massagens — acento mais forte no pink */
+    /* Card de Massagens, acento mais forte no pink */
     .categoria-card--massagens {
       border-color: rgba(228, 106, 160, 0.35);
       background: rgba(50, 14, 60, 0.55);
@@ -287,6 +288,23 @@
       vertical-align: middle;
     }
 
+    /* Atalhos no mobile: uma linha só, rolável por swipe, sem barra de rolagem visível */
+    @media (max-width: 680px) {
+      .svc-search__chips-row {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        scroll-snap-type: x proximity;
+        padding-bottom: 0.2rem;
+      }
+      .svc-search__chips-row::-webkit-scrollbar { display: none; }
+      .svc-search__chips-label,
+      .svc-chip { flex-shrink: 0; }
+      .svc-chip { scroll-snap-align: start; }
+    }
+
     .svc-no-results {
       text-align: center;
       color: rgba(237,230,247,0.45);
@@ -371,16 +389,16 @@
 
       <div class="categorias-grid">
 
-        <a href="procedimentos/cronograma.html" class="categoria-card reveal" data-keywords="cronograma hidratacao nutricao reconstrucao umectacao proteina capilar">
+        <a href="procedimentos/cronograma.html" class="categoria-card reveal" data-keywords="cronograma estelar capilar hidratacao nutricao reconstrucao umectacao proteina">
           <span class="categoria-card__num">01</span>
           <div class="categoria-card__body">
-            <h2 class="categoria-card__name">Cronograma Capilar</h2>
+            <h2 class="categoria-card__name">Cronogramas</h2>
             <span class="categoria-card__count">2 protocolos</span>
           </div>
           <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </a>
 
-        <a href="procedimentos/tratamentos.html" class="categoria-card reveal" data-keywords="selagem queratina cauterizacao hidratacao proteina fortalecimento nutricao tratamento">
+        <a href="procedimentos/tratamentos.html" class="categoria-card reveal" data-keywords="tratamento tratamentos estelar capilar plastica dos fios essenciais ccrp carvao ativado reposicao de carbono acidificacao redken selagem queratina cauterizacao hidratacao proteina fortalecimento nutricao reconstrucao botox">
           <span class="categoria-card__num">02</span>
           <div class="categoria-card__body">
             <h2 class="categoria-card__name">Tratamentos</h2>
@@ -389,7 +407,7 @@
           <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </a>
 
-        <a href="procedimentos/cortes.html" class="categoria-card reveal" data-keywords="corte tesoura degrade franja cabelo curto cacheado aparar">
+        <a href="procedimentos/cortes.html" class="categoria-card reveal" data-keywords="corte cortes estiloso terapeutico tesoura degrade franja cabelo curto cacheado aparar repicado">
           <span class="categoria-card__num">03</span>
           <div class="categoria-card__body">
             <h2 class="categoria-card__name">Cortes</h2>
@@ -398,7 +416,7 @@
           <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </a>
 
-        <a href="procedimentos/finalizacoes.html" class="categoria-card reveal" data-keywords="finalizacao blow dry babyliss escova definicao cachos difusor secador">
+        <a href="procedimentos/finalizacoes.html" class="categoria-card reveal" data-keywords="finalizacao finalizacoes cacheada lisa blow dry babyliss escova definicao cachos difusor secador chapinha">
           <span class="categoria-card__num">04</span>
           <div class="categoria-card__body">
             <h2 class="categoria-card__name">Finalização</h2>
@@ -407,7 +425,7 @@
           <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </a>
 
-        <a href="procedimentos/alisamentos.html" class="categoria-card reveal" data-keywords="alisamento progressiva escova progressiva quimica liso definitivo relaxamento">
+        <a href="procedimentos/alisamentos.html" class="categoria-card reveal" data-keywords="alisamento alisamentos progressiva detok harmonizacao para lisas escova progressiva quimica liso definitivo relaxamento">
           <span class="categoria-card__num">05</span>
           <div class="categoria-card__body">
             <h2 class="categoria-card__name">Alisamentos</h2>
@@ -416,7 +434,7 @@
           <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </a>
 
-        <a href="procedimentos/harmonizacoes.html" class="categoria-card reveal" data-keywords="volume frizz anti-frizz controle reducao crespo ondulado">
+        <a href="procedimentos/harmonizacoes.html" class="categoria-card reveal" data-keywords="reducao de volume harmonizacao cacheadas crespas volume frizz anti-frizz antifrizz controle crespo ondulado cacheado">
           <span class="categoria-card__num">06</span>
           <div class="categoria-card__body">
             <h2 class="categoria-card__name">Redução de Volume</h2>
@@ -425,7 +443,7 @@
           <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </a>
 
-        <a href="procedimentos/coloracao.html" class="categoria-card reveal" data-keywords="coloracao tintura cor ruiva loira castanha black pintura">
+        <a href="procedimentos/coloracao.html" class="categoria-card reveal" data-keywords="coloracao tintura tinta cor ruiva loira castanha morena black pintura tonalizante matizacao raiz">
           <span class="categoria-card__num">07</span>
           <div class="categoria-card__body">
             <h2 class="categoria-card__name">Coloração</h2>
@@ -434,17 +452,26 @@
           <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </a>
 
-        <a href="procedimentos/coloracoes.html" class="categoria-card reveal" data-keywords="mechas tecnicas ombre balayage babylights iluminacao luzes reflexo californiana">
+        <a href="procedimentos/coloracoes.html" class="categoria-card reveal" data-keywords="mechas tecnicas ombre hair balayage babylights iluminacao luzes reflexo californiana mechas iluminadas">
           <span class="categoria-card__num">08</span>
           <div class="categoria-card__body">
             <h2 class="categoria-card__name">Mechas & Técnicas</h2>
-            <span class="categoria-card__count">8 procedimentos</span>
+            <span class="categoria-card__count">3 procedimentos</span>
           </div>
           <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </a>
 
-        <a href="procedimentos/moreno-iluminado.html" class="categoria-card reveal" data-keywords="moreno iluminado reflexo cabelo escuro luzes em morena descoloracao">
+        <a href="procedimentos/global.html" class="categoria-card reveal" data-keywords="global coloracao global cabelo inteiro cor unica uma cor castanho loiro ruivo cobertura raiz uniforme">
           <span class="categoria-card__num">09</span>
+          <div class="categoria-card__body">
+            <h2 class="categoria-card__name">Global</h2>
+            <span class="categoria-card__count">Cabelo inteiro</span>
+          </div>
+          <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="procedimentos/moreno-iluminado.html" class="categoria-card reveal" data-keywords="moreno iluminado morena iluminada reflexo cabelo escuro luzes em morena descoloracao">
+          <span class="categoria-card__num">10</span>
           <div class="categoria-card__body">
             <h2 class="categoria-card__name">Moreno Iluminado</h2>
             <span class="categoria-card__count">2 procedimentos</span>
@@ -452,8 +479,8 @@
           <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </a>
 
-        <a href="procedimentos/coloridos.html" class="categoria-card reveal" data-keywords="colorido fantasia azul verde rosa violeta cor especial">
-          <span class="categoria-card__num">10</span>
+        <a href="procedimentos/coloridos.html" class="categoria-card reveal" data-keywords="colorido coloridos fantasia azul verde rosa violeta lilas cor especial mechas coloridas global colorido uma mecha colorida peekaboo hair californiana colorida">
+          <span class="categoria-card__num">11</span>
           <div class="categoria-card__body">
             <h2 class="categoria-card__name">Coloridos</h2>
             <span class="categoria-card__count">5 categorias</span>
@@ -461,8 +488,8 @@
           <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </a>
 
-        <a href="procedimentos/estetica.html" class="categoria-card reveal" data-keywords="estetica sobrancelha limpeza de pele design facial">
-          <span class="categoria-card__num">11</span>
+        <a href="procedimentos/estetica.html" class="categoria-card reveal" data-keywords="estetica sobrancelha design de sobrancelha limpeza de pele facial">
+          <span class="categoria-card__num">12</span>
           <div class="categoria-card__body">
             <h2 class="categoria-card__name">Estética</h2>
             <span class="categoria-card__count">2 serviços</span>
@@ -470,8 +497,8 @@
           <span class="categoria-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </a>
 
-        <a href="massagens/index.html" class="categoria-card categoria-card--massagens reveal" data-keywords="massagem relaxante drenagem linfatica modeladora redutora miofascial detox argila corpo bem-estar">
-          <span class="categoria-card__num">12</span>
+        <a href="massagens/index.html" class="categoria-card categoria-card--massagens reveal" data-keywords="massagem massagens relaxante drenagem linfatica modeladora redutora miofascial detox com argila corpo bem-estar">
+          <span class="categoria-card__num">13</span>
           <div class="categoria-card__body">
             <h2 class="categoria-card__name">Massagens</h2>
             <span class="categoria-card__count">6 tipos</span>
