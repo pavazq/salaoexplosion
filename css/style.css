@@ -3329,8 +3329,9 @@ section {
 }
 
 .cta-final__text {
-  color: var(--text-light-secondary);
-  font-size: 1.1rem;
+  color: rgba(237, 230, 247, 0.85);
+  font-size: 1.2rem;
+  line-height: 1.7;
   margin: 0 auto 2.5rem;
 }
 
