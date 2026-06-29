@@ -107,11 +107,9 @@ body::before {
     rgba(140, 30, 220, 0.25) 100%
   );
   filter: blur(72px);
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  animation: orbMorph 14s ease-in-out infinite alternate;
+  border-radius: 36% 64% 62% 38% / 42% 36% 64% 58%;
   pointer-events: none;
   z-index: -1;
-  will-change: transform;
 }
 
 /* ── Blob secundário — rosa para profundidade ── */
@@ -129,11 +127,9 @@ body::before {
     rgba(200, 45, 185, 0.14) 100%
   );
   filter: blur(85px);
-  border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
-  animation: orbMorph2 18s ease-in-out infinite alternate;
+  border-radius: 64% 36% 38% 62% / 62% 64% 36% 38%;
   pointer-events: none;
   z-index: -1;
-  will-change: transform;
 }
 
 @keyframes orbMorph {
