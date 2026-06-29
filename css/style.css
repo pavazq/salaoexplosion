@@ -306,10 +306,8 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(7, 0, 14, 0.35);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  transition: background 0.4s ease, backdrop-filter 0.4s ease;
+  background: rgba(7, 0, 14, 0.58);
+  transition: background 0.4s ease;
   border-bottom: none;
 }
 
@@ -327,9 +325,7 @@ section {
 }
 
 .header.scrolled {
-  background: rgba(7, 0, 14, 0.82);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: rgba(7, 0, 14, 0.92);
 }
 
 .header.scrolled::after {

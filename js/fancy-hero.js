@@ -13,10 +13,14 @@
     var EASE = 0.04;
     var SENSITIVITY = -0.5;
 
+    var running = false;
+    function startLoop() { if (!running) { running = true; requestAnimationFrame(tick); } }
+
     function onMove(x, y) {
       var rect = field.getBoundingClientRect();
       mouseX = x - rect.left;
       mouseY = y - rect.top;
+      startLoop();
     }
 
     window.addEventListener('mousemove', function(e) { onMove(e.clientX, e.clientY); }, { passive: true });
@@ -25,6 +29,7 @@
     }, { passive: true });
 
     function tick() {
+      var moving = false;
       els.forEach(function(el, i) {
         var depth = parseFloat(el.dataset.depth) || 1;
         var strength = (depth * SENSITIVITY) / 20;
@@ -32,11 +37,13 @@
         var ty = mouseY * strength;
         positions[i].x += (tx - positions[i].x) * EASE;
         positions[i].y += (ty - positions[i].y) * EASE;
+        if (Math.abs(tx - positions[i].x) > 0.08 || Math.abs(ty - positions[i].y) > 0.08) moving = true;
         el.style.transform = 'translate3d(' + positions[i].x.toFixed(2) + 'px,' + positions[i].y.toFixed(2) + 'px,0)';
       });
-      requestAnimationFrame(tick);
+      // Para o loop quando tudo assenta; recomeça no proximo movimento
+      if (moving) { requestAnimationFrame(tick); } else { running = false; }
     }
-    tick();
+    startLoop();
 
     // Fade in images with stagger
     els.forEach(function(el, i) {

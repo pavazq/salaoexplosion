@@ -767,11 +767,20 @@ document.addEventListener('DOMContentLoaded', () => {
       var pt = e.touches[0];
       curX = pt.clientX - startX;
       curY = pt.clientY - startY;
-      if (Math.abs(curX) > 8 || Math.abs(curY) > 8) {
-        wasDrag = true;
-        if (e.cancelable) e.preventDefault();
-        topCard.style.transform = 'translate(' + curX + 'px, ' + curY + 'px) rotate(' + (curX * 0.07) + 'deg)';
+      // Decide a direcao no primeiro movimento significativo
+      if (!wasDrag) {
+        if (Math.abs(curX) < 8 && Math.abs(curY) < 8) return; // ainda indefinido
+        if (Math.abs(curY) > Math.abs(curX)) {
+          // Gesto vertical: nao e swipe de carta — libera a rolagem da pagina
+          isDragging = false;
+          topCard.style.transition = '';
+          positionCards();
+          return;
+        }
+        wasDrag = true; // gesto horizontal confirmado
       }
+      if (e.cancelable) e.preventDefault();
+      topCard.style.transform = 'translate(' + curX + 'px, ' + curY + 'px) rotate(' + (curX * 0.07) + 'deg)';
     }, { passive: false });
 
     document.addEventListener('touchend', function() {
