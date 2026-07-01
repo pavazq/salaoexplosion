@@ -305,6 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const phone = '5511986542632';
       const message = link.dataset.whatsapp || 'Olá! Gostaria de agendar um horário no Salão Explosion.';
       const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.track && window.track('whatsapp_click', { page: location.pathname });
       window.open(url, '_blank');
     });
   });
