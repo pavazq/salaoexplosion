@@ -15,6 +15,15 @@
   <meta name="twitter:image" content="https://salaoexplosion.com.br/assets/img/og-image-v3.png">
   <link rel="stylesheet" href="../css/style.css?v=20260630a">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <style>
+    .alt-option { display:flex; align-items:center; gap:1rem; justify-content:space-between; max-width:560px; margin:1.25rem auto 0; padding:1.15rem 1.4rem; background:var(--bg-dark); border:1px solid rgba(177,78,255,0.3); border-radius:var(--radius-md); text-decoration:none; color:var(--text-light); transition:all var(--transition); }
+    .alt-option:hover { border-color:rgba(177,78,255,0.6); background:var(--bg-card); transform:translateY(-2px); box-shadow:0 8px 30px rgba(0,0,0,0.35); }
+    .alt-option__txt { text-align:left; line-height:1.45; }
+    .alt-option__txt strong { display:block; }
+    .alt-option__txt span { color:var(--text-light-secondary); font-size:0.92rem; }
+    .alt-option__arrow { width:22px; height:22px; color:var(--accent); flex-shrink:0; transition:transform var(--transition); }
+    .alt-option:hover .alt-option__arrow { transform:translateX(3px); }
+  </style>
   <script defer src="../js/analytics.js?v=20260630c"></script>
 </head>
 <body>
@@ -133,6 +142,15 @@
           <a href="#" class="btn-cta btn-cta-solid proc-split__cta" data-whatsapp="Olá! Gostaria de um orçamento para o Cronograma Estelar.">Agendar pelo WhatsApp</a>
         </div>
       </div>
+
+      <!-- Opção: sessão única -->
+      <a href="tratamento-estelar.html" class="alt-option reveal">
+        <span class="alt-option__txt">
+          <strong>Prefere fazer em uma única sessão?</strong>
+          <span>Conheça o <strong style="color:var(--accent);display:inline;">Tratamento Estelar</strong> — as 10 etapas do cronograma completo em uma sessão só.</span>
+        </span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="alt-option__arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
 
     </div>
   </section>
