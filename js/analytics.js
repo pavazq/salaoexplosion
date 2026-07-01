@@ -17,9 +17,9 @@
   'use strict';
 
   /* ---- IDs (troque os placeholders pelos códigos reais) ---- */
-  var CLARITY_ID = 'xfdojgk28j';    // Microsoft Clarity  → LIGADO
-  var GA4_ID     = 'G-Q8LFPJP5C8';  // Google Analytics 4 → LIGADO
-  var PIXEL_ID   = 'PIXEL_ID';      // Meta Pixel         (ex.: 1029384756)
+  var CLARITY_ID = 'xfdojgk28j';       // Microsoft Clarity  → LIGADO
+  var GA4_ID     = 'G-Q8LFPJP5C8';     // Google Analytics 4 → LIGADO
+  var PIXEL_ID   = '518426083446408';  // Meta Pixel         → LIGADO
 
   var clarityOn = !!CLARITY_ID && CLARITY_ID !== 'CLARITY_ID';
   var ga4On     = !!GA4_ID     && GA4_ID     !== 'G-XXXXXXXXXX';
