@@ -310,6 +310,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- SOM DO VIDEO ---
+  document.querySelectorAll('[data-video-sound]').forEach(btn => {
+    const wrap  = btn.closest('.sobre__video-wrap');
+    const video = wrap && wrap.querySelector('video');
+    if (!video) { btn.remove(); return; }
+
+    const sync = () => {
+      const on = !video.muted;
+      btn.classList.toggle('is-on', on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? 'Desligar o som do video' : 'Ligar o som do video');
+    };
+
+    btn.addEventListener('click', () => {
+      video.muted = !video.muted;
+      if (!video.muted) {
+        video.volume = 1;
+        const p = video.play();
+        if (p && p.catch) p.catch(() => {});
+      }
+      sync();
+      window.track && window.track('video_som_toggle', { page: location.pathname, ligado: !video.muted });
+    });
+
+    sync();
+  });
+
   // --- CATEGORY TAB REDIRECT (from servicos.html) ---
   const savedTab = sessionStorage.getItem('activeTab');
   if (savedTab && tabs.length) {
