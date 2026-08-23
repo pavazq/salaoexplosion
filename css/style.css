@@ -6874,17 +6874,39 @@ a[href$="playlist.html"] { display: none !important; }
 .equipe__idx-foto-wrap::before {
   content: '';
   position: absolute;
-  inset: -18px;
-  border-radius: 34px;
-  background: radial-gradient(ellipse, rgba(228,106,160,0.45) 0%, rgba(177,78,255,0.18) 50%, transparent 75%);
-  filter: blur(26px);
+  inset: -52px;
+  border-radius: 70px;
+  background: radial-gradient(ellipse at center,
+    rgba(228,106,160,0.9) 0%,
+    rgba(177,78,255,0.6) 40%,
+    rgba(177,78,255,0.22) 64%,
+    transparent 80%);
+  filter: blur(48px);
   z-index: 0;
   animation: idxGlow 4s ease-in-out infinite alternate;
   pointer-events: none;
 }
+
+/* contorno aceso colado no card */
+.equipe__idx-foto-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -9px;
+  border-radius: 34px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--pink) 45%, var(--accent) 100%);
+  filter: blur(12px);
+  opacity: 0.95;
+  z-index: 0;
+  pointer-events: none;
+}
+
 @keyframes idxGlow {
-  from { opacity: 0.4; transform: scale(0.93); }
-  to   { opacity: 0.85; transform: scale(1.07); }
+  from { opacity: 0.6; transform: scale(0.97); }
+  to   { opacity: 1;   transform: scale(1.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .equipe__idx-foto-wrap::before { animation: none; opacity: 0.85; }
 }
 
 .equipe__idx-foto {
@@ -6895,7 +6917,10 @@ a[href$="playlist.html"] { display: none !important; }
   object-fit: cover;
   object-position: center 20%;
   border: none;
-  filter: drop-shadow(0 0 18px rgba(228,106,160,0.45)) drop-shadow(0 8px 24px rgba(0,0,0,0.35));
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,0.16),
+    0 26px 64px rgba(0,0,0,0.55);
+  filter: drop-shadow(0 0 30px rgba(228,106,160,0.5));
   display: block;
   position: relative;
   z-index: 1;
