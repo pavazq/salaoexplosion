@@ -3,26 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <meta name="description" content="Cronograma Estelar no Salão Explosion, 4 sessões com 10 etapas completas de restauração capilar. O tratamento mais completo do salão. Diadema, SP.">
+  <meta name="description" content="Consulta nutricional com Paloma Vazquez, CRN-3 66840, no Salão Explosion. Plano alimentar individualizado, plataforma exclusiva e acompanhamento. Online 180 ou presencial 280. Diadema, SP.">
   <meta name="theme-color" content="#0a0011">
-  <title>Cronograma Estelar, Salão Explosion</title>
+  <title>Consulta Nutricional, Salão Explosion</title>
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Cronograma Estelar, Salão Explosion">
-  <meta property="og:description" content="Cronograma Estelar no Salão Explosion, 4 sessões com 10 etapas completas de restauração capilar. O tratamento mais completo do salão. Diadema, SP.">
+  <meta property="og:title" content="Consulta Nutricional, Salão Explosion">
+  <meta property="og:description" content="Consulta nutricional com Paloma Vazquez, CRN-3 66840, no Salão Explosion. Plano alimentar individualizado, plataforma exclusiva e acompanhamento. Online 180 ou presencial 280. Diadema, SP.">
   <meta property="og:image" content="https://salaoexplosion.com.br/assets/img/og-image-v3.png">
-  <meta property="og:url" content="https://salaoexplosion.com.br/procedimentos/cronograma-estelar.html">
+  <meta property="og:url" content="https://salaoexplosion.com.br/outros/consulta-nutricional.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://salaoexplosion.com.br/assets/img/og-image-v3.png">
   <link rel="stylesheet" href="../css/style.css?v=20260823a">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <style>
-    .alt-option { display:flex; align-items:center; gap:1rem; justify-content:space-between; max-width:560px; margin:1.25rem auto 0; padding:1.15rem 1.4rem; background:var(--bg-dark); border:1px solid rgba(177,78,255,0.3); border-radius:var(--radius-md); text-decoration:none; color:var(--text-light); transition:all var(--transition); }
-    .alt-option:hover { border-color:rgba(177,78,255,0.6); background:var(--bg-card); transform:translateY(-2px); box-shadow:0 8px 30px rgba(0,0,0,0.35); }
-    .alt-option__txt { text-align:left; line-height:1.45; }
-    .alt-option__txt strong { display:block; }
-    .alt-option__txt span { color:var(--text-light-secondary); font-size:0.92rem; }
-    .alt-option__arrow { width:22px; height:22px; color:var(--accent); flex-shrink:0; transition:transform var(--transition); }
-    .alt-option:hover .alt-option__arrow { transform:translateX(3px); }
+    .price-table__section { font-family:var(--font-display); font-weight:600; color:var(--text-light); font-size:1rem; margin:1.5rem 0 0.5rem; }
+    .nutri-pro { display:grid; grid-template-columns:minmax(0,300px) 1fr; gap:clamp(1.5rem,4vw,3rem); align-items:center; margin:0 auto clamp(2.5rem,5vw,4rem); max-width:860px; }
+    .nutri-pro__photo { position:relative; border-radius:24px; overflow:hidden; aspect-ratio:4/5; box-shadow:0 24px 60px rgba(0,0,0,0.55), 0 0 0 1.5px rgba(228,106,160,0.25), 0 0 36px rgba(177,78,255,0.15); }
+    .nutri-pro__photo img { width:100%; height:100%; object-fit:cover; object-position:center 18%; display:block; }
+    .nutri-pro__photo::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom, transparent 60%, rgba(10,0,17,0.5) 100%); pointer-events:none; }
+    .nutri-pro__name { font-family:var(--font-display); font-size:clamp(1.35rem,2.4vw,1.7rem); font-weight:700; color:var(--text-light); margin:0.5rem 0 0.35rem; }
+    .nutri-pro__crn { font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--pink); margin:0 0 1rem; }
+    .nutri-pro__text { color:var(--text-light-secondary); line-height:1.75; font-size:clamp(0.95rem,1.2vw,1.05rem); margin:0; }
+    @media (max-width:768px) {
+      .nutri-pro { grid-template-columns:1fr; text-align:center; }
+      .nutri-pro__photo { width:min(280px,100%); margin:0 auto; }
+    }
   </style>
   <script defer src="../js/analytics.js?v=20260630c"></script>
 </head>
@@ -57,100 +62,92 @@
   <section class="proc-hero">
     <div class="proc-hero__bg" style="background-image:url('../assets/img/hero.jpg');"></div>
     <div class="container proc-hero__content">
-      <p class="proc-hero__breadcrumb"><a href="../">Início</a> › <a href="../servicos.html">Serviços</a> › Cronograma Estelar</p>
-      <span class="label proc-hero__category">Tratamentos · Restauração completa</span>
-      <h1 class="proc-hero__title">Cronograma Estelar</h1>
+      <p class="proc-hero__breadcrumb"><a href="../">Início</a> › <a href="../servicos.html">Serviços</a> › Consulta Nutricional</p>
+      <span class="label proc-hero__category">Nutrição · Online e presencial</span>
+      <h1 class="proc-hero__title">Consulta Nutricional</h1>
+      <p class="hero__subtitle" style="margin-top:1rem;color:var(--text-light-secondary);">Plano alimentar · Plataforma · Acompanhamento</p>
     </div>
   </section>
 
   <section class="proc-content">
     <div class="container">
 
-      <!-- Intro -->
+      <!-- Fonte de todo o conteúdo desta página: site Nutrio (nutrio-one.vercel.app/info/como-funciona-consulta), consultado em 23/08/2026. -->
       <div class="proc-page-intro reveal">
-        <span class="proc-split__badge">O queridinho do salão</span>
-        <h2 class="proc-page-intro__title">Cronograma Estelar</h2>
-        <p class="proc-page-intro__sub">São quatro sessões, uma por semana, dentro de um mês. Cada sessão é uma restauração capilar completa, do couro cabeludo às pontas.</p>
+        <span class="proc-split__badge">Nutrição</span>
+        <h2 class="proc-page-intro__title">Consulta Nutricional</h2>
+        <p class="proc-page-intro__sub">O plano alimentar sai da sua rotina de verdade: o que você come, o seu histórico clínico e onde você quer chegar. Entre uma consulta e outra, o acompanhamento continua pelo WhatsApp.</p>
       </div>
 
-      <!-- O que está incluso -->
+      <div class="nutri-pro reveal">
+        <div class="nutri-pro__photo">
+          <img src="../assets/img/paloma-nutri.jpg" alt="Paloma Vazquez, nutricionista do Salão Explosion" loading="lazy" width="1050" height="1400">
+        </div>
+        <div>
+          <span class="proc-split__badge">Quem vai te atender</span>
+          <p class="nutri-pro__name">Paloma Vazquez Alves</p>
+          <p class="nutri-pro__crn">Nutricionista · CRN-3 66840</p>
+          <p class="nutri-pro__text">Formada em 2021 pela FMABC. O planejamento alimentar é individualizado, com comida de verdade e mudanças que cabem na sua rotina. Atende online e aqui no Explosion.</p>
+        </div>
+      </div>
+
       <div class="proc-page-features reveal">
         <h4 class="proc-page-features__heading">O que está incluso</h4>
         <div class="proc-split__features">
-          <div class="proc-split__feature">Avaliação profissional</div>
-          <div class="proc-split__feature">Higienização</div>
-          <div class="proc-split__feature">Umectação</div>
-          <div class="proc-split__feature">Massagem capilar</div>
-          <div class="proc-split__feature">Argiloterapia</div>
-          <div class="proc-split__feature">Acidificação</div>
-          <div class="proc-split__feature">Tratamento Premium</div>
-          <div class="proc-split__feature">Led terapia</div>
-          <div class="proc-split__feature">Alta frequência</div>
-          <div class="proc-split__feature">Ozonioterapia</div>
-          <div class="proc-split__feature">Finalização</div>
+          <div class="proc-split__feature">Consulta sobre rotina, histórico clínico e objetivos</div>
+          <div class="proc-split__feature">Plano alimentar individualizado, com porções e horários</div>
+          <div class="proc-split__feature">Acesso à plataforma exclusiva</div>
+          <div class="proc-split__feature">Biblioteca de e-books e receitas</div>
+          <div class="proc-split__feature">Gráficos de peso, medidas e gordura corporal</div>
+          <div class="proc-split__feature">Acompanhamento por WhatsApp entre as consultas</div>
+          <div class="proc-split__feature">1 consulta e 1 retorno</div>
         </div>
       </div>
 
-      <!-- Benefícios -->
       <div class="proc-page-benefits reveal">
-        <h4 class="proc-page-benefits__heading">Benefícios</h4>
+        <h4 class="proc-page-benefits__heading">Como funciona</h4>
         <div class="proc-page-benefits__grid">
           <div class="proc-split__explanation">
-            <p class="proc-split__explanation-title">Umectação</p>
-            <p class="proc-split__explanation-text">Os óleos vegetais ajudam a nutrir profundamente, recuperando a proteção natural do cabelo e evitando o ressecamento.</p>
+            <p class="proc-split__explanation-title">Online</p>
+            <p class="proc-split__explanation-text">A consulta acontece por videochamada, no horário que couber no seu dia. Você recebe o plano alimentar e o acesso à plataforma do mesmo jeito de quem vem até o salão.</p>
           </div>
           <div class="proc-split__explanation">
-            <p class="proc-split__explanation-title">Massagem capilar</p>
-            <p class="proc-split__explanation-text">Uma massagem relaxante no couro cabeludo ativando a circulação e estimulando os folículos.</p>
+            <p class="proc-split__explanation-title">Presencial</p>
+            <p class="proc-split__explanation-text">Tem tudo o que a online tem, mais a avaliação corporal completa, com bioimpedância e adipometria. Acontece aqui no Explosion, na Rua Anuja 59, Eldorado, Diadema.</p>
           </div>
           <div class="proc-split__explanation">
-            <p class="proc-split__explanation-title">Argiloterapia</p>
-            <p class="proc-split__explanation-text">A argila ajuda a purificar, desintoxicar e equilibrar, removendo impurezas e excesso de oleosidade.</p>
+            <p class="proc-split__explanation-title">A plataforma exclusiva</p>
+            <p class="proc-split__explanation-text">Seu plano fica no celular, com as porções e os horários. Os gráficos acompanham peso, medidas e gordura corporal, e tudo se atualiza a cada retorno.</p>
           </div>
           <div class="proc-split__explanation">
-            <p class="proc-split__explanation-title">Acidificação</p>
-            <p class="proc-split__explanation-text">Ajusta o pH do fio, restaurando o equilíbrio ideal para que o cabelo se torne mais forte e saudável.</p>
-          </div>
-          <div class="proc-split__explanation">
-            <p class="proc-split__explanation-title">Led terapia</p>
-            <p class="proc-split__explanation-text">Potencializa a ação das máscaras, melhorando a absorção dos ativos e proporcionando resultados mais rápidos e eficazes.</p>
-          </div>
-          <div class="proc-split__explanation">
-            <p class="proc-split__explanation-title">Alta frequência</p>
-            <p class="proc-split__explanation-text">Estimula o crescimento capilar e reduz a queda dos fios com tecnologia de corrente elétrica de alta frequência.</p>
-          </div>
-          <div class="proc-split__explanation">
-            <p class="proc-split__explanation-title">Ozonioterapia</p>
-            <p class="proc-split__explanation-text">Aumenta a circulação sanguínea no couro cabeludo, estimula o crescimento dos fios e fortalece com propriedades antioxidantes.</p>
-          </div>
-          <div class="proc-split__explanation">
-            <p class="proc-split__explanation-title">Tratamento Premium</p>
-            <p class="proc-split__explanation-text">Máscara de reconstrução profunda com ativos de alta concentração, selando os fios e devolvendo resistência.</p>
+            <p class="proc-split__explanation-title">Para quem é</p>
+            <p class="proc-split__explanation-text">Hipertrofia, emagrecimento e reeducação alimentar. Também para quem convive com diabetes, colesterol alto ou hipertensão e quer ajustar a alimentação.</p>
           </div>
         </div>
       </div>
 
-      <!-- Card de preço -->
       <div class="proc-page-price reveal">
-        <div class="proc-page-price__inner">
+        <div class="proc-page-price__inner proc-page-price__inner--table">
           <span class="proc-split__badge">Investimento</span>
-          <div class="proc-split__price">
-            <span class="proc-split__price-current">799</span>
-            <span class="proc-split__price-install">ou 3× de 267</span>
-          </div>
-          <p class="proc-split__note">Valor com desconto no Pix</p>
-          <a href="#" class="btn-cta btn-cta-solid proc-split__cta" data-whatsapp="Olá! Gostaria de um orçamento para o Cronograma Estelar.">Agendar pelo WhatsApp</a>
+          <p class="price-table__section">Consulta</p>
+          <table class="proc-split__prices-table">
+            <thead><tr><th>Modalidade</th><th>Valor</th><th>Inclui</th></tr></thead>
+            <tbody>
+              <tr><td>Online</td><td>180</td><td>1 consulta e 1 retorno</td></tr>
+              <tr><td>Presencial</td><td>280</td><td>1 consulta, 1 retorno e avaliação corporal</td></tr>
+            </tbody>
+          </table>
+          <p class="price-table__section">Avulso</p>
+          <table class="proc-split__prices-table">
+            <thead><tr><th>Serviço</th><th>Valor</th><th>Inclui</th></tr></thead>
+            <tbody>
+              <tr><td>Avaliação corporal</td><td>90</td><td>Bioimpedância e adipometria</td></tr>
+            </tbody>
+          </table>
+          <p class="proc-split__note">Pacotes de 60 e 90 dias e valor para dupla: consulte pelo WhatsApp.</p>
+          <a href="#" class="btn-cta btn-cta-solid proc-split__cta" data-whatsapp-phone="5511950037191" data-whatsapp="Olá! Tenho interesse na Consulta Nutricional. Gostaria de agendar um horário.">Agendar pelo WhatsApp</a>
         </div>
       </div>
-
-      <!-- Opção: sessão única -->
-      <a href="tratamento-estelar.html" class="alt-option reveal">
-        <span class="alt-option__txt">
-          <strong>Prefere fazer em uma única sessão?</strong>
-          <span>Conheça o <strong style="color:var(--accent);display:inline;">Tratamento Estelar</strong> — as 10 etapas do cronograma completo em uma sessão só.</span>
-        </span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="alt-option__arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
 
     </div>
   </section>
@@ -159,19 +156,19 @@
     <div class="container">
       <h2 style="text-align:center;margin-bottom:2.5rem;" class="reveal">Você também pode gostar</h2>
       <div class="proc-related__grid">
-        <a href="cronograma-capilar.html" class="servico-card reveal">
-          <h3 class="servico-card__title">Cronograma Capilar</h3>
-          <p class="servico-card__desc">Três sessões semanais com acidificação, tratamento específico, massagem capilar, Led terapia e finalização.</p>
+        <a href="../massagens/drenagem-linfatica.html" class="servico-card reveal">
+          <h3 class="servico-card__title">Drenagem Linfática</h3>
+          <p class="servico-card__desc">Reduz inchaço, elimina toxinas e melhora a circulação linfática.</p>
           <div class="servico-card__footer"><span class="servico-card__link">Ver detalhes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
         </a>
-        <a href="tratamento-estelar.html" class="servico-card reveal reveal-delay-1">
-          <h3 class="servico-card__title">Tratamento Estelar</h3>
-          <p class="servico-card__desc">As 10 etapas do cronograma completo em uma única sessão para resultado imediato.</p>
+        <a href="../massagens/redutora.html" class="servico-card reveal">
+          <h3 class="servico-card__title">Massagem Redutora</h3>
+          <p class="servico-card__desc">Movimentos firmes que ajudam a modelar o contorno corporal.</p>
           <div class="servico-card__footer"><span class="servico-card__link">Ver detalhes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
         </a>
-        <a href="hidratacao.html" class="servico-card reveal reveal-delay-2">
-          <h3 class="servico-card__title">Hidratação</h3>
-          <p class="servico-card__desc">Reposição intensa de água e maciez para cabelos ressecados ou sem brilho.</p>
+        <a href="limpeza-de-pele.html" class="servico-card reveal">
+          <h3 class="servico-card__title">Limpeza de Pele</h3>
+          <p class="servico-card__desc">Remoção de impurezas, desobstrução dos poros e hidratação profunda.</p>
           <div class="servico-card__footer"><span class="servico-card__link">Ver detalhes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
         </a>
       </div>
@@ -223,7 +220,7 @@
     </div>
   </footer>
 
-  <a href="#" class="whatsapp-float" data-whatsapp="Olá! Gostaria de um orçamento para o Cronograma Estelar." aria-label="WhatsApp">
+  <a href="#" class="whatsapp-float" data-whatsapp-phone="5511950037191" data-whatsapp="Olá! Gostaria de saber mais sobre a Consulta Nutricional." aria-label="WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 

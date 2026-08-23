@@ -3527,6 +3527,31 @@ section {
   color: var(--text-light-secondary);
 }
 
+.footer__made {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1rem;
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+.footer__made:hover { opacity: 1; }
+.footer__made-label {
+  font-size: 8px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--text-light-secondary);
+}
+.footer__made-logo {
+  height: 25px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+.footer__made:hover .footer__made-logo { transform: rotate(-3deg); }
+
 /* ============================================
    WHATSAPP FLUTUANTE
    ============================================ */
@@ -6961,4 +6986,134 @@ a[href$="playlist.html"] { display: none !important; }
 }
 @media (max-width: 768px) {
   .proc-selector-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================
+   NUTRIÇÃO (seção da home)
+   ============================================ */
+.nutri {
+  background: transparent;
+  position: relative;
+}
+
+/* Desktop: foto à esquerda, título e texto à direita */
+.nutri__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+  grid-template-areas:
+    "photo head"
+    "photo text";
+  align-items: center;
+  justify-content: center;
+  column-gap: clamp(3rem, 6vw, 5rem);
+  row-gap: 0.5rem;
+}
+
+.nutri__head {
+  grid-area: head;
+  align-self: end;
+  text-align: center;
+}
+
+.nutri__text {
+  grid-area: text;
+  align-self: start;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+.nutri__label {
+  color: var(--pink);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.nutri__lead {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.9vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--text-light);
+  margin: 1.5rem 0 0;
+  max-width: 22ch;
+  margin-inline: auto;
+}
+
+.nutri__lead em {
+  display: block;
+  font-style: normal;
+  color: var(--gold);
+}
+
+.nutri__desc {
+  color: var(--text-light-secondary);
+  margin: 1.25rem 0 2rem;
+  line-height: 1.7;
+}
+
+.nutri__desc + .nutri__desc {
+  margin-top: 1rem;
+}
+
+.nutri__crn {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-light-secondary);
+  margin-top: 1.5rem;
+}
+
+.nutri__photo {
+  grid-area: photo;
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  width: min(420px, 100%);
+  flex-shrink: 0;
+  margin: 0;
+  box-shadow:
+    0 28px 70px rgba(0,0,0,0.6),
+    0 0 0 1.5px rgba(228,106,160,0.25),
+    0 0 40px rgba(177,78,255,0.15);
+  z-index: 2;
+}
+
+.nutri__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  display: block;
+}
+
+.nutri__photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 55%, rgba(10,0,17,0.55) 100%);
+  pointer-events: none;
+}
+
+/* Mobile: título entre o vídeo da massagem e a foto, depois o texto */
+@media (max-width: 900px) {
+  .nutri__layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "head"
+      "photo"
+      "text";
+    justify-items: center;
+    text-align: center;
+    row-gap: clamp(1.75rem, 5vw, 2.5rem);
+  }
+  .nutri__head,
+  .nutri__text { align-self: auto; }
+  .nutri__text { max-width: 620px; }
+  .nutri__lead { margin-top: 0; }
+  .nutri__photo { width: min(340px, 100%); }
 }
