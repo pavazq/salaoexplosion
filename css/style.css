@@ -6874,8 +6874,8 @@ a[href$="playlist.html"] { display: none !important; }
 .equipe__idx-foto-wrap::before {
   content: '';
   position: absolute;
-  inset: -20px;
-  border-radius: 50%;
+  inset: -18px;
+  border-radius: 34px;
   background: radial-gradient(ellipse, rgba(228,106,160,0.45) 0%, rgba(177,78,255,0.18) 50%, transparent 75%);
   filter: blur(26px);
   z-index: 0;
@@ -6888,9 +6888,10 @@ a[href$="playlist.html"] { display: none !important; }
 }
 
 .equipe__idx-foto {
-  width: clamp(260px, 32vw, 340px);
-  height: clamp(260px, 32vw, 340px);
-  border-radius: 50%;
+  width: clamp(290px, 30vw, 370px);
+  height: auto;
+  aspect-ratio: 4 / 5;
+  border-radius: 26px;
   object-fit: cover;
   object-position: center 20%;
   border: none;
@@ -6935,8 +6936,8 @@ a[href$="playlist.html"] { display: none !important; }
     gap: 1.25rem;
   }
   .equipe__idx-foto {
-    width: min(320px, 78vw);
-    height: min(320px, 78vw);
+    width: min(340px, 86vw);
+    height: auto;
   }
   .equipe__idx-desc { max-width: 100%; }
 }
