@@ -1344,9 +1344,10 @@ document.addEventListener('DOMContentLoaded', () => {
   (function initTeamGlitter() {
     var cards = document.querySelectorAll('.equipe__mini-card');
     if (!cards.length) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     var canvas = document.createElement('canvas');
-    canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;';
+    canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;display:none;';
     document.body.appendChild(canvas);
     var ctx = canvas.getContext('2d');
 
@@ -1358,6 +1359,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', resize, { passive: true });
 
     var particles = [];
+    var MAX_PARTICLES = 140;
     /* Cores: maioria branco/prata brilhoso, pontadas de roxo e rosa */
     var COLORS = [
       '#ffffff','#ffffff','#ffffff',
@@ -1365,18 +1367,44 @@ document.addEventListener('DOMContentLoaded', () => {
       '#b14eff','#e46aa0'
     ];
 
+    /* Cada cor vira um sprite com o halo ja desenhado, uma unica vez.
+       Antes o halo saia de ctx.shadowBlur por particula por quadro, que
+       obriga o navegador a refazer um blur ~108 vezes a cada frame. */
+    var SPRITE = 40;
+    var sprites = COLORS.map(function (cor) {
+      var c = document.createElement('canvas');
+      c.width = c.height = SPRITE;
+      var g = c.getContext('2d');
+      var meio = SPRITE / 2;
+      var grad = g.createRadialGradient(meio, meio, 0, meio, meio, meio);
+      grad.addColorStop(0,    cor);
+      grad.addColorStop(0.18, cor);
+      grad.addColorStop(0.5,  hexParaRgba(cor, 0.35));
+      grad.addColorStop(1,    hexParaRgba(cor, 0));
+      g.fillStyle = grad;
+      g.fillRect(0, 0, SPRITE, SPRITE);
+      return c;
+    });
+
+    function hexParaRgba(hex, a) {
+      var n = parseInt(hex.slice(1), 16);
+      return 'rgba(' + ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255) + ',' + a + ')';
+    }
+
     function spawnGlitter(card) {
       var img = card.querySelector('.equipe__mini-img');
       if (!img) return;
       var r = img.getBoundingClientRect();
       if (r.width === 0) return;
+      if (particles.length >= MAX_PARTICLES) return;
       var cx = r.left + r.width  / 2;
       var cy = r.top  + r.height / 2;
       var radius = r.width / 2;
       var count = 22 + Math.floor(Math.random() * 10);
-      for (var i = 0; i < count; i++) {
+      for (var i = 0; i < count && particles.length < MAX_PARTICLES; i++) {
         /* Ângulo aleatório ao redor da borda */
         var angle = Math.random() * Math.PI * 2;
+        var ci = Math.floor(Math.random() * COLORS.length);
         particles.push({
           x:    cx + Math.cos(angle) * radius,
           y:    cy + Math.sin(angle) * radius,
@@ -1384,7 +1412,7 @@ document.addEventListener('DOMContentLoaded', () => {
           vy:   Math.random() * 2.0 + 0.8,      /* sempre cai para baixo */
           alpha: 1.0,
           size:  0.6 + Math.random() * 1.1,     /* bem fino */
-          color: COLORS[Math.floor(Math.random() * COLORS.length)],
+          sprite: sprites[ci],
           gravity: 0.07 + Math.random() * 0.04,
           drag:    0.97
         });
@@ -1392,36 +1420,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     var raf = null;
-    function tick() {
+    var ultimo = 0;
+
+    function tick(agora) {
+      /* passo em "quadros de 60fps": a vida da particula passa a ser medida
+         em tempo, nao em quadros. Sem isso, quando o aparelho engasga a
+         particula vive mais tempo e o engasgo se realimenta. */
+      var passo = ultimo ? Math.min((agora - ultimo) / 16.667, 3) : 1;
+      ultimo = agora;
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.globalCompositeOperation = 'lighter'; /* blending aditivo — mais brilho */
       for (var i = particles.length - 1; i >= 0; i--) {
         var p = particles[i];
-        p.vy    += p.gravity;
-        p.vx    *= p.drag;
-        p.x     += p.vx;
-        p.y     += p.vy;
-        p.alpha -= 0.016;
+        p.vy    += p.gravity * passo;
+        p.vx    *= Math.pow(p.drag, passo);
+        p.x     += p.vx * passo;
+        p.y     += p.vy * passo;
+        p.alpha -= 0.016 * passo;
         if (p.alpha <= 0) { particles.splice(i, 1); continue; }
-        ctx.save();
+        var d = p.size * 3 + 22;
         ctx.globalAlpha = p.alpha;
-        ctx.fillStyle   = p.color;
-        ctx.shadowColor = p.color;
-        ctx.shadowBlur  = 14;  /* halo brilhoso */
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
+        ctx.drawImage(p.sprite, p.x - d / 2, p.y - d / 2, d, d);
       }
+      ctx.globalAlpha = 1;
       ctx.globalCompositeOperation = 'source-over';
       if (particles.length > 0) {
         raf = requestAnimationFrame(tick);
       } else {
         raf = null;
+        ultimo = 0;
+        /* solta a camada: canvas fixo em tela cheia composita a cada quadro */
+        canvas.style.display = 'none';
       }
     }
 
     function startLoop() {
+      canvas.style.display = 'block';
       if (!raf) raf = requestAnimationFrame(tick);
     }
 
