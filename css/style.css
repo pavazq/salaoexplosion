@@ -4503,7 +4503,10 @@ section {
 
 .proc-related__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* auto-fit + justify-content: com 1 ou 2 cards a grade centraliza em vez de
+     deixar a linha pela metade. Com 3 preenche igual a antes. */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 370px));
+  justify-content: center;
   gap: 1.5rem;
 }
 

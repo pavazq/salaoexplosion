@@ -52,7 +52,6 @@
   <url><loc>https://salaoexplosion.com.br/procedimentos/cronograma.html</loc><priority>0.8</priority></url>
   <url><loc>https://salaoexplosion.com.br/procedimentos/cortes.html</loc><priority>0.8</priority></url>
   <url><loc>https://salaoexplosion.com.br/procedimentos/tratamentos.html</loc><priority>0.8</priority></url>
-  <url><loc>https://salaoexplosion.com.br/procedimentos/tratamentos-essenciais.html</loc><priority>0.7</priority></url>
   <url><loc>https://salaoexplosion.com.br/procedimentos/coloracoes.html</loc><priority>0.8</priority></url>
   <url><loc>https://salaoexplosion.com.br/procedimentos/coloracao.html</loc><priority>0.7</priority></url>
   <url><loc>https://salaoexplosion.com.br/procedimentos/alisamentos.html</loc><priority>0.8</priority></url>
@@ -61,19 +60,13 @@
   <url><loc>https://salaoexplosion.com.br/procedimentos/estetica.html</loc><priority>0.7</priority></url>
 
   <!-- Procedimentos — tratamentos individuais -->
-  <url><loc>https://salaoexplosion.com.br/procedimentos/hidratacao.html</loc><priority>0.7</priority></url>
-  <url><loc>https://salaoexplosion.com.br/procedimentos/nutricao.html</loc><priority>0.7</priority></url>
-  <url><loc>https://salaoexplosion.com.br/procedimentos/reconstrucao.html</loc><priority>0.7</priority></url>
-  <url><loc>https://salaoexplosion.com.br/procedimentos/tratamento-capilar.html</loc><priority>0.7</priority></url>
   <url><loc>https://salaoexplosion.com.br/procedimentos/tratamento-estelar.html</loc><priority>0.7</priority></url>
-  <url><loc>https://salaoexplosion.com.br/procedimentos/cronograma-capilar.html</loc><priority>0.7</priority></url>
   <url><loc>https://salaoexplosion.com.br/procedimentos/cronograma-estelar.html</loc><priority>0.7</priority></url>
   <url><loc>https://salaoexplosion.com.br/procedimentos/detok.html</loc><priority>0.7</priority></url>
   <url><loc>https://salaoexplosion.com.br/procedimentos/ccrp-carvao-ativado.html</loc><priority>0.7</priority></url>
   <url><loc>https://salaoexplosion.com.br/procedimentos/acidificacao-redken.html</loc><priority>0.7</priority></url>
   <url><loc>https://salaoexplosion.com.br/procedimentos/plastica-dos-fios.html</loc><priority>0.7</priority></url>
   <url><loc>https://salaoexplosion.com.br/procedimentos/reposicao-de-carbono.html</loc><priority>0.7</priority></url>
-  <url><loc>https://salaoexplosion.com.br/procedimentos/progressiva.html</loc><priority>0.7</priority></url>
 
   <!-- Procedimentos — cortes individuais -->
   <url><loc>https://salaoexplosion.com.br/procedimentos/corte-estiloso.html</loc><priority>0.7</priority></url>
