@@ -14,3 +14,27 @@ RewriteRule ^ https://salaoexplosion.com.br%{REQUEST_URI} [R=301,L]
 # Redireciona variacoes antigas da landing page para /landing/
 RewriteRule ^landing\.html$ /landing/ [R=301,L]
 RewriteRule ^landing$ /landing/ [R=301,L]
+
+# ── Cache ─────────────────────────────────────────────────────────────
+# Sem estas regras o servidor nao manda Cache-Control para HTML, e o
+# navegador decide sozinho por quanto tempo guardar. Resultado: a pessoa
+# continua vendo a pagina antiga depois do deploy, sem nem revalidar.
+<IfModule mod_headers.c>
+  # HTML e sitemap: pode guardar, mas precisa perguntar se mudou antes de
+  # usar. Com o etag a resposta vira 304 e quase nao custa banda.
+  <FilesMatch "\.(html|xml)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+
+  # CSS e JS carregam ?v= no link, entao o endereco muda a cada versao e
+  # pode ser guardado por muito tempo com seguranca.
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=31536000"
+  </FilesMatch>
+
+  # Imagens, fontes e video nao tem versao no nome. Uma semana equilibra
+  # velocidade e a chance de um arquivo ser trocado mantendo o mesmo nome.
+  <FilesMatch "\.(jpg|jpeg|png|webp|gif|svg|ico|woff|woff2|ttf|mp4|m4a)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
